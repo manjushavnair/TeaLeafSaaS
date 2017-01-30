@@ -13,7 +13,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import com.google.common.base.Preconditions;
 
 /**
- * @author manjusha
+ * @author manjusha saju
  * 
  */
 public class BrowserFactory {
