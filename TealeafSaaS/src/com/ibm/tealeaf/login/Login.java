@@ -1,4 +1,4 @@
-package com.ibm.tealeaf.Login;
+package com.ibm.tealeaf.login;
 
 import org.openqa.selenium.WebDriver;
 
