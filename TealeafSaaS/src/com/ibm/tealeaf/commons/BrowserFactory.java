@@ -10,8 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import com.google.common.base.Preconditions;
-
 /**
  * @author manjusha saju
  * 

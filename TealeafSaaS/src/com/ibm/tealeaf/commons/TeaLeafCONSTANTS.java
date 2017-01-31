@@ -3,6 +3,7 @@ package com.ibm.tealeaf.commons;
 public interface TeaLeafCONSTANTS {
 
 	
+	
 	 public static String FIREFOX="firefox";
 	 public static String CHROME="chrome";
 	 public static String BROWSER_TYPE="BROWSER_TYPE";

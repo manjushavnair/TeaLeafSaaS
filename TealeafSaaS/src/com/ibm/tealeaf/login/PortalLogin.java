@@ -1,12 +1,9 @@
 package com.ibm.tealeaf.login;
-import java.util.concurrent.*;
+import java.util.concurrent.TimeUnit;
 
-import org.jboss.netty.util.*;
-import org.openqa.jetty.html.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WebDriver.Timeouts;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
