@@ -44,10 +44,7 @@ public class VerifyTealeafSaaSlogin {
 	@Test(priority = 1)
 	public void verifyValidLogin() {
 		 
-		// Below is the code base of selenium using page object model.
-		// This will launch browser and specific url
-		// WebDriver driver=
-		// BrowserFactory.startBrowser("chrome","https://50.23.117.115/webapp/login");
+		
 		// Created page object using Page Factory
 		LoginPage login_page = PageFactory
 				.initElements(driver, LoginPage.class);
@@ -78,7 +75,7 @@ public class VerifyTealeafSaaSlogin {
 	public void struggleAnalytics() {
 		try {
 
-			//test
+			
 			StruggleAnalyticsPage stru_page = PageFactory.initElements(
 					driver, StruggleAnalyticsPage.class);
 			stru_page.strugAnalytics();
