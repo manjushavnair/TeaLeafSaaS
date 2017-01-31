@@ -5,6 +5,8 @@ package com.ibm.tealeaf.commons;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,9 +20,16 @@ public class BrowserFactory {
 
 	private static WebDriver driver;
 	private static PropertyReader prpr;
+	
+	private static Logger  logger = Logger.getLogger(BrowserFactory.class);
+	
 
 	public static WebDriver startBrowser(String browserName, String url) {
-
+		BasicConfigurator.configure();
+		 
+		logger.info("starting Browser");
+		logger.debug("starting Browser 2");
+		logger.error("starting Browser 3");
 		prpr = PropertyReader.readProperty();
 
 		/*
