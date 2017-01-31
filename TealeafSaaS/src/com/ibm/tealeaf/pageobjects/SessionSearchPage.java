@@ -6,6 +6,7 @@ package com.ibm.tealeaf.pageobjects;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -40,16 +41,24 @@ public class SessionSearchPage {
     }
     @FindBy(xpath="//span[contains(@title,'Session search')]")WebElement sess_search;
     
-    public void SessSearch()
+    public void sessSearch()
     {
     	WebDriverWait wait = new WebDriverWait(driver,200);
-	    logger.info("Session Search Page View step 1");
 	    wait.until(ExpectedConditions.textToBePresentInElement(sess_search, "Session search"));
-	    logger.info("Session Search Page View step 2");
 	    sess_search.click();
-    	
+	    logger.info("Session Search Page View");
     }
-  
+    
+    @FindBy(xpath="//button[@ng-click='search()' and text()='Search']")WebElement last_24;;
+    
+     public void sessEndTime_last24hrs() 
+     {
+    	 WebDriverWait wait = new WebDriverWait(driver,200);
+    	 wait.until(ExpectedConditions.titleContains("Search result"));
+    	 last_24.click();
+    	 logger.info("Search result view for last 24 hrs");
+    	 
+     }
            
     /**
 	 * Navigating back to home page
