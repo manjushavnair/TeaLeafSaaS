@@ -63,8 +63,8 @@ public class BrowserFactory {
 
 		// driver.manage().timeouts().pageLoadTimeout(10L, TimeUnit.SECONDS);
 
-		//driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME30SEC, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC, TimeUnit.SECONDS);
 		driver.get(url);
 		return driver;
 
