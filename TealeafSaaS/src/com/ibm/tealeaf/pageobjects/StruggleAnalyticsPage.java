@@ -156,8 +156,7 @@ public class StruggleAnalyticsPage {
 		Actions builder2 = new Actions(driver);
 		builder2.moveToElement(menustruggle).click(menustruggle);
 		builder2.perform();
-		System.out
-				.println("Successfully navigated back to Struggle Analytics ");
+		logger.info("Successfully navigated back to Struggle Analytics ");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 	}
 
