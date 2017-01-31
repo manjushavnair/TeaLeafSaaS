@@ -68,7 +68,7 @@ public class BrowserFactory {
     }
 
 	public static void stopDriver() {
-		if (driver != null) {
+		if (driver !=  null) {
 			driver.quit();
 		}
 	}
