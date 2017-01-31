@@ -49,15 +49,21 @@ public class SessionSearchPage {
 	    logger.info("Session Search Page View");
     }
     
-    @FindBy(xpath="//button[@ng-click='search()' and text()='Search']")WebElement last_24;
+   @FindBy(xpath="//button[@ng-click='search()'and text()='Search']")WebElement last_24;
+   
+   @FindBy(xpath="//a[contains(text(),'Search result')]")WebElement pagemenu;
     
-    @FindBy(xpath="//a[contains(text(),'Search result')]")WebElement pagemenu;
-     public void sessEndTime_last24hrs() 
+   //Session search for last 24 hrs 
+     public void sessEndTime_last24hrs() throws InterruptedException 
      {
+    	 driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC, TimeUnit.SECONDS);
+    	 last_24.click();
     	 WebDriverWait wait = new WebDriverWait(driver,200);
     	 wait.until(ExpectedConditions.textToBePresentInElement(pagemenu, "Search result"));
-    	 last_24.click();
+    	 
     	 logger.info("Search result view for last 24 hrs");
+    	 
+    	 Thread.sleep(TeaLeafCONSTANTS.WAITTIME300SEC);
     	 
      }
            
