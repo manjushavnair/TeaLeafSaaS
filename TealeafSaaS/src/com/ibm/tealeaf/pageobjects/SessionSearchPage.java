@@ -5,6 +5,7 @@ package com.ibm.tealeaf.pageobjects;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,6 +13,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 
 /**
@@ -19,6 +21,8 @@ import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
  *
  */
 public class SessionSearchPage {
+	
+	private static Logger  logger = Logger.getLogger(BrowserFactory.class);
 	
 	private WebDriver driver;
  

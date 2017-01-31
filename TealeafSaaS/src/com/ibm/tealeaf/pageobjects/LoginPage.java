@@ -4,12 +4,16 @@ package com.ibm.tealeaf.pageobjects;
  * @author Manjusha Saju
  *
  */
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import com.ibm.tealeaf.commons.BrowserFactory;
 public class LoginPage {
     WebDriver driver;
-    	  
+    private static Logger  logger = Logger.getLogger(BrowserFactory.class);
+	
     public LoginPage(WebDriver driver)
     {
         this.driver=driver;

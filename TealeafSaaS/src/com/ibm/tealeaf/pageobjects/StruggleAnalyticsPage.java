@@ -5,6 +5,7 @@ package com.ibm.tealeaf.pageobjects;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 
 /**
@@ -24,6 +26,8 @@ public class StruggleAnalyticsPage {
 
 	WebDriver driver;
 
+	private static Logger  logger = Logger.getLogger(BrowserFactory.class);
+	
 	public StruggleAnalyticsPage(WebDriver driver) {
 		this.driver = driver;
 
@@ -37,10 +41,10 @@ public class StruggleAnalyticsPage {
 		wait.until(ExpectedConditions.textToBePresentInElement(
 				struggleanalytics, "Struggle analytics"));
 
-		System.out.println("Struggle Analytics PageView");
+		logger.info("Struggle Analytics PageView");
 		
 		struggleanalytics.click();
-		System.out.println("Struggle Analytics PageView clicked");
+		logger.info("Struggle Analytics PageView clicked");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		 
 	}
@@ -61,7 +65,7 @@ public class StruggleAnalyticsPage {
 			Assert.fail("No such element");
 		}
 				
-		System.out.println("In Registration struggle report");
+		logger.info("In Registration struggle report");
 	}
 
  
@@ -80,7 +84,7 @@ public class StruggleAnalyticsPage {
 
 		 
 		 
-		System.out.println("In Shopping cart struggle report yet to click");
+		logger.info("In Shopping cart struggle report yet to click");
 		
 		driver.manage()
 		.timeouts()
@@ -89,10 +93,10 @@ public class StruggleAnalyticsPage {
 		 
 		
 		shoppingcartlabel.click();
-		System.out.println("In Shopping cart struggle report clicked");
+		logger.info("In Shopping cart struggle report clicked");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 		
-		System.out.println("In Shopping cart struggle report clicked ");
+		logger.info("In Shopping cart struggle report clicked ");
 
 		
 	}
@@ -112,7 +116,7 @@ public class StruggleAnalyticsPage {
 		//Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		checkoutlabel.click();
 		 
-		System.out.println("In Checkout struggle report");
+		logger.info("In Checkout struggle report");
 	}
 
 	 
@@ -129,7 +133,7 @@ public class StruggleAnalyticsPage {
 		//Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		bannerlabel.click();
 		 
-		System.out.println("In Banner landing page report");
+		logger.info("In Banner landing page report");
 	}
 
 	

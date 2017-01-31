@@ -27,9 +27,8 @@ public class BrowserFactory {
 	public static WebDriver startBrowser(String browserName, String url) {
 		BasicConfigurator.configure();
 		 
-		logger.info("starting Browser");
-		logger.debug("starting Browser 2");
-		logger.error("starting Browser 3");
+		logger.info("Starting Browser");
+	 
 		prpr = PropertyReader.readProperty();
 
 		/*

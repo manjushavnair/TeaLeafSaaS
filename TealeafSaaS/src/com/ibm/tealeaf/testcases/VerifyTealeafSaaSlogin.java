@@ -9,6 +9,7 @@ package com.ibm.tealeaf.testcases;
  */
 
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterSuite;
@@ -25,7 +26,8 @@ import com.ibm.tealeaf.pageobjects.StruggleAnalyticsPage;
 public class VerifyTealeafSaaSlogin {
 
 	private static WebDriver driver;
-
+	private static Logger  logger = Logger.getLogger(BrowserFactory.class);
+	
 	private static PropertyReader prpr;
 
 	@BeforeClass
