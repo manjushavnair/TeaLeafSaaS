@@ -30,7 +30,7 @@ public class SessionSearchPage {
 	
 	public SessionSearchPage()
     {
-   System.out.println("default constructor called");
+   logger.info("default constructor called");
     
     }
     public SessionSearchPage(WebDriver driver)
@@ -43,9 +43,9 @@ public class SessionSearchPage {
     public void SessSearch()
     {
     	WebDriverWait wait = new WebDriverWait(driver,200);
-	    System.out.println("Session Search Page View step 1");
+	    logger.info("Session Search Page View step 1");
 	    wait.until(ExpectedConditions.textToBePresentInElement(sess_search, "Session search"));
-	    System.out.println("Session Search Page View step 2");
+	    logger.info("Session Search Page View step 2");
 	    sess_search.click();
     	
     }
@@ -70,8 +70,7 @@ public class SessionSearchPage {
 		Actions builder = new Actions(driver);
 		builder.moveToElement(homepage).click(homepage);
 		builder.perform();
-		System.out
-				.println("Successfully navigated back to Home Page ");
+		 logger.info("Successfully navigated back to Home Page ");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 	}
 
