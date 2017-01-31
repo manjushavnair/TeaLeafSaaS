@@ -17,7 +17,7 @@ import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 
 /**
- * @author tealeaf
+ * @author Manjusha Saju
  *
  */
 public class SessionSearchPage {
@@ -50,9 +50,7 @@ public class SessionSearchPage {
     	
     }
   
-    
-    //a[contains(@href,'/home')and contains(.,'IBM Tealeaf Customer Experience')]
-    
+           
     /**
 	 * Navigating back to home page
 	 * 
