@@ -4,6 +4,7 @@
 	<groupId>TealeafSaaS</groupId>
 	<artifactId>TealeafSaaS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>TealeafSaaS</name>
 	<description>TealeafSaaS Test Automation Project</description>
 	<build>
