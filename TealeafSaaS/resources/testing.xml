@@ -1,28 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <suite name="Group of group Suite" verbose="1">
   <test name="Group of group Test">
-    <groups>
-      <define name="include-group">
-        <include name="include-test-one" />
-        <include name="include-test-two" />
-      </define>
-      <define name="exclude-group">
-        <include name="test-one-exclude" />
-        <include name="test-two-exclude" />
-      </define>
-      <run>
-        <include name="include-group" />
-        <exclude name="exclude-group" />
-      </run>
-    </groups>
-   <!--   <parameter name="test" value="one"/> -->
-  
+ 
     <classes>
       <class name="com.ibm.tealeaf.testcases.VerifyTealeafSaaSlogin" />
     </classes>
-    <!--
-    <packages> <package name="com.ibm.tealeaf.testcases"/></packages>
-     -->
+    
   
   </test>
   
