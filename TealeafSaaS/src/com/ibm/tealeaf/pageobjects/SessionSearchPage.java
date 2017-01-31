@@ -49,12 +49,13 @@ public class SessionSearchPage {
 	    logger.info("Session Search Page View");
     }
     
-    @FindBy(xpath="//button[@ng-click='search()' and text()='Search']")WebElement last_24;;
+    @FindBy(xpath="//button[@ng-click='search()' and text()='Search']")WebElement last_24;
     
+    @FindBy(xpath="//a[contains(text(),'Search result')]")WebElement pagemenu;
      public void sessEndTime_last24hrs() 
      {
     	 WebDriverWait wait = new WebDriverWait(driver,200);
-    	 wait.until(ExpectedConditions.titleContains("Search result"));
+    	 wait.until(ExpectedConditions.textToBePresentInElement(pagemenu, "Search result"));
     	 last_24.click();
     	 logger.info("Search result view for last 24 hrs");
     	 
