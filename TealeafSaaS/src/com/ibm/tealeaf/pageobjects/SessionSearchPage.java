@@ -22,7 +22,7 @@ import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
  */
 public class SessionSearchPage {
 
-	private static Logger logger = Logger.getLogger(BrowserFactory.class);
+	private static Logger logger = Logger.getLogger(SessionSearchPage.class);
 
 	private WebDriver driver;
 

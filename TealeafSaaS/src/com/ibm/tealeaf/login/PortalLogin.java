@@ -15,7 +15,7 @@ import com.ibm.tealeaf.commons.BrowserFactory;
 public class PortalLogin extends Login {
 	
 	private WebDriver driver;
-	private static Logger  logger = Logger.getLogger(BrowserFactory.class);
+	private static Logger  logger = Logger.getLogger(PortalLogin.class);
 	
 	
 	public PortalLogin()

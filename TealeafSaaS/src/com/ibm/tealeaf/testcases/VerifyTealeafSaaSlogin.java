@@ -27,7 +27,7 @@ import com.ibm.tealeaf.pageobjects.StruggleAnalyticsPage;
 public class VerifyTealeafSaaSlogin {
 
 	private static WebDriver driver;
-	private static Logger  logger = Logger.getLogger(BrowserFactory.class);
+	private static Logger  logger = Logger.getLogger(VerifyTealeafSaaSlogin.class);
 	
 	private static PropertyReader prpr;
 
