@@ -64,7 +64,7 @@ public class VerifyTealeafSaaSlogin {
 			sessionsearch_page.sessSearch();
 			sessionsearch_page.sessEndTime_last24hrs();
 			sessionsearch_page.selectBBRsession();
-			//sessionsearch_page.backToHome();
+			sessionsearch_page.backToHome();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -104,6 +104,6 @@ public class VerifyTealeafSaaSlogin {
 		BrowserFactory.stopDriver();
 	
 
-	}*/
+	}
 
 }
