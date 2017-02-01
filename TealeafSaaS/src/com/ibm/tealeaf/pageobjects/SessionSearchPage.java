@@ -62,6 +62,15 @@ public class SessionSearchPage {
     	 Thread.sleep(TeaLeafCONSTANTS.WAITTIME300SEC);
     	 
      }
+     
+     @FindBy(xpath="//*[@id='sessions_list']/tbody/tr[2]/td[2]")WebElement firstsession;
+     public void OpenBBRsession(){
+      driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME160SEC, TimeUnit.SECONDS); 
+   	  firstsession.click(); 
+   	  
+   	  logger.info("BBR session is opened");
+   	  
+     }
            
     /**
 	 * Navigating back to home page

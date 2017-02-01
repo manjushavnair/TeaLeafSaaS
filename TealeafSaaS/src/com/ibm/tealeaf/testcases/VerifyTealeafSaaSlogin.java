@@ -63,7 +63,8 @@ public class VerifyTealeafSaaSlogin {
 					driver, SessionSearchPage.class);
 			sessionsearch_page.sessSearch();
 			sessionsearch_page.sessEndTime_last24hrs();
-			sessionsearch_page.backToHome();
+			sessionsearch_page.OpenBBRsession();
+			//sessionsearch_page.backToHome();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -72,7 +73,7 @@ public class VerifyTealeafSaaSlogin {
 
 	}
 
-	@Test(priority=3)
+	/*@Test(priority=3)
 	public void struggleAnalytics() {
 		try {
 
@@ -96,7 +97,7 @@ public class VerifyTealeafSaaSlogin {
 
 		}	
 
-	}
+	}*/
 
 	@AfterSuite
 	public void testDown() {
