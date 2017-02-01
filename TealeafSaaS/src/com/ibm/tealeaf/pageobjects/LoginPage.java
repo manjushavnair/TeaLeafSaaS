@@ -12,7 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import com.ibm.tealeaf.commons.BrowserFactory;
 public class LoginPage {
     WebDriver driver;
-    private static Logger  logger = Logger.getLogger(BrowserFactory.class);
+    private static Logger  logger = Logger.getLogger(LoginPage.class);
 	
     public LoginPage(WebDriver driver)
     {

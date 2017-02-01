@@ -26,7 +26,7 @@ public class StruggleAnalyticsPage {
 
 	WebDriver driver;
 
-	private static Logger  logger = Logger.getLogger(BrowserFactory.class);
+	private static Logger  logger = Logger.getLogger(StruggleAnalyticsPage.class);
 	
 	public StruggleAnalyticsPage(WebDriver driver) {
 		this.driver = driver;
