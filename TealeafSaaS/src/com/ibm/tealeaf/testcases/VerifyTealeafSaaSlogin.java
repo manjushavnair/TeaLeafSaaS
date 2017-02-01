@@ -63,7 +63,7 @@ public class VerifyTealeafSaaSlogin {
 					driver, SessionSearchPage.class);
 			sessionsearch_page.sessSearch();
 			sessionsearch_page.sessEndTime_last24hrs();
-			sessionsearch_page.OpenBBRsession();
+			sessionsearch_page.selectBBRsession();
 			//sessionsearch_page.backToHome();
 
 		} catch (Exception e) {

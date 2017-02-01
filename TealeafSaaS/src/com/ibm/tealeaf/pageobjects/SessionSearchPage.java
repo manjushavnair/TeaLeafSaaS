@@ -64,11 +64,11 @@ public class SessionSearchPage {
      }
      
      @FindBy(xpath="//*[@id='sessions_list']/tbody/tr[2]/td[2]")WebElement firstsession;
-     public void OpenBBRsession(){
+     public void selectBBRsession(){
       driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME160SEC, TimeUnit.SECONDS); 
    	  firstsession.click(); 
    	  
-   	  logger.info("BBR session is opened");
+   	  logger.info("BBR session is selected");
    	  
      }
            
