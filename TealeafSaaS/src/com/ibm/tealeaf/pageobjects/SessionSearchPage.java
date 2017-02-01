@@ -54,7 +54,7 @@ public class SessionSearchPage {
    //Session search for last 24 hrs 
      public void sessEndTime_last24hrs() throws InterruptedException 
      {
-    	 driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC, TimeUnit.SECONDS);
+    	 driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME30SEC, TimeUnit.SECONDS);
     	 last_24.click();
     	    	 
     	 logger.info("Search result view for last 24 hrs");
@@ -63,12 +63,24 @@ public class SessionSearchPage {
     	 
      }
      
-     @FindBy(xpath="//*[@id='sessions_list']/tbody/tr[2]/td[2]")WebElement firstsession;
-     public void OpenBBRsession(){
+     @FindBy(xpath="//*[@id='sessions_list']/tbody/tr[3]/td[2]")WebElement firstsession;
+     public void selectBBRsession(){
       driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME160SEC, TimeUnit.SECONDS); 
-   	  firstsession.click(); 
+      Actions builder = new Actions(driver);
+   // Move cursor to the Main Menu Element
+   builder.moveToElement(firstsession).perform();
+   // Giving 5 Secs for submenu to be displayed
+   try {
+	Thread.sleep(5000L);
+} catch (InterruptedException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+   // Clicking on the Hidden SubMenu
+   firstsession.click();
+
    	  
-   	  logger.info("BBR session is opened");
+   	  logger.info("BBR session is selected");
    	  
      }
            
