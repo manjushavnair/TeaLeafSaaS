@@ -97,7 +97,7 @@ public class VerifyTealeafSaaSlogin {
 
 		}	
 
-	}*/
+	}
 
 	@AfterSuite
 	public void testDown() {
