@@ -9,6 +9,7 @@ package com.ibm.tealeaf.testcases;
  */
 
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -32,6 +33,8 @@ public class VerifyTealeafSaaSlogin {
 
 	@BeforeClass
 	public void initatebrowser() {
+		BasicConfigurator.configure();
+		 
 
 		prpr = PropertyReader.readProperty();
 		
