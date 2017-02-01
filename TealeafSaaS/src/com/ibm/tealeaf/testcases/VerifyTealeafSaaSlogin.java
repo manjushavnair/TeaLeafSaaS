@@ -73,7 +73,7 @@ public class VerifyTealeafSaaSlogin {
 
 	}
 
-	/*@Test(priority=3)
+	@Test(priority=3)
 	public void struggleAnalytics() {
 		try {
 
