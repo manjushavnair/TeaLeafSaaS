@@ -15,7 +15,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 
 /**
