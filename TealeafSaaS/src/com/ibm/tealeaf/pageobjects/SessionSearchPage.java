@@ -95,7 +95,7 @@ public class SessionSearchPage {
 	 * 
 	 * @throws InterruptedException
 	 */
-	@FindBy(xpath = ("//a[contains(@href,'/home')and contains(.,'IBM Tealeaf Customer Experience')]"))
+	@FindBy(xpath ="//a[contains(@href,'/home')and contains(.,'IBM Tealeaf Customer Experience')]")
 	WebElement homepage;
 
 	public void backToHome() throws InterruptedException {
@@ -111,6 +111,16 @@ public class SessionSearchPage {
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 	}
 	
+	//To find sessions for last 5 min
+	
+	@FindBy(xpath="//div[contains(@class,'app-info')]//filtering-select//div//div//input[contains(@type, 'text')]")WebElement last_5;
+	
+	public void sessEndTime_last5min(){
+		
+		WebDriverWait wait = new WebDriverWait(driver, 200);
+		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,
+				"Session search"));
+	}
 	
 	
 
