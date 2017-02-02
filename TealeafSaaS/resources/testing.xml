@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<suite name="Group of group Suite" verbose="1">
-  <test name="Group of group Test">
- 
+<suite name="Standalone" verbose="1">
+  <test name="standalone">
+  <!--    <groups>
+            <run>
+                <include name="standalone" />
+            </run>
+        </groups>
+        <packages>
+            <package name="com.ibm.tealeaf.testcases" />
+        </packages>
+        -->
     <classes>
       <class name="com.ibm.tealeaf.testcases.VerifyTealeafSaaSlogin" />
     
