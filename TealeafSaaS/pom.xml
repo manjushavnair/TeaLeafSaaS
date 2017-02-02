@@ -147,7 +147,9 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.8.7</version>
+			<version>6.9.8</version>
+      <scope>test</scope>
+			 
 		</dependency>
 	</dependencies>
 </project>
