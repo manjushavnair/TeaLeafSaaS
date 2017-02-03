@@ -7,11 +7,13 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
@@ -132,15 +134,21 @@ public class SessionSearchPage {
 	
 	//To get the drop down option for  Session End Time and click on Last 5 min
 	
-	@FindBy(xpath="//div[contains(@class,'sess-endtime')]//filtering-select//div//div//div[contains(@class, 'input-mask ng-scope')]")WebElement last_24hrs;
+	@FindBy(xpath="//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[contains(@class, 'input-mask ng-scope')]")WebElement last_24hrs;
 	
 	public void sessEndTime_last24hrs(){
 		
 		WebDriverWait wait = new WebDriverWait(driver, 200);
 		wait.until(ExpectedConditions.titleContains("Last 24 hours"));
-		last_24hrs.click();
-				
 		
+		try {
+			last_24hrs.click();
+			
+		} catch (WebDriverException e) {
+			
+			Assert.fail("Element is not clickable at point");
+		}
+		logger.info("clicked on default selection");	
 	}
 	
 	
