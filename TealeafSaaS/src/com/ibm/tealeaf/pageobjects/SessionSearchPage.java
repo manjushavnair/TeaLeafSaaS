@@ -49,14 +49,14 @@ public class SessionSearchPage {
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
-	@FindBy(xpath = "//button[@ng-click='search()'and text()='Search']")WebElement default_selection;
+	@FindBy(xpath = "//button[@ng-click='search()'and text()='Search']")WebElement default_search;
 
 	public void selectDefaultView() throws InterruptedException {
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
 						TimeUnit.SECONDS);
-		default_selection.click();
+		default_search.click();
 
 		logger.info("Displayed search result view for last 24 hrs ");
 
@@ -107,6 +107,26 @@ public class SessionSearchPage {
 		builder.moveToElement(homepage).click(homepage);
 		builder.perform();
 		logger.info("Successfully navigated back to Home Page ");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
+	}
+	
+	/** Navigating back to Session Search page 
+	 * 
+	 * @throws InterruptedException
+	 */
+	@FindBy(xpath ="//a[contains(@href,'/sessionsearch?result=false')and contains(.,'Session search')]")
+	WebElement searchpage;
+
+	public void backToSearch() throws InterruptedException {
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
+		driver.manage()
+				.timeouts()
+				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
+						TimeUnit.SECONDS);
+		Actions builder = new Actions(driver);
+		builder.moveToElement(searchpage).click(searchpage);
+		builder.perform();
+		logger.info("Successfully navigated back to Session search Page ");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 	}
 	
