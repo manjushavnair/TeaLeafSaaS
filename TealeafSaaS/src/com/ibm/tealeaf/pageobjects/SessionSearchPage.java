@@ -49,15 +49,14 @@ public class SessionSearchPage {
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
-	@FindBy(xpath = "//button[@ng-click='search()'and text()='Search']")
-	WebElement last_24;
+	@FindBy(xpath = "//button[@ng-click='search()'and text()='Search']")WebElement default_selection;
 
-	public void sessEndTime_last24hrs() throws InterruptedException {
+	public void selectDefaultView() throws InterruptedException {
 		driver.manage()
 				.timeouts()
-				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME30SEC,
+				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
 						TimeUnit.SECONDS);
-		last_24.click();
+		default_selection.click();
 
 		logger.info("Displayed search result view for last 24 hrs ");
 
@@ -111,15 +110,17 @@ public class SessionSearchPage {
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 	}
 	
-	//To find sessions for last 5 min
+	//To get the drop down option for  Session End Time and click on Last 5 min
 	
-	@FindBy(xpath="//div[contains(@class,'app-info')]//filtering-select//div//div//input[contains(@type, 'text')]")WebElement last_5;
+	@FindBy(xpath="//div[contains(@class,'sess-endtime')]//filtering-select//div//div//div[contains(@class, 'input-mask ng-scope')]")WebElement last_24hrs;
 	
-	public void sessEndTime_last5min(){
+	public void sessEndTime_last24hrs(){
 		
 		WebDriverWait wait = new WebDriverWait(driver, 200);
-		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,
-				"Session search"));
+		wait.until(ExpectedConditions.titleContains("Last 24 hours"));
+		last_24hrs.click();
+				
+		
 	}
 	
 	

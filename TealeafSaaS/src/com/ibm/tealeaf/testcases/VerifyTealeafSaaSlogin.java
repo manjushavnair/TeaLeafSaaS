@@ -65,9 +65,10 @@ public class VerifyTealeafSaaSlogin {
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
 			sessionsearch_page.sessSearch();
-			sessionsearch_page.sessEndTime_last24hrs();
+			sessionsearch_page.selectDefaultView();
 			sessionsearch_page.selectBBRsession();
 			sessionsearch_page.backToHome();
+			sessionsearch_page.sessEndTime_last24hrs();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -76,7 +77,7 @@ public class VerifyTealeafSaaSlogin {
 
 	}
 
-	@Test(priority=3)
+	/*@Test(priority=3)
 	public void struggleAnalytics() {
 		try {
 
@@ -100,7 +101,7 @@ public class VerifyTealeafSaaSlogin {
 
 		}	
 
-	}
+	}*/
 
 	@AfterSuite
 	public void testDown() {
