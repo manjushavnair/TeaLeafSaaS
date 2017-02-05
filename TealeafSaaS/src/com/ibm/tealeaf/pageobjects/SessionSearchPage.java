@@ -42,12 +42,13 @@ public class SessionSearchPage {
 	@FindBy(xpath = "//span[contains(@title,'Session search')]")
 	WebElement sess_search;
 
-	public void sessSearch() {
+	public void sessSearch() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 200);
 		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,
 				"Session search"));
 		sess_search.click();
 		logger.info("In Session Search Page View");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
