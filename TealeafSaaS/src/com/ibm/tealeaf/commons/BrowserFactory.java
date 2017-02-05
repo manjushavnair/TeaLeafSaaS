@@ -20,16 +20,16 @@ public class BrowserFactory {
 
 	private static WebDriver driver;
 	private static PropertyReader prpr;
-	
-	private static Logger  logger = Logger.getLogger(BrowserFactory.class);
-	
+
+	private static Logger logger = Logger.getLogger(BrowserFactory.class);
 
 	public static WebDriver startBrowser(String browserName, String url) {
 		BasicConfigurator.configure();
-		 
+
 		logger.info("Starting Browser");
-	 
+
 		prpr = PropertyReader.readProperty();
+		logger.info("Starting reader ");
 
 		/*
 		 * Preconditions.checkNotNull(browserName,
@@ -64,17 +64,21 @@ public class BrowserFactory {
 		// driver.manage().timeouts().pageLoadTimeout(10L, TimeUnit.SECONDS);
 
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC, TimeUnit.SECONDS);
+		driver.manage()
+				.timeouts()
+				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC,
+						TimeUnit.SECONDS);
 		driver.get(url);
 		return driver;
 
 	}
+
 	public static WebDriver getDriver() {
-        return driver;
-    }
+		return driver;
+	}
 
 	public static void stopDriver() {
-		if (driver !=  null) {
+		if (driver != null) {
 			driver.quit();
 		}
 	}

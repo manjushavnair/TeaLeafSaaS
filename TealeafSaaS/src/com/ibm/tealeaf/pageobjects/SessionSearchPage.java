@@ -17,6 +17,7 @@ import org.testng.Assert;
 
 import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
+import com.ibm.tealeaf.exception.BusinessException;
 
 /**
  * @author Manjusha Saju
@@ -52,7 +53,8 @@ public class SessionSearchPage {
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
-	@FindBy(xpath = "//button[@ng-click='search()'and text()='Search']")WebElement default_search;
+	@FindBy(xpath = "//button[@ng-click='search()'and text()='Search']")
+	WebElement default_search;
 
 	public void selectDefaultView() throws InterruptedException {
 		driver.manage()
@@ -78,26 +80,27 @@ public class SessionSearchPage {
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME160SEC,
 						TimeUnit.SECONDS);
 		Actions builder = new Actions(driver);
-	//3.a Move cursor to the Main Menu Element
+		// 3.a Move cursor to the Main Menu Element
 		builder.moveToElement(firstsession).perform();
-	//3.b Giving 5 Secs for submenu to be displayed
+		// 3.b Giving 5 Secs for submenu to be displayed
 		try {
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	//3.c Clicking on the Hidden SubMenu
+		// 3.c Clicking on the Hidden SubMenu
 		firstsession.click();
 
 		logger.info("BBR session is selected");
 
 	}
 
-	/**4. Navigating back to home page from BBR replay view
+	/**
+	 * 4. Navigating back to home page from BBR replay view
 	 * 
 	 * @throws InterruptedException
 	 */
-	@FindBy(xpath ="//a[contains(@href,'/home')and contains(.,'IBM Tealeaf Customer Experience')]")
+	@FindBy(xpath = "//a[contains(@href,'/home')and contains(.,'IBM Tealeaf Customer Experience')]")
 	WebElement homepage;
 
 	public void backToHome() throws InterruptedException {
@@ -112,12 +115,13 @@ public class SessionSearchPage {
 		logger.info("Successfully navigated back to Home Page ");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 	}
-	
-	/** Navigating back to Session Search page 
+
+	/**
+	 * Navigating back to Session Search page
 	 * 
 	 * @throws InterruptedException
 	 */
-	@FindBy(xpath ="//a[contains(@href,'/sessionsearch?result=false')and contains(.,'Session search')]")
+	@FindBy(xpath = "//a[contains(@href,'/sessionsearch?result=false')and contains(.,'Session search')]")
 	WebElement searchpage;
 
 	public void backToSearch() throws InterruptedException {
@@ -132,26 +136,26 @@ public class SessionSearchPage {
 		logger.info("Successfully navigated back to Session search Page ");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 	}
-	
-	//To get the drop down option for  Session End Time and click on Last 5 min
-	
-	@FindBy(xpath="//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[contains(@class, 'input-mask ng-scope')]")WebElement last_24hrs;
-	
-	public void sessEndTime_last24hrs(){
-		
+
+	// To get the drop down option for Session End Time and click on Last 5 min
+
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[contains(@class, 'input-mask ng-scope')]")
+	WebElement last_24hrs;
+
+	public void sessEndTime_last24hrs() throws BusinessException {
+
 		WebDriverWait wait = new WebDriverWait(driver, 200);
 		wait.until(ExpectedConditions.titleContains("Last 24 hours"));
-		
+
 		try {
 			last_24hrs.click();
-			
+
 		} catch (WebDriverException e) {
-			
+
 			Assert.fail("Element is not clickable at point");
+			throw new BusinessException("2001", e.getMessage());
 		}
-		logger.info("clicked on default selection");	
+		logger.info("clicked on default selection");
 	}
-	
-	
 
 }

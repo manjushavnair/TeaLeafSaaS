@@ -12,10 +12,10 @@ public class ErrorCodeReader extends Properties {
 
 	public static ErrorCodeReader readProperty() {
 
-	 	if (errorCodereader == null) {
-	 		errorCodereader = new ErrorCodeReader();
+		if (errorCodereader == null) {
+			errorCodereader = new ErrorCodeReader();
 		}
- 
+
 		try {
 			InputStream in = new FileInputStream(new File(
 					TeaLeafCONSTANTS.EXCEPTIONPATH));

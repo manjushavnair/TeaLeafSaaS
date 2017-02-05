@@ -36,8 +36,9 @@ public class BusinessException extends Exception {
 		ErrorCodeReader prpr = ErrorCodeReader.readProperty();
 
 		String errorMessage = prpr.getProperty(errorCode);
-		
-		return errorCode + " : Custom Message" + errorMessage	+ " : Aux Message" + auxMsg;
+
+		return errorCode + " : Custom Message" + errorMessage
+				+ " : Aux Message" + auxMsg;
 
 	}
 

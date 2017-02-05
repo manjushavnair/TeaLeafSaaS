@@ -12,14 +12,14 @@ public class PropertyReader extends Properties {
 
 	public static PropertyReader readProperty() {
 
-	 	if (prpreader == null) {
-		 	prpreader = new PropertyReader();
+		if (prpreader == null) {
+			prpreader = new PropertyReader();
 		}
- 
+
 		try {
 			InputStream in = new FileInputStream(new File(
 					TeaLeafCONSTANTS.CONFIGPATH));
-		 	prpreader.load(in);
+			prpreader.load(in);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 
