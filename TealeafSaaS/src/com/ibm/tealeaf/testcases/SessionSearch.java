@@ -21,31 +21,41 @@ import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 import com.ibm.tealeaf.pageobjects.LoginPage;
 import com.ibm.tealeaf.pageobjects.SessionSearchPage;
 
-public class VerifyTealeafSaaSlogin extends SaaSBasePage {
+public class SessionSearch extends SaaSBasePage {
 
 	 
 	private static Logger logger = Logger
-			.getLogger(VerifyTealeafSaaSlogin.class);
+			.getLogger(SessionSearch.class);
 
 	 
 
-	public VerifyTealeafSaaSlogin() {
+	public SessionSearch() {
 
 		super();
 
 	}
 
+	 
 	@Test(priority = 1)
-	public void verifyValidLogin() {
+	public void sessionSearch() {
 
-		// Created page object using Page Factory
-		LoginPage login_page = PageFactory
-				.initElements(driver, LoginPage.class);
+		try {
 
-		// Call the method
+			SessionSearchPage sessionsearch_page = PageFactory.initElements(
+					driver, SessionSearchPage.class);
+			sessionsearch_page.sessSearch();
+			// sessionsearch_page.clickonSearchButton();
+			// sessionsearch_page.selectBBRsession();
+			// sessionsearch_page.backToSearch();
+			sessionsearch_page.clickonDefaultOption_Last24hrs();
+			sessionsearch_page.clickonOption_Last5min();
+			sessionsearch_page.clickonSearchButton();
 
-		login_page.login_tealeafSaaS(prpr.getProperty("LOGIN_USERNAME"),
-				prpr.getProperty("LOGIN_PASSWORD"));
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
 	}
 
 	 
