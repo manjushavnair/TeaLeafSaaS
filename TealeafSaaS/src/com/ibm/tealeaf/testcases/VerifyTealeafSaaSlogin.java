@@ -11,7 +11,6 @@ package com.ibm.tealeaf.testcases;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -61,10 +60,12 @@ public class VerifyTealeafSaaSlogin {
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
 			sessionsearch_page.sessSearch();
-			sessionsearch_page.selectDefaultView();
+			sessionsearch_page.clickonSearchButton();
 			sessionsearch_page.selectBBRsession();
 			sessionsearch_page.backToSearch();
-			sessionsearch_page.sessEndTime_last5min();
+			sessionsearch_page.clickonDefaultOption_Last24hrs();
+			//sessionsearch_page.clickonOption_Last5min();
+			//sessionsearch_page.clickonSearchButton();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -93,10 +94,10 @@ public class VerifyTealeafSaaSlogin {
 	 * }
 	 */
 
-	@AfterSuite
+	/*@AfterSuite
 	public void testDown() {
 		BrowserFactory.stopDriver();
 
-	}
+	}*/
 
 }

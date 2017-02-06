@@ -4,6 +4,6 @@ http://websystique.com/java/testing/testng-mockito-example-stubbing-void-methods
 http://www.vogella.com/tutorials/Mockito/article.html
 
 To run Test suite
-java -cp "TealeafSaaS-0.0.1-SNAPSHOT-jar-with-dependencies.jar" org.testng.TestNG ../resources/testing.xml
+java -cp "c:\\Automation\\TeaLeafSaaS\\TealeafSaaS\\target\\TealeafSaaS-0.0.1-SNAPSHOT-jar-with-dependencies.jar" org.testng.TestNG testing.xml
 
 select date picker dropdown-http://stackoverflow.com/questions/21447152/select-values-in-the-month-drop-down-selenium-webdriver?rq=1

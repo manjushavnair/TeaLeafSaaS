@@ -48,21 +48,21 @@ public class SessionSearchPage {
 				"Session search"));
 		sess_search.click();
 		logger.info("In Session Search Page View");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
 	@FindBy(xpath = "//button[@ng-click='search()'and text()='Search']")
 	WebElement default_search;
 
-	public void selectDefaultView() throws InterruptedException {
+	public void clickonSearchButton() throws InterruptedException {
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
 						TimeUnit.SECONDS);
 		default_search.click();
 
-		logger.info("Displayed search result view for last 24 hrs ");
+		logger.info("Displayed search result view ");
 
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME300SEC);
 
@@ -133,38 +133,42 @@ public class SessionSearchPage {
 		builder.moveToElement(searchpage).click(searchpage);
 		builder.perform();
 		logger.info("Successfully navigated back to Session search Page ");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
 	}
 
-	// To get the drop down option for Session End Time and click on Last 5 min
-
+	// Select drop down option for Session End Time by clicking on 24hrs
+	// option-default search
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[contains(@class, 'input-mask ng-scope')]")
 	WebElement last_24hrs;
-    @FindBy(xpath="//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]/ul/li[1]//a[contains(@title, 'Last 5 minutes')]")WebElement last_5min;
-	public void sessEndTime_last5min() throws BusinessException {
 
-		WebDriverWait wait = new WebDriverWait(driver, 200);
-		wait.until(ExpectedConditions.textToBePresentInElement(last_24hrs,"Last 24 hours"));
-
+	public void clickonDefaultOption_Last24hrs() throws BusinessException {
+		
 		try {
 			Actions builder = new Actions(driver);
-			builder.moveToElement(last_24hrs).click(last_24hrs);
-			builder.perform();
+			builder.moveToElement(last_24hrs).build().perform();
+			last_24hrs.click();
 			logger.info("In default select option of 'Last 24 hrs'");
-			
-			WebDriverWait wait1 = new WebDriverWait(driver, 5);
-			wait1.until(ExpectedConditions.textToBePresentInElement(last_5min,"Last 5 minutes"));
-			last_5min.click();
-
-					
-
-		} catch (WebDriverException e) {
-			
-			Assert.fail("Element is not clickable at point");
-			throw new BusinessException(e.getMessage());
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		logger.info("clicked on Last 5 minutes selection");
-		
 	}
 
+	// Click on drop down option-Last 5 min
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]/ul/li[1]//a[contains(@title, 'Last 5 minutes')]")
+	WebElement last_5min;
+
+	public void clickonOption_Last5min() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 200);
+		wait.until(ExpectedConditions.textToBePresentInElement(last_5min,
+				"Last 5 minutes"));
+
+		last_5min.click();
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		
+	}
+	
 }
+		
+		
+
+
