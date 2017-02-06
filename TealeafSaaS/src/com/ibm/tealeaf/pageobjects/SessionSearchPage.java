@@ -52,7 +52,7 @@ public class SessionSearchPage {
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
-	@FindBy(xpath = "//button[@class='btn btn-primary ng-binding' and contains(text(),'Search')]")
+	@FindBy(xpath = "//button[@ng-click='search()' and contains(text(),'Search')]")
 	WebElement default_search;
 
 	public void clickonSearchButton() throws InterruptedException {
