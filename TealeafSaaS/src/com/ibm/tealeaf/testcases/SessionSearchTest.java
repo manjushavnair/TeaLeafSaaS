@@ -30,30 +30,9 @@ public class SessionSearchTest extends SaaSBasePage {
 		// super();
 
 	}
-
-	@Test(priority = 2)
-	public void sessionSearchLast5Min() {
-
-		try {
-
-			SessionSearchPage sessionsearch_page = PageFactory.initElements(
-					driver, SessionSearchPage.class);
-			sessionsearch_page.sessSearch();
-
-			sessionsearch_page.clickonDefaultOption_Last24hrs();
-			sessionsearch_page.clickonOption_Last5min();
-			sessionsearch_page.clickonSearchButton();
-			sessionsearch_page.backToHome();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-
-		}
-
-	}
-
+	
 	@Test(priority = 1)
-	public void sessionSearchDefault() {
+	public void sessionSearchLast24hrs() {
 
 		try {
 
@@ -70,5 +49,29 @@ public class SessionSearchTest extends SaaSBasePage {
 		}
 
 	}
+
+	@Test(priority = 2)
+	public void sessionSearchLast5Min() {
+
+		try {
+
+			SessionSearchPage sessionsearch_page = PageFactory.initElements(
+					driver, SessionSearchPage.class);
+			sessionsearch_page.sessSearch();
+
+			sessionsearch_page.clickonDefaultOption_Last24hrs();
+			sessionsearch_page.clickonOption_Last5min();
+			sessionsearch_page.clickonSearchButton();
+			sessionsearch_page.selectBBRsession();
+			sessionsearch_page.backToSearch();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+	}
+
+	
 
 }
