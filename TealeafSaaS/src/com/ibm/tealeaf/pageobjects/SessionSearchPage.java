@@ -93,6 +93,7 @@ public class SessionSearchPage {
 		logger.info("BBR session is selected");
 
 	}
+	
 
 	/**
 	 * 4. Navigating back to home page from BBR replay view
