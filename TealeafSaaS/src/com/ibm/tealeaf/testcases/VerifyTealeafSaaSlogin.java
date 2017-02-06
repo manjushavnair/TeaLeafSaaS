@@ -60,12 +60,12 @@ public class VerifyTealeafSaaSlogin {
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
 			sessionsearch_page.sessSearch();
-			sessionsearch_page.clickonSearchButton();
-			sessionsearch_page.selectBBRsession();
-			sessionsearch_page.backToSearch();
-			sessionsearch_page.clickonDefaultOption_Last24hrs();
-			//sessionsearch_page.clickonOption_Last5min();
 			//sessionsearch_page.clickonSearchButton();
+			//sessionsearch_page.selectBBRsession();
+			//sessionsearch_page.backToSearch();
+			sessionsearch_page.clickonDefaultOption_Last24hrs();
+			sessionsearch_page.clickonOption_Last5min();
+			sessionsearch_page.clickonSearchButton();
 
 		} catch (Exception e) {
 			e.printStackTrace();

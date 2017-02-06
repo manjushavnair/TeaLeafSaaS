@@ -48,11 +48,11 @@ public class SessionSearchPage {
 				"Session search"));
 		sess_search.click();
 		logger.info("In Session Search Page View");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
-	@FindBy(xpath = "//button[@ng-click='search()'and text()='Search']")
+	@FindBy(xpath = "//button[@class='btn btn-primary ng-binding' and contains(text(),'Search')]")
 	WebElement default_search;
 
 	public void clickonSearchButton() throws InterruptedException {
@@ -64,7 +64,7 @@ public class SessionSearchPage {
 
 		logger.info("Displayed search result view ");
 
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME300SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 
 	}
 
@@ -136,32 +136,31 @@ public class SessionSearchPage {
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
 	}
 
-	// Select drop down option for Session End Time by clicking on 24hrs
-	// option-default search
+	// Select drop down option for Session End Time by clicking on 24hrs.Option-default search
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[contains(@class, 'input-mask ng-scope')]")
 	WebElement last_24hrs;
 
-	public void clickonDefaultOption_Last24hrs() throws BusinessException {
+	public void clickonDefaultOption_Last24hrs() throws InterruptedException {
+		driver.manage()
+		.timeouts()
+		.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
+				TimeUnit.SECONDS);
 		
-		try {
-			Actions builder = new Actions(driver);
-			builder.moveToElement(last_24hrs).build().perform();
-			last_24hrs.click();
-			logger.info("In default select option of 'Last 24 hrs'");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		last_24hrs.click();
+		logger.info("In default select option of 'Last 24 hrs'");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 
 	// Click on drop down option-Last 5 min
-	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]/ul/li[1]//a[contains(@title, 'Last 5 minutes')]")
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[1]//a//span[contains (text(),'Last 5 minutes')]")
 	WebElement last_5min;
 
 	public void clickonOption_Last5min() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 200);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_5min,
 				"Last 5 minutes"));
-
+		Actions builder = new Actions(driver);
+		builder.moveToElement(last_5min).build().perform();
 		last_5min.click();
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 		
