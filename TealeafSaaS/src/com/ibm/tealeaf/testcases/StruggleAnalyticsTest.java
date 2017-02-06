@@ -15,9 +15,9 @@ import org.testng.annotations.Test;
 import com.ibm.tealeaf.commons.SaaSBasePage;
 import com.ibm.tealeaf.pageobjects.StruggleAnalyticsPage;
 
-public class StruggleAnalytics extends SaaSBasePage {
+public class StruggleAnalyticsTest extends SaaSBasePage {
 
-	private static Logger logger = Logger.getLogger(StruggleAnalytics.class);
+	private static Logger logger = Logger.getLogger(StruggleAnalyticsTest.class);
 
 	 
 

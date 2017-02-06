@@ -9,18 +9,11 @@ package com.ibm.tealeaf.testcases;
  */
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.ibm.tealeaf.commons.BrowserFactory;
-import com.ibm.tealeaf.commons.PropertyReader;
 import com.ibm.tealeaf.commons.SaaSBasePage;
-import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 import com.ibm.tealeaf.pageobjects.LoginPage;
-import com.ibm.tealeaf.pageobjects.SessionSearchPage;
 
 public class VerifyTealeafSaaSlogin extends SaaSBasePage {
 

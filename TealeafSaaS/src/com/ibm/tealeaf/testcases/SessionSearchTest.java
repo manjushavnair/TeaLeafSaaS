@@ -21,11 +21,11 @@ import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 import com.ibm.tealeaf.pageobjects.LoginPage;
 import com.ibm.tealeaf.pageobjects.SessionSearchPage;
 
-public class SessionSearch extends SaaSBasePage {
+public class SessionSearchTest extends SaaSBasePage {
 
-	private static Logger logger = Logger.getLogger(SessionSearch.class);
+	private static Logger logger = Logger.getLogger(SessionSearchTest.class);
 
-	public SessionSearch() {
+	public SessionSearchTest() {
 
 		// super();
 
