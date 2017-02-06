@@ -16,13 +16,13 @@ import org.testng.annotations.AfterSuite;
 
 public class SaaSBasePage implements BasePage{
 
-	protected static WebDriver driver;
+	protected  WebDriver driver;
 	private static Logger logger = Logger.getLogger(SaaSBasePage.class);
 
-	protected static PropertyReader prpr;
+	protected  PropertyReader prpr;
 	private WebDriverWait wait;
 
-	public SaaSBasePage() {
+	public SaaSBasePage( ) {
 
 		prpr = PropertyReader.readProperty();
 

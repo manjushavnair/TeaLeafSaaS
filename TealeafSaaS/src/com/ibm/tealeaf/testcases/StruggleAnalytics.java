@@ -19,11 +19,7 @@ public class StruggleAnalytics extends SaaSBasePage {
 
 	private static Logger logger = Logger.getLogger(StruggleAnalytics.class);
 
-	public StruggleAnalytics() {
-
-		//super();
-
-	}
+	 
 
 	@Test(priority = 1)
 	public void struggleAnalytics() {
