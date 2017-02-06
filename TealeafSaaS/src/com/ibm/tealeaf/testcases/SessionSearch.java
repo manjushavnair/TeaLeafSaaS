@@ -31,7 +31,7 @@ public class SessionSearch extends SaaSBasePage {
 
 	public SessionSearch() {
 
-		super();
+		//super();
 
 	}
 

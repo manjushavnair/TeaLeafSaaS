@@ -21,7 +21,7 @@ public class StruggleAnalytics extends SaaSBasePage {
 
 	public StruggleAnalytics() {
 
-		super();
+		//super();
 
 	}
 
