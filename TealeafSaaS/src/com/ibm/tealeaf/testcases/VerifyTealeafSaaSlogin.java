@@ -8,7 +8,6 @@ package com.ibm.tealeaf.testcases;
  *
  */
 
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -19,10 +18,8 @@ import org.testng.annotations.Test;
 import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.PropertyReader;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
-import com.ibm.tealeaf.exception.BusinessException;
 import com.ibm.tealeaf.pageobjects.LoginPage;
 import com.ibm.tealeaf.pageobjects.SessionSearchPage;
-import com.ibm.tealeaf.pageobjects.StruggleAnalyticsPage;
 
 public class VerifyTealeafSaaSlogin {
 
@@ -51,21 +48,9 @@ public class VerifyTealeafSaaSlogin {
 				.initElements(driver, LoginPage.class);
 
 		// Call the method
-		try {
-			login_page.login_tealeafSaaS(prpr.getProperty("LOGIN_USERNAME"),
-					prpr.getProperty("LOGIN_PASSWORD"));
 
-		} catch (RuntimeException e) {
-			logger.info(e.getMessage());
-			e.printStackTrace();
-		} catch (BusinessException e) {
-			logger.info(e.getMessage());
-			e.printStackTrace();
-		} catch (Exception e) {
-			logger.info(e.getMessage());
-			e.printStackTrace();
-		}
-
+		login_page.login_tealeafSaaS(prpr.getProperty("LOGIN_USERNAME"),
+				prpr.getProperty("LOGIN_PASSWORD"));
 	}
 
 	@Test(priority = 2)
@@ -79,7 +64,7 @@ public class VerifyTealeafSaaSlogin {
 			sessionsearch_page.selectDefaultView();
 			sessionsearch_page.selectBBRsession();
 			sessionsearch_page.backToSearch();
-			sessionsearch_page.sessEndTime_last24hrs();
+			sessionsearch_page.sessEndTime_last5min();
 
 		} catch (Exception e) {
 			e.printStackTrace();

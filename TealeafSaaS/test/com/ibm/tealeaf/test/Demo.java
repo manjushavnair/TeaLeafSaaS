@@ -9,29 +9,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
- 
-
-
 public class Demo {
 	private WebDriver mockDriver;
-	  private WebElement mockElement;
+	private WebElement mockElement;
 
-	  
-	  public void setUp(){
-	    this.mockDriver = mock(WebDriver.class);
-	//    this.mockElement = mock(WebElement.class, withSettings().name("elementName"));
-	    when(this.mockElement.getAttribute("name")).thenReturn("elementName");
-	    
-	  }
+	public void setUp() {
+		this.mockDriver = mock(WebDriver.class);
+		// this.mockElement = mock(WebElement.class,
+		// withSettings().name("elementName"));
+		when(this.mockElement.getAttribute("name")).thenReturn("elementName");
 
-	  public String getName(String id){
-	    WebElement testElement = mockDriver.findElement(By.id(id));
-	    return testElement.getAttribute("name");
-	  }
+	}
 
-	  @Test
-	  public void assertElementName() throws InterruptedException {
-	    Assert.assertTrue(getName("testmock").equals("elementName"));
-	  }
+	public String getName(String id) {
+		WebElement testElement = mockDriver.findElement(By.id(id));
+		return testElement.getAttribute("name");
+	}
+
+	@Test
+	public void assertElementName() throws InterruptedException {
+		Assert.assertTrue(getName("testmock").equals("elementName"));
+	}
 
 }

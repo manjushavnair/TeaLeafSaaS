@@ -50,12 +50,12 @@ public class BusinessException extends Exception {
 	@Override
 	public String getMessage() {
 
-		return msg;
+		return this.msg;
 	}
 
 	@Override
 	public String toString() {
-		return msg;
+		return this.msg;
 	}
 
 }

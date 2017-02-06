@@ -15,7 +15,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 import com.ibm.tealeaf.exception.BusinessException;
 
@@ -141,21 +140,31 @@ public class SessionSearchPage {
 
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[contains(@class, 'input-mask ng-scope')]")
 	WebElement last_24hrs;
-
-	public void sessEndTime_last24hrs() throws BusinessException {
+    @FindBy(xpath="//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]/ul/li[1]//a[contains(@title, 'Last 5 minutes')]")WebElement last_5min;
+	public void sessEndTime_last5min() throws BusinessException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 200);
-		wait.until(ExpectedConditions.titleContains("Last 24 hours"));
+		wait.until(ExpectedConditions.textToBePresentInElement(last_24hrs,"Last 24 hours"));
 
 		try {
-			last_24hrs.click();
+			Actions builder = new Actions(driver);
+			builder.moveToElement(last_24hrs).click(last_24hrs);
+			builder.perform();
+			logger.info("In default select option of 'Last 24 hrs'");
+			
+			WebDriverWait wait1 = new WebDriverWait(driver, 5);
+			wait1.until(ExpectedConditions.textToBePresentInElement(last_5min,"Last 5 minutes"));
+			last_5min.click();
+
+					
 
 		} catch (WebDriverException e) {
-
+			
 			Assert.fail("Element is not clickable at point");
-			throw new BusinessException("2001", e.getMessage());
+			throw new BusinessException(e.getMessage());
 		}
-		logger.info("clicked on default selection");
+		logger.info("clicked on Last 5 minutes selection");
+		
 	}
 
 }

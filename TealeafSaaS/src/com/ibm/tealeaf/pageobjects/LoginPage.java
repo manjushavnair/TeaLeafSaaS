@@ -10,8 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-import com.ibm.tealeaf.exception.BusinessException;
-
 public class LoginPage {
 	WebDriver driver;
 	private static Logger logger = Logger.getLogger(LoginPage.class);
@@ -32,15 +30,13 @@ public class LoginPage {
 	@FindBy(xpath = "//a[contains(text(),'Forgot password')]")
 	WebElement forgot_password;
 
-	public void login_tealeafSaaS(String userName, String passWord)
-			throws BusinessException {
+	public void login_tealeafSaaS(String userName, String passWord) {
 		try {
 			username.sendKeys(userName);
 			password.sendKeys(passWord);
 			login_button.click();
 		} catch (Exception e) {
 			Assert.fail("Login failed");
-			throw new BusinessException("1002", e.getMessage());
 		}
 
 	}
