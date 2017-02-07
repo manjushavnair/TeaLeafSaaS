@@ -47,8 +47,8 @@ public class SessionSearchPage {
 		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,
 				"Session search"));
 		sess_search.click();
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 		logger.info("In Session Search Page View");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
@@ -67,7 +67,7 @@ public class SessionSearchPage {
 		
 		logger.info("Displayed search result view ");
 
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME80SEC);
 
 	}
 
@@ -146,12 +146,12 @@ public class SessionSearchPage {
 	WebElement last_24hrs;
 
 	public void clickonDefaultOption_Last24hrs() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 200);
+		WebDriverWait wait = new WebDriverWait(driver, 400);
 		wait.until(ExpectedConditions.visibilityOf(last_24hrs));
 				
 		last_24hrs.click();
 		logger.info("In default select option of 'Last 24 hrs'");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME80SEC);
 	}
 
 	// Click on drop down option-Last 5 min
@@ -159,7 +159,7 @@ public class SessionSearchPage {
 	WebElement last_5min;
 
 	public void clickonOption_Last5min() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 200);
+		WebDriverWait wait = new WebDriverWait(driver, 400);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_5min,
 				"Last 5 minutes"));
 		Actions builder = new Actions(driver);

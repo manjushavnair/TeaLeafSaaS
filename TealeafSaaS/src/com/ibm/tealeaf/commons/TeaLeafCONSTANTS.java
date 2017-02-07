@@ -13,6 +13,7 @@ public interface TeaLeafCONSTANTS {
 	public static int WAITTIME160SEC = 160;
 	public static int WAITTIME120SEC = 120;
 	public static int WAITTIME100SEC = 100;
+	public static int WAITTIME80SEC = 80;
 	public static int WAITTIME60SEC = 60;
 	public static int WAITTIME30SEC = 30;
 	public static int WAITTIME15SEC = 15;
