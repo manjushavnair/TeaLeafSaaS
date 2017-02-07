@@ -41,8 +41,6 @@ public class StruggleAnalyticsPage {
 		wait.until(ExpectedConditions.textToBePresentInElement(
 				struggleanalytics, "Struggle analytics"));
 
-		logger.info("Struggle Analytics PageView");
-
 		struggleanalytics.click();
 		logger.info("Struggle Analytics PageView clicked");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
@@ -81,7 +79,7 @@ public class StruggleAnalyticsPage {
 
 		driver.manage()
 				.timeouts()
-				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME30SEC,
+				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC,
 						TimeUnit.SECONDS);
 
 		shoppingcartlabel.click();
@@ -102,7 +100,7 @@ public class StruggleAnalyticsPage {
 
 	public void checkOut() throws InterruptedException {
 
-		// Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME15SEC);
 		checkoutlabel.click();
 
 		logger.info("In Checkout struggle report");
@@ -118,7 +116,7 @@ public class StruggleAnalyticsPage {
 
 	public void bannerLandingPage() throws InterruptedException {
 
-		// Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 		bannerlabel.click();
 
 		logger.info("In Banner landing page report");
@@ -134,15 +132,15 @@ public class StruggleAnalyticsPage {
 
 	public void backToStruggleAnalytics() throws InterruptedException {
 		// Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
-		/*
-		 * driver.manage() .timeouts()
-		 * .implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC, TimeUnit.SECONDS);
-		 */
+
+		 driver.manage() .timeouts()
+		 .implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC, TimeUnit.SECONDS);
+		 
 		Actions builder2 = new Actions(driver);
 		builder2.moveToElement(menustruggle).click(menustruggle);
 		builder2.perform();
 		logger.info("Successfully navigated back to Struggle Analytics ");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 	}
 
 }

@@ -43,7 +43,7 @@ public class SessionSearchPage {
 	WebElement sess_search;
 
 	public void sessSearch() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver,200);
+		WebDriverWait wait = new WebDriverWait(driver,400);
 		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,
 				"Session search"));
 		sess_search.click();
