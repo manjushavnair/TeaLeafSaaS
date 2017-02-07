@@ -63,8 +63,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>resources/testing.xml</suiteXmlFile>
-							<suiteXmlFile>resources/testing1.xml</suiteXmlFile>
-								<suiteXmlFile>resources/testing2.xml</suiteXmlFile>
+							 
 					</suiteXmlFiles>
 				</configuration>
 
