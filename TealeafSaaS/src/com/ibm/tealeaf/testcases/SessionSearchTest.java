@@ -41,7 +41,7 @@ public class SessionSearchTest extends SaaSBasePage {
 			sessionsearch_page.sessSearch();
 			sessionsearch_page.clickonSearchButton();
 			sessionsearch_page.selectBBRsession();
-			sessionsearch_page.backToSearch();
+			sessionsearch_page.backToHome();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -50,7 +50,7 @@ public class SessionSearchTest extends SaaSBasePage {
 
 	}
 
-	@Test
+	/*@Test
 	public void sessionSearchLast5Min() {
 
 		try {
@@ -70,7 +70,7 @@ public class SessionSearchTest extends SaaSBasePage {
 
 		}
 
-	}
+	}*/
 
 	
 
