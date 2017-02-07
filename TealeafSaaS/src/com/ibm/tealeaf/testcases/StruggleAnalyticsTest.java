@@ -21,7 +21,7 @@ public class StruggleAnalyticsTest extends SaaSBasePage {
 
 	 
 
-	@Test(priority = 1)
+	@Test
 	public void struggleAnalytics() {
 		try {
 
