@@ -43,12 +43,12 @@ public class SessionSearchPage {
 	WebElement sess_search;
 
 	public void sessSearch() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 200);
+		WebDriverWait wait = new WebDriverWait(driver,500);
 		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,
 				"Session search"));
 		sess_search.click();
-		logger.info("In Session Search Page View");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME120SEC);
+		logger.info("In Session Search Page View");
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
