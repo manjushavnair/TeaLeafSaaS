@@ -7,16 +7,13 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
-import com.ibm.tealeaf.exception.BusinessException;
 
 /**
  * @author Manjusha Saju
@@ -155,7 +152,7 @@ public class SessionSearchPage {
 	}
 
 	// Click on drop down option-Last 5 min
-	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[1]//a[(@title='Last 5 minutes')]")
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[1]//a[@title='Last 5 minutes']")
 	WebElement last_5min;
 
 	public void clickonOption_Last5min() throws InterruptedException {
@@ -165,9 +162,118 @@ public class SessionSearchPage {
 		Actions builder = new Actions(driver);
 		builder.moveToElement(last_5min).build().perform();
 		last_5min.click();
+		logger.info("Selected session end time 'Last 5 minutes'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 		
 	}
+	
+	// Click on drop down option-Last 15 min
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[2]//a[@title='Last 15 minutes']")
+	WebElement last_15min;
+
+	public void clickonOption_Last15min() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 400);
+		wait.until(ExpectedConditions.textToBePresentInElement(last_15min,
+				"Last 15 minutes"));
+		Actions builder = new Actions(driver);
+		builder.moveToElement(last_15min).build().perform();
+		last_15min.click();
+		logger.info("Selected session end time 'Last 15 minutes'");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+	}
+	
+	
+	// Click on drop down option-Last 30 min
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[3]//a[@title='Last 30 minutes']")
+	WebElement last_30min;
+
+	public void clickonOption_Last30min() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 400);
+		wait.until(ExpectedConditions.textToBePresentInElement(last_30min,
+				"Last 30 minutes"));
+		Actions builder = new Actions(driver);
+		builder.moveToElement(last_30min).build().perform();
+		last_30min.click();
+		logger.info("Selected session end time 'Last 30 minutes'");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		}
+	
+	
+	// Click on drop down option-Last hour
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[4]//a[@title='Last hour']")
+	WebElement last_hour;
+
+	public void clickonOption_Lasthour() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 400);
+		wait.until(ExpectedConditions.textToBePresentInElement(last_hour,
+				"Last hour"));
+		Actions builder = new Actions(driver);
+		builder.moveToElement(last_hour).build().perform();
+		last_hour.click();
+		logger.info("Selected session end time 'Last hour'");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		}
+	
+	// Click on drop down option-Last 12 hours
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[5]//a[@title='Last 12 hours']")
+	WebElement last_12hours;
+
+	public void clickonOption_Last12hours() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 400);
+		wait.until(ExpectedConditions.textToBePresentInElement(last_12hours,
+				"Last 12 hours"));
+		Actions builder = new Actions(driver);
+		builder.moveToElement(last_12hours).build().perform();
+		last_12hours.click();
+		logger.info("Selected session end time 'Last 12 hours'");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		}
+	
+	// Click on drop down option-Last 7 days
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[7]//a[@title='Last 7 days']")
+	WebElement last_7days;
+
+	public void clickonOption_Last7days() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 400);
+		wait.until(ExpectedConditions.textToBePresentInElement(last_7days,
+				"Last 7 days"));
+		Actions builder = new Actions(driver);
+		builder.moveToElement(last_7days).build().perform();
+		last_7days.click();
+		logger.info("Selected session end time 'Last 7 days'");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		}
+	
+	// Click on drop down option-Last 14 days
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[8]//a[@title='Last 14 days']")
+	WebElement last_14days;
+
+	public void clickonOption_Last14days() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 400);
+		wait.until(ExpectedConditions.textToBePresentInElement(last_14days,
+				"Last 14 days"));
+		Actions builder = new Actions(driver);
+		builder.moveToElement(last_14days).build().perform();
+		last_14days.click();
+		logger.info("Selected session end time 'Last 14 days'");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		}
+	
+	// Click on drop down option-custom date range
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[9]//a[@title='Custom date range']")
+	WebElement customdaterange;
+
+	public void clickonOption_Customdaterange() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 400);
+		wait.until(ExpectedConditions.textToBePresentInElement(customdaterange,
+				"Custom date range"));
+		Actions builder = new Actions(driver);
+		builder.moveToElement(customdaterange).build().perform();
+		customdaterange.click();
+		logger.info("Selected session end time 'Custom Date Range'");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		}
+	
 	
 }
 		
