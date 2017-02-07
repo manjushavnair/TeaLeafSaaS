@@ -12,10 +12,9 @@
         </packages>
         -->
     <classes>
+      <class name="com.ibm.tealeaf.testcases.VerifyTealeafSaaSlogin" />
       
-     <class name="com.ibm.tealeaf.testcases.VerifyTealeafSaaSlogin" />
-   
-    
+     
     </classes>
     
     
