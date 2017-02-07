@@ -43,11 +43,11 @@ public class SessionSearchPage {
 	WebElement sess_search;
 
 	public void sessSearch() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver,500);
+		WebDriverWait wait = new WebDriverWait(driver,200);
 		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,
 				"Session search"));
 		sess_search.click();
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME120SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 		logger.info("In Session Search Page View");
 	}
 
@@ -58,10 +58,12 @@ public class SessionSearchPage {
 	public void clickonSearchButton() throws InterruptedException {
 		driver.manage()
 				.timeouts()
-				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME120SEC,
+				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
 						TimeUnit.SECONDS);
 		Actions actions = new Actions(driver);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME15SEC);
 		actions.moveToElement(default_search).click().perform();
+		
 		
 		logger.info("Displayed search result view ");
 
@@ -74,7 +76,7 @@ public class SessionSearchPage {
 	@FindBy(xpath = "//*[@id='sessions_list']/tbody/tr[3]/td[2]")
 	WebElement firstsession;
 
-	public void selectBBRsession() {
+	public void selectBBRsession() throws InterruptedException {
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME160SEC,
@@ -84,14 +86,15 @@ public class SessionSearchPage {
 		builder.moveToElement(firstsession).perform();
 		// 3.b Giving 5 Secs for submenu to be displayed
 		try {
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
+			Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
+		// 3.c Clicking on the Hidden SubMenu
+			firstsession.click();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// 3.c Clicking on the Hidden SubMenu
-		firstsession.click();
-
+		
 		logger.info("BBR session is selected");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 
 	}
 	
@@ -135,26 +138,24 @@ public class SessionSearchPage {
 		builder.moveToElement(searchpage).click(searchpage);
 		builder.perform();
 		logger.info("Successfully navigated back to Session search Page ");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 	}
 
 	// Select drop down option for Session End Time by clicking on 24hrs.Option-default search
-	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[contains(@class, 'input-mask ng-scope')]")
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[3][contains(@class, 'icon-container')]")
 	WebElement last_24hrs;
 
 	public void clickonDefaultOption_Last24hrs() throws InterruptedException {
-		driver.manage()
-		.timeouts()
-		.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
-				TimeUnit.SECONDS);
-		
+		WebDriverWait wait = new WebDriverWait(driver, 200);
+		wait.until(ExpectedConditions.visibilityOf(last_24hrs));
+				
 		last_24hrs.click();
 		logger.info("In default select option of 'Last 24 hrs'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 
 	// Click on drop down option-Last 5 min
-	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[1]//a//span[contains (text(),'Last 5 minutes')]")
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[1]//a[(@title='Last 5 minutes')]")
 	WebElement last_5min;
 
 	public void clickonOption_Last5min() throws InterruptedException {
