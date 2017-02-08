@@ -16,16 +16,17 @@ import org.testng.annotations.AfterSuite;
 
 public class SaaSBasePage implements BasePage{
 
-	protected  WebDriver driver;
+	protected static WebDriver driver;
 	private static Logger logger = Logger.getLogger(SaaSBasePage.class);
 
-	protected  PropertyReader prpr;
+	protected static  PropertyReader prpr;
 	private WebDriverWait wait;
 
 	public SaaSBasePage( ) {
 
 		prpr = PropertyReader.readProperty();
 
+		if(driver ==null)
 		driver = BrowserFactory.startBrowser(
 				prpr.getProperty(TeaLeafCONSTANTS.BROWSER_TYPE),
 				prpr.getProperty(TeaLeafCONSTANTS.APPLICATION_URL));
