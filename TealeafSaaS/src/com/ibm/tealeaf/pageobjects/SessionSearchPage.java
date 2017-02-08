@@ -58,7 +58,7 @@ public class SessionSearchPage {
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
 						TimeUnit.SECONDS);
 		Actions actions = new Actions(driver);
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME15SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME120SEC);
 		actions.moveToElement(default_search).click().perform();
 		
 		
@@ -277,6 +277,3 @@ public class SessionSearchPage {
 	
 }
 		
-		
-
-
