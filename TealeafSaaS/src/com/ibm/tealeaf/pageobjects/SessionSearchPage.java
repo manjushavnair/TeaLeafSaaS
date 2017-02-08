@@ -48,6 +48,7 @@ public class SessionSearchPage {
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 	}
 
+	
 	// 2. Display default Session search view( for last 24 hrs )
 	@FindBy(xpath = "//button[@ng-click='search()' and contains(text(),'Search')]")
 	WebElement default_search;
@@ -274,6 +275,3 @@ public class SessionSearchPage {
 	
 }
 		
-		
-
-
