@@ -79,12 +79,12 @@ public class StruggleAnalyticsPage {
 
 		driver.manage()
 				.timeouts()
-				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME10SEC,
+				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME160SEC,
 						TimeUnit.SECONDS);
 
 		shoppingcartlabel.click();
 		logger.info("In Shopping cart struggle report clicked");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 
 		
 	}
