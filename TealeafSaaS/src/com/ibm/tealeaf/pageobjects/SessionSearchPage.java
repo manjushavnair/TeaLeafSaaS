@@ -45,7 +45,7 @@ public class SessionSearchPage {
 				"Session search"));
 		sess_search.click();
 		logger.info("In Session Search Page View");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
@@ -53,12 +53,9 @@ public class SessionSearchPage {
 	WebElement default_search;
 
 	public void clickonSearchButton() throws InterruptedException {
-		driver.manage()
-				.timeouts()
-				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
-						TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME30SEC,TimeUnit.SECONDS);
 		Actions actions = new Actions(driver);
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME15SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME120SEC);
 		actions.moveToElement(default_search).click().perform();
 		
 		
