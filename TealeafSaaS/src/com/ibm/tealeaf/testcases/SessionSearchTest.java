@@ -38,7 +38,7 @@ public class SessionSearchTest extends SaaSBasePage {
 	 * 5. Ensure session availability in default session search view
 	 * 6. Naviagate back to Session Search page
 	 */
-	/*@Test
+	@Test
 	public void sessionSearchLast24hrs() {
 
 		try {
@@ -55,7 +55,7 @@ public class SessionSearchTest extends SaaSBasePage {
 
 		}
 
-	}*/
+	}
 
 	
 	/*Test Case 2

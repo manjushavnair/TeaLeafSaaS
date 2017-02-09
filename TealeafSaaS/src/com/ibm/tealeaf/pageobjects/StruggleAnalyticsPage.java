@@ -76,15 +76,13 @@ public class StruggleAnalyticsPage {
 	public void shoppingCart() throws InterruptedException {
 
 		logger.info("In Shopping cart struggle report yet to click");
-
-		driver.manage()
-				.timeouts()
-				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME160SEC,
-						TimeUnit.SECONDS);
-
+		WebDriverWait wait = new WebDriverWait(driver, 400);
+		wait.until(ExpectedConditions.textToBePresentInElement(
+				shoppingcartlabel, "Shopping cart"));
+		
 		shoppingcartlabel.click();
 		logger.info("In Shopping cart struggle report clicked");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
 
 		
 	}
@@ -139,7 +137,7 @@ public class StruggleAnalyticsPage {
 		builder2.moveToElement(menustruggle).click(menustruggle);
 		builder2.perform();
 		logger.info("Successfully navigated back to Struggle Analytics ");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
 	}
 
 }
