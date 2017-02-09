@@ -57,7 +57,7 @@ public class SessionSearchTest extends SaaSBasePage {
 
 	}
 
-	
+	/*
 	/*Test Case 2
 	 * 1.Log into tealeaf SaaS
 	 * 2.Navigate to Session Search view
@@ -294,6 +294,8 @@ public class SessionSearchTest extends SaaSBasePage {
 	 * 6. Ensure session availability in this session search view
 	 * 7. Naviagate back to Session Search page
 	 */
+	
+	
 	@Test
 	public void sessionSearch_Customdaterange() {
 
@@ -310,7 +312,7 @@ public class SessionSearchTest extends SaaSBasePage {
 			sessionsearch_page.backToHome();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace();}
 
 		}
 
@@ -320,4 +322,5 @@ public class SessionSearchTest extends SaaSBasePage {
 	
 	
 	
-}
+
+

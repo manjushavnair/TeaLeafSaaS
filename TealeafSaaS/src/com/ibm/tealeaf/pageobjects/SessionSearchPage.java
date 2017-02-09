@@ -45,21 +45,22 @@ public class SessionSearchPage {
 				"Session search"));
 		sess_search.click();
 		logger.info("In Session Search Page View");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
 	}
 
 	
 	// 2. Display default Session search view( for last 24 hrs )
-	@FindBy(xpath = "//button[@ng-click='search()' and contains(text(),'Search')]")
-	WebElement default_search;
+	@FindBy(xpath = "//div[@class='search-button']//button[@ng-click='search()' and contains(text(),'Search')]")
+	WebElement defaultsearch;
 
 	public void clickonSearchButton() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME30SEC,TimeUnit.SECONDS);
-		Actions actions = new Actions(driver);
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME120SEC);
-		actions.moveToElement(default_search).click().perform();
-		
-		
+		//driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver,400);
+		wait.until(ExpectedConditions.textToBePresentInElement(defaultsearch,
+				"Search"));
+		Actions action = new Actions(driver);
+		action.moveToElement(defaultsearch).click().perform();
+					
 		logger.info("Displayed search result view ");
 
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME80SEC);

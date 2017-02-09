@@ -13,8 +13,25 @@
         -->
     <classes>
       
-     <class name="com.ibm.tealeaf.testcases.VerifyTealeafSaaSlogin" />
-     <class name="com.ibm.tealeaf.testcases.SessionSearchTest" />
+     <class name="com.ibm.tealeaf.testcases.VerifyTealeafSaaSlogin" >
+     
+     </class>
+     
+     <class name="com.ibm.tealeaf.testcases.SessionSearchTest">
+     
+     <methods>
+        <include name="sessionSearchLast24hrs" />
+        <include name="sessionSearchLast5Min" />
+        <exclude name="sessionSearchLast15Min" />
+        <exclude name="sessionSearchLast30Min" />
+        <exclude name="sessionSearchLasthour" />
+        <exclude name="sessionSearchLast12hours" />
+        <exclude name="sessionSearchLast7days" />
+        <exclude name="sessionSearchLast14days" />
+        <exclude name="sessionSearch_Customdaterange" />
+      </methods>
+     
+     </class>
     
      
    
