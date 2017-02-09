@@ -74,7 +74,7 @@ public class SessionSearchTest extends SaaSBasePage {
 
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
-			sessionsearch_page.sessSearch();
+			//sessionsearch_page.sessSearch();
 
 			sessionsearch_page.clickonDefaultOption_Last24hrs();
 			sessionsearch_page.clickonOption_Last5min();

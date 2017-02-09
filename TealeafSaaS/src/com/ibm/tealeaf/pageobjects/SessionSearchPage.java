@@ -6,6 +6,7 @@ package com.ibm.tealeaf.pageobjects;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -50,7 +51,7 @@ public class SessionSearchPage {
 
 	
 	// 2. Display default Session search view( for last 24 hrs )
-	@FindBy(xpath = "//div[@class='search-button']//button[@ng-click='search()' and contains(text(),'Search')]")
+	@FindBy(xpath = "//button[text()='Search']")
 	WebElement defaultsearch;
 
 	public void clickonSearchButton() throws InterruptedException {
@@ -58,12 +59,14 @@ public class SessionSearchPage {
 		WebDriverWait wait = new WebDriverWait(driver,400);
 		wait.until(ExpectedConditions.textToBePresentInElement(defaultsearch,
 				"Search"));
-		Actions action = new Actions(driver);
-		action.moveToElement(defaultsearch).click().perform();
+		//Actions action = new Actions(driver);
+		//action.moveToElement(defaultsearch).click().perform();
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", defaultsearch);
 					
 		logger.info("Displayed search result view ");
 
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME80SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 
 	}
 
@@ -142,10 +145,11 @@ public class SessionSearchPage {
 	WebElement last_24hrs;
 
 	public void clickonDefaultOption_Last24hrs() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
-		wait.until(ExpectedConditions.visibilityOf(last_24hrs));
-				
-		last_24hrs.click();
+		//WebDriverWait wait = new WebDriverWait(driver, 400);
+		//wait.until(ExpectedConditions.visibilityOf(last_24hrs));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", last_24hrs);		
+		//last_24hrs.click();
 		logger.info("In default select option of 'Last 24 hrs'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME80SEC);
 	}
