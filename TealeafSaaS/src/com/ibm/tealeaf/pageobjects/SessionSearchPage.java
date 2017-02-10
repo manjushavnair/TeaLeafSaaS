@@ -41,7 +41,7 @@ public class SessionSearchPage {
 	WebElement sess_search;
 
 	public void sessSearch() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver,400);
+		WebDriverWait wait = new WebDriverWait(driver, 400);
 		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,
 				"Session search"));
 		sess_search.click();
@@ -49,21 +49,20 @@ public class SessionSearchPage {
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
 	}
 
-	
 	// 2. Display default Session search view( for last 24 hrs )
 	@FindBy(xpath = "//button[text()='Search']")
 	WebElement defaultsearch;
 
 	public void clickonSearchButton() throws InterruptedException {
-		//driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,TimeUnit.SECONDS);
-		WebDriverWait wait = new WebDriverWait(driver,400);
+		// driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver, 400);
 		wait.until(ExpectedConditions.textToBePresentInElement(defaultsearch,
 				"Search"));
-		//Actions action = new Actions(driver);
-		//action.moveToElement(defaultsearch).click().perform();
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		// Actions action = new Actions(driver);
+		// action.moveToElement(defaultsearch).click().perform();
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", defaultsearch);
-					
+
 		logger.info("Displayed search result view ");
 
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
@@ -76,7 +75,7 @@ public class SessionSearchPage {
 	WebElement firstsession;
 
 	public void selectBBRsession() throws InterruptedException {
-		driver.manage()
+			driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME160SEC,
 						TimeUnit.SECONDS);
@@ -86,17 +85,17 @@ public class SessionSearchPage {
 		// 3.b Giving 5 Secs for submenu to be displayed
 		try {
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
-		// 3.c Clicking on the Hidden SubMenu
+			// 3.c Clicking on the Hidden SubMenu
 			firstsession.click();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		logger.info("BBR session is selected");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 
 	}
-	
 
 	/**
 	 * 4. Navigating back to home page from BBR replay view
@@ -140,16 +139,17 @@ public class SessionSearchPage {
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 	}
 
-	// Select drop down option for Session End Time by clicking on 24hrs.Option-default search
+	// Select drop down option for Session End Time by clicking on
+	// 24hrs.Option-default search
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[3][contains(@class, 'icon-container')]")
 	WebElement last_24hrs;
 
 	public void clickonDefaultOption_Last24hrs() throws InterruptedException {
-		//WebDriverWait wait = new WebDriverWait(driver, 400);
-		//wait.until(ExpectedConditions.visibilityOf(last_24hrs));
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", last_24hrs);		
-		//last_24hrs.click();
+		// WebDriverWait wait = new WebDriverWait(driver, 400);
+		// wait.until(ExpectedConditions.visibilityOf(last_24hrs));
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", last_24hrs);
+		// last_24hrs.click();
 		logger.info("In default select option of 'Last 24 hrs'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME80SEC);
 	}
@@ -167,9 +167,9 @@ public class SessionSearchPage {
 		last_5min.click();
 		logger.info("Selected session end time 'Last 5 minutes'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
-		
+
 	}
-	
+
 	// Click on drop down option-Last 15 min
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[2]//a[@title='Last 15 minutes']")
 	WebElement last_15min;
@@ -184,8 +184,7 @@ public class SessionSearchPage {
 		logger.info("Selected session end time 'Last 15 minutes'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
-	
-	
+
 	// Click on drop down option-Last 30 min
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[3]//a[@title='Last 30 minutes']")
 	WebElement last_30min;
@@ -199,9 +198,8 @@ public class SessionSearchPage {
 		last_30min.click();
 		logger.info("Selected session end time 'Last 30 minutes'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
-		}
-	
-	
+	}
+
 	// Click on drop down option-Last hour
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[4]//a[@title='Last hour']")
 	WebElement last_hour;
@@ -215,8 +213,8 @@ public class SessionSearchPage {
 		last_hour.click();
 		logger.info("Selected session end time 'Last hour'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
-		}
-	
+	}
+
 	// Click on drop down option-Last 12 hours
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[5]//a[@title='Last 12 hours']")
 	WebElement last_12hours;
@@ -230,8 +228,8 @@ public class SessionSearchPage {
 		last_12hours.click();
 		logger.info("Selected session end time 'Last 12 hours'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
-		}
-	
+	}
+
 	// Click on drop down option-Last 7 days
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[7]//a[@title='Last 7 days']")
 	WebElement last_7days;
@@ -245,8 +243,8 @@ public class SessionSearchPage {
 		last_7days.click();
 		logger.info("Selected session end time 'Last 7 days'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
-		}
-	
+	}
+
 	// Click on drop down option-Last 14 days
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[8]//a[@title='Last 14 days']")
 	WebElement last_14days;
@@ -260,8 +258,8 @@ public class SessionSearchPage {
 		last_14days.click();
 		logger.info("Selected session end time 'Last 14 days'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
-		}
-	
+	}
+
 	// Click on drop down option-custom date range
 	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[9]//a[@title='Custom date range']")
 	WebElement customdaterange;
@@ -275,8 +273,6 @@ public class SessionSearchPage {
 		customdaterange.click();
 		logger.info("Selected session end time 'Custom Date Range'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
-		}
-	
-	
+	}
+
 }
-		
