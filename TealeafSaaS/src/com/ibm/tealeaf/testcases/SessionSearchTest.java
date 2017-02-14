@@ -11,6 +11,7 @@ package com.ibm.tealeaf.testcases;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -51,6 +52,7 @@ public class SessionSearchTest extends SaaSBasePage {
 			sessionsearch_page.backToSearch();
 
 		} catch (Exception e) {
+			Assert.fail("Unable to execute default search with BBR session replay");
 			e.printStackTrace();
 
 		}
