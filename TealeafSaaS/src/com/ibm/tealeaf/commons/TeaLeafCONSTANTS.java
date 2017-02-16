@@ -8,6 +8,11 @@ public interface TeaLeafCONSTANTS {
 	public static String APPLICATION_URL = "APPLICATION_URL";
 	public static String CONFIGPATH = "c:\\Automation\\config.properties";
 	public static String EXCEPTIONPATH = "c:\\Automation\\exception.properties";
+	
+
+	public static String LOGINDATAPATH = "c:\\Automation\\logindataselenium.xls";
+
+	
 	public static String IE = "IE";
 	public static int WAITTIME300SEC = 300;
 	public static int WAITTIME160SEC = 160;
