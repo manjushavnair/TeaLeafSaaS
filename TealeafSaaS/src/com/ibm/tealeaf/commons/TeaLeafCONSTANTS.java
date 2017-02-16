@@ -11,6 +11,7 @@ public interface TeaLeafCONSTANTS {
 	
 
 	public static String LOGINDATAPATH = "c:\\Automation\\logindataselenium.xls";
+	public static String LOGINDATASHEETNAME = "Sheet1";
 
 	
 	public static String IE = "IE";
