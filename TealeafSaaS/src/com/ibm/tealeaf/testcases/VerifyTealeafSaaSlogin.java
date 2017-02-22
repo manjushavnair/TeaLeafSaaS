@@ -39,8 +39,8 @@ public class VerifyTealeafSaaSlogin extends SaaSBasePage {
 		String userName = "";
 		String password = "";
 		try {
-			ExcelUtil.setExcelFile(TeaLeafCONSTANTS.LOGINDATAPATH,
-					TeaLeafCONSTANTS.LOGINDATASHEETNAME);
+			ExcelUtil.setExcelFile(TeaLeafCONSTANTS.LOGINXLSDATAPATH,
+					TeaLeafCONSTANTS.LOGINXLSDATASHEETNAME);
 			userName = ExcelUtil.getCellData(3, 3);
 			password = ExcelUtil.getCellData(3, 4);
 			logger.info("username" + userName + "password " + password);
