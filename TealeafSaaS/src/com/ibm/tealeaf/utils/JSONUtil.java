@@ -69,7 +69,7 @@ public class JSONUtil {
 	 	List<String> list = new ArrayList<String>();
 	 	JSONArray array = jsonObject.getJSONArray("Company List");
 	 	for(int i = 0 ; i < array.length() ; i++){
-	 	    list.add(array.getJSONObject(i).getString("Company"));
+	 	    list.add(array.getString(i));
 	 	}
 	 
 	  	for (int i = 0; i < list.size(); i++) {
