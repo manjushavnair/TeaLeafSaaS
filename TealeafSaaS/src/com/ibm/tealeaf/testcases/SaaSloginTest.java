@@ -18,12 +18,12 @@ import com.ibm.tealeaf.pageobjects.LoginPage;
 import com.ibm.tealeaf.pageobjects.SaaSBasePage;
 import com.ibm.tealeaf.utils.ExcelUtil;
 
-public class SaaSlogin extends SaaSBasePage {
+public class SaaSloginTest extends SaaSBasePage {
 
 	private static Logger logger = Logger
-			.getLogger(SaaSlogin.class);
+			.getLogger(SaaSloginTest.class);
 
-	public SaaSlogin() {
+	public SaaSloginTest() {
 
 		super();
 

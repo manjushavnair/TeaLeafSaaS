@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 import com.ibm.tealeaf.pageobjects.StruggleAnalyticsPage;
 
-public class StruggleAnalyticsTest extends SaaSlogin {
+public class StruggleAnalyticsTest extends SaaSloginTest {
 
 	private static Logger logger = Logger.getLogger(StruggleAnalyticsTest.class);
 

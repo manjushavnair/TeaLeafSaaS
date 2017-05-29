@@ -22,7 +22,7 @@ import com.ibm.tealeaf.pageobjects.LoginPage;
 import com.ibm.tealeaf.pageobjects.SaaSBasePage;
 import com.ibm.tealeaf.pageobjects.SessionSearchPage;
 
-public class SessionSearchTest extends SaaSlogin {
+public class SessionSearchTest extends SaaSloginTest {
 
 	private static Logger logger = Logger.getLogger(SessionSearchTest.class);
 
