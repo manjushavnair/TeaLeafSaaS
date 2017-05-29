@@ -10,7 +10,7 @@ public interface TeaLeafCONSTANTS {
 	public static String EXCEPTIONPATH = "c:\\Automation\\exception.properties";
 	
 
-	public static String LOGINXLSDATAPATH = "c:\\Automation\\logindataselenium.xls";
+	public static String LOGINXLSDATAPATH = "c:/Automation/logindataselenium.xls";
 	public static String LOGINXLSDATASHEETNAME = "Sheet1";
 
 	public static String LOGINJSONDATAPATH = "c:\\Automation\\logindataselenium.json";

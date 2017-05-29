@@ -10,6 +10,7 @@ package com.ibm.tealeaf.testcases;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.ibm.tealeaf.commons.SaaSBasePage;
@@ -39,19 +40,19 @@ public class VerifyTealeafSaaSlogin extends SaaSBasePage {
 		String userName = "";
 		String password = "";
 		try {
-			ExcelUtil.setExcelFile(TeaLeafCONSTANTS.LOGINXLSDATAPATH,
+
+			ExcelUtil eu = new ExcelUtil();
+
+			eu.setExcelFile(TeaLeafCONSTANTS.LOGINXLSDATAPATH,
 					TeaLeafCONSTANTS.LOGINXLSDATASHEETNAME);
-			userName = ExcelUtil.getCellData(3, 3);
-			password = ExcelUtil.getCellData(3, 4);
+			userName = eu.getCellData(1, 1);
+			password = eu.getCellData(1, 2);
 			logger.info("username" + userName + "password " + password);
-			System.out.print("username" + userName + "password " + password);
 		} catch (Exception e) {
+			Assert.fail("Unable to login");
+
 			e.printStackTrace();
 		}
-		// Call the method
-		userName = prpr.getProperty("LOGIN_USERNAME");
-		password = prpr.getProperty("LOGIN_PASSWORD");
-
 		login_page.login_tealeafSaaS(userName, password);
 	}
 

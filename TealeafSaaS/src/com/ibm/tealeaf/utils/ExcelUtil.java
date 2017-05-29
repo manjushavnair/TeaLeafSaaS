@@ -1,46 +1,43 @@
 package com.ibm.tealeaf.utils;
 
+import java.io.File;
 import java.io.FileInputStream;
 
-import java.io.FileOutputStream;
-
-import org.apache.poi.xssf.usermodel.XSSFCell;
-
-import org.apache.poi.xssf.usermodel.XSSFRow;
-
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 
 public class ExcelUtil {
 
-	private static XSSFSheet ExcelWSheet;
-
-	private static XSSFWorkbook ExcelWBook;
-
-	private static XSSFCell Cell;
-
-	private static XSSFRow Row;
+	private Sheet datatypeSheet;
 
 	// This method is to set the File path and to open the Excel file, Pass
 	// Excel Path and Sheetname as Arguments to this method
 
-	public static void setExcelFile(String filePath, String sheetName)
+	public void setExcelFile(String filePath, String sheetName)
 			throws Exception {
 
 		try {
 
 			// Open the Excel file
-
+			File f = new File(filePath);
 			FileInputStream excelFile = new FileInputStream(filePath);
 
 			// Access the required test data sheet
+			Workbook workbook = null;
+			if (filePath.endsWith("xlsx")) {
+				workbook = new XSSFWorkbook(excelFile);
+			} else if (filePath.endsWith("xls")) {
+				workbook = new HSSFWorkbook(excelFile);
+			} else {
+				throw new IllegalArgumentException(
+						"The specified file is not Excel file");
+			}
 
-			ExcelWBook = new XSSFWorkbook(excelFile);
-
-			ExcelWSheet = ExcelWBook.getSheet(sheetName);
+			datatypeSheet = workbook.getSheet("Sheet1");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -54,13 +51,12 @@ public class ExcelUtil {
 	// This method is to read the test data from the Excel cell, in this we are
 	// passing parameters as Row num and Col num
 
-	public static String getCellData(int rowNum, int colNum) throws Exception {
+	public String getCellData(int rowNum, int colNum) throws Exception {
 
 		try {
 
-			Cell = ExcelWSheet.getRow(rowNum).getCell(colNum);
-
-			String cellData = Cell.getStringCellValue();
+			String cellData = datatypeSheet.getRow(rowNum).getCell(colNum)
+					.getStringCellValue();
 
 			return cellData;
 
@@ -73,47 +69,28 @@ public class ExcelUtil {
 
 	}
 
-	// This method is to write in the Excel cell, Row num and Col num are the
-	// parameters
+	public static void main(String arg[]) {
 
-	public static void setCellData(String filePath,String result, int rowNum, int colNum)
-			throws Exception {
-
+		// Call the method
+		String userName = "";
+		String password = "";
 		try {
 
-			Row = ExcelWSheet.getRow(rowNum);
+			ExcelUtil eu = new ExcelUtil();
 
-			Cell = Row.getCell(colNum, Row.RETURN_BLANK_AS_NULL);
+			eu.setExcelFile(TeaLeafCONSTANTS.LOGINXLSDATAPATH,
+					TeaLeafCONSTANTS.LOGINXLSDATASHEETNAME);
 
-			if (Cell == null) {
+			userName = eu.getCellData(1, 1);
+			password = eu.getCellData(1, 2);
 
-				Cell = Row.createCell(colNum);
-
-				Cell.setCellValue(result);
-
-			} else {
-
-				Cell.setCellValue(result);
-
-			}
-
-			// Constant variables Test Data path and Test Data file name
-
-			FileOutputStream fileOut = new FileOutputStream(filePath);
-
-			ExcelWBook.write(fileOut);
-
-			fileOut.flush();
-
-			fileOut.close();
-
+			System.out.print("username" + userName + "password" + password);
 		} catch (Exception e) {
+
 			e.printStackTrace();
-
-			throw (e);
-
 		}
 
+		// login_page.login_tealeafSaaS(userName, password);
 	}
 
 }

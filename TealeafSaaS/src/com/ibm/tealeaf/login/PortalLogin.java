@@ -39,7 +39,7 @@ public class PortalLogin extends Login {
 
 		driver.findElement(By.id("j_username")).sendKeys(
 				"manjushasaju@in.ibm.com");
-		driver.findElement(By.id("j_password")).sendKeys("Welcome124$");
+		driver.findElement(By.id("j_password")).sendKeys("hari123$");
 		driver.findElement(By.className("submit")).click();
 		logger.info("Struggle Analytics Page View step 1");
 		WebElement struggle = driver.findElement(By
