@@ -32,6 +32,7 @@ public class SaaSlogin extends SaaSBasePage {
 	@Test(priority = 1)
 	public void verifyValidLogin() {
 
+		System.out.println("verifyValidLogin" );
 		// Created page object using Page Factory
 		LoginPage login_page = PageFactory
 				.initElements(driver, LoginPage.class);
@@ -48,8 +49,7 @@ public class SaaSlogin extends SaaSBasePage {
 					TeaLeafCONSTANTS.LOGINXLSDATASHEETNAME);
 			userName = eu.getCellData(1, 1);
 			password = eu.getCellData(1, 2);
-			logger.info("username" + userName + "password " + password);
-		} catch (Exception e) {
+	 	} catch (Exception e) {
 			Assert.fail("Unable to login");
 
 			e.printStackTrace();

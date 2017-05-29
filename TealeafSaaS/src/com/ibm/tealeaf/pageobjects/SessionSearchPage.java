@@ -42,13 +42,14 @@ public class SessionSearchPage {
 	WebElement sess_search;
 
 	public void sessSearch() {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,
 				"Session search"));
+		logger.info("In Session Search Page View");
 		sess_search.click();
 		logger.info("In Session Search Page View");
 		try {
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
+			Thread.sleep(TeaLeafCONSTANTS.WAITTIME1000MILLISEC);
 		} catch (Exception e) {
 			Assert.fail("Unable to navigate to Session Search page");
 			e.printStackTrace();

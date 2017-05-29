@@ -20,7 +20,7 @@ public class LoginPage {
 	}
 
 	// Instead of above commented method we can call @FindBy
-
+	
 	@FindBy(id = "j_username")
 	WebElement username;
 	@FindBy(id = "j_password")
@@ -32,6 +32,7 @@ public class LoginPage {
 
 	public void login_tealeafSaaS(String userName, String passWord) {
 		try {
+			System.out.println("login_tealeafSaaS" );
 			username.sendKeys(userName);
 			password.sendKeys(passWord);
 			login_button.click();
