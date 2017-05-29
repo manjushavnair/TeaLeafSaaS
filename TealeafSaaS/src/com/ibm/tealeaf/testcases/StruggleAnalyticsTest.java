@@ -12,10 +12,9 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import com.ibm.tealeaf.pageobjects.SaaSBasePage;
 import com.ibm.tealeaf.pageobjects.StruggleAnalyticsPage;
 
-public class StruggleAnalyticsTest extends SaaSBasePage {
+public class StruggleAnalyticsTest extends SaaSlogin {
 
 	private static Logger logger = Logger.getLogger(StruggleAnalyticsTest.class);
 
