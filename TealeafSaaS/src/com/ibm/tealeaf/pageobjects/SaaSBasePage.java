@@ -1,7 +1,7 @@
 /**
  *  
  */
-package com.ibm.tealeaf.commons;
+package com.ibm.tealeaf.pageobjects;
 
 /**
  * @author Manjusha Saju
@@ -13,6 +13,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
+
+import com.ibm.tealeaf.commons.BasePage;
+import com.ibm.tealeaf.commons.BrowserFactory;
+import com.ibm.tealeaf.commons.PropertyReader;
+import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 
 public class SaaSBasePage implements BasePage{
 
