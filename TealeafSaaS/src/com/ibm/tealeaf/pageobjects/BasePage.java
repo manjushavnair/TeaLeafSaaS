@@ -1,4 +1,4 @@
-package com.ibm.tealeaf.commons;
+package com.ibm.tealeaf.pageobjects;
 
 import org.openqa.selenium.By;
 

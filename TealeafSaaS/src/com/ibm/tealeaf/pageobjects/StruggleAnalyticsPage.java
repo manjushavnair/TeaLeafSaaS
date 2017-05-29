@@ -23,7 +23,7 @@ import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
  */
 public class StruggleAnalyticsPage {
 
-	WebDriver driver;
+	private WebDriver driver;
 
 	private static Logger logger = Logger
 			.getLogger(StruggleAnalyticsPage.class);

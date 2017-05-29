@@ -17,9 +17,9 @@ import org.testng.annotations.Test;
 
 import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.PropertyReader;
-import com.ibm.tealeaf.commons.SaaSBasePage;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 import com.ibm.tealeaf.pageobjects.LoginPage;
+import com.ibm.tealeaf.pageobjects.SaaSBasePage;
 import com.ibm.tealeaf.pageobjects.SessionSearchPage;
 
 public class SessionSearchTest extends SaaSBasePage {
@@ -28,7 +28,7 @@ public class SessionSearchTest extends SaaSBasePage {
 
 	public SessionSearchTest() {
 
-		// super();
+		 super();
 
 	}
 	/*Test Case 1

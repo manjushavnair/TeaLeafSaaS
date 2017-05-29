@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 public class LoginPage {
-	WebDriver driver;
+	private WebDriver driver;
 	private static Logger logger = Logger.getLogger(LoginPage.class);
 
 	public LoginPage(WebDriver driver) {

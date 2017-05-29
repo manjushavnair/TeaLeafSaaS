@@ -42,9 +42,12 @@ public class PortalLogin extends Login {
 		driver.findElement(By.id("j_password")).sendKeys("hari123$");
 		driver.findElement(By.className("submit")).click();
 		logger.info("Struggle Analytics Page View step 1");
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		
 		WebElement struggle = driver.findElement(By
 				.xpath("//span[contains(@title,'Struggle analytics')]"));
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 200);
 		logger.info("Struggle Analytics Page View step 2");
 		wait.until(ExpectedConditions.textToBePresentInElement(struggle,
 				"Struggle analytics"));

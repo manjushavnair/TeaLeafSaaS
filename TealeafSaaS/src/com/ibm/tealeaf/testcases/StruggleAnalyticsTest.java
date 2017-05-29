@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import com.ibm.tealeaf.commons.SaaSBasePage;
+import com.ibm.tealeaf.pageobjects.SaaSBasePage;
 import com.ibm.tealeaf.pageobjects.StruggleAnalyticsPage;
 
 public class StruggleAnalyticsTest extends SaaSBasePage {
@@ -21,7 +21,7 @@ public class StruggleAnalyticsTest extends SaaSBasePage {
 
 	public StruggleAnalyticsTest() {
 
-		// super();
+		 super();
 
 	}
 
