@@ -38,13 +38,14 @@ public class SessionSearchPage {
 	}
 
 	// 1.Navigate to session search page view from home
-	@FindBy(xpath = "//span[contains(@title,'Session search')]")
+ 	//@FindBy(xpath = "//span[contains(@title,'Session search')]")
+	@FindBy(xpath = "//span[@class='name sessionsearch sessionsearch-click']")
+
 	WebElement sess_search;
 
 	public void sessSearch() {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,
-				"Session search"));
+		//WebDriverWait wait = new WebDriverWait(driver, 20);
+		//wait.until(ExpectedConditions.textToBePresentInElement(sess_search,"Session search"));
 		logger.info("In Session Search Page View");
 		sess_search.click();
 		logger.info("In Session Search Page View");

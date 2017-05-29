@@ -33,13 +33,13 @@ public class StruggleAnalyticsPage {
 
 	}
 
-	@FindBy(xpath = "//span[contains(@title,'Struggle analytics')]")
+	//@FindBy(xpath = "//span[contains(@title,'Struggle analytics')]")
+	@FindBy(xpath = "//span[@class='name struggles struggles-click']")
 	WebElement struggleanalytics;
 
 	public void strugAnalytics() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
-		wait.until(ExpectedConditions.textToBePresentInElement(
-				struggleanalytics, "Struggle analytics"));
+		//WebDriverWait wait = new WebDriverWait(driver, 400);
+		//wait.until(ExpectedConditions.textToBePresentInElement(struggleanalytics, "Struggle analytics"));
 
 		struggleanalytics.click();
 		logger.info("Struggle Analytics PageView clicked");

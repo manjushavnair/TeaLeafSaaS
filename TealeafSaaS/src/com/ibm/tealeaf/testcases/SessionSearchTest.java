@@ -47,9 +47,18 @@ public class SessionSearchTest extends SaaSlogin {
 			 System.out.println("sessionSearchLast24hrs called");
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
-			 System.out.println("sessionSearchLast24hrs 1");
+			logger.info("sessionSearchLast24hrs 1");
+			 
+			try {
+				Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
+			} catch (Exception e) {
+				 
+				e.printStackTrace();
+			}
+			
 			sessionsearch_page.sessSearch();
-			 System.out.println("sessionSearchLast24hrs 2");
+			logger.info("sessionSearchLast24hrs 2");
+		 
 			sessionsearch_page.clickonSearchButton();
 			sessionsearch_page.selectBBRsession();
 			sessionsearch_page.backToSearch();
