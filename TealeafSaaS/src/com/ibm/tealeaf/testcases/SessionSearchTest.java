@@ -22,11 +22,11 @@ import com.ibm.tealeaf.pageobjects.LoginPage;
 import com.ibm.tealeaf.pageobjects.SaaSBasePage;
 import com.ibm.tealeaf.pageobjects.SessionSearchPage;
 
-public class SessionSearchTest1 extends SaaSloginTest1 {
+public class SessionSearchTest extends SaaSloginTest {
 
-	private static Logger logger = Logger.getLogger(SessionSearchTest1.class);
+	private static Logger logger = Logger.getLogger(SessionSearchTest.class);
 
-	public SessionSearchTest1() {
+	public SessionSearchTest() {
 
 		 super();
 		 System.out.println("SessionSearchTest called");

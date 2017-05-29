@@ -21,11 +21,11 @@ import org.testng.annotations.Test;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 import com.ibm.tealeaf.pageobjects.StruggleAnalyticsPage;
 
-public class StruggleAnalyticsTest1 extends SaaSloginTest1 {
+public class StruggleAnalyticsTest extends SaaSloginTest {
 
-	private static Logger logger = Logger.getLogger(StruggleAnalyticsTest1.class);
+	private static Logger logger = Logger.getLogger(StruggleAnalyticsTest.class);
 
-	public StruggleAnalyticsTest1() {
+	public StruggleAnalyticsTest() {
 
 		 super();
 
