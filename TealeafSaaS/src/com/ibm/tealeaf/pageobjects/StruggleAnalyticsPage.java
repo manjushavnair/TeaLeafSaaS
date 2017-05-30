@@ -38,7 +38,7 @@ public class StruggleAnalyticsPage {
 	WebElement struggleanalytics;
 
 	public void strugAnalytics() throws InterruptedException {
-		//WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
+		 WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		//wait.until(ExpectedConditions.textToBePresentInElement(struggleanalytics, "Struggle analytics"));
 		logger.info("Entering Struggle Analytics PageView clicked");
 		struggleanalytics.click();
@@ -132,7 +132,7 @@ public class StruggleAnalyticsPage {
 		// Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 		logger.info("Entering navigated back to Struggle Analytics ");
 		 driver.manage() .timeouts()
-		 .implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC, TimeUnit.MILLISECONDS);
+		 .implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC, TimeUnit.SECONDS);
 		 
 		Actions builder2 = new Actions(driver);
 		builder2.moveToElement(menustruggle).click(menustruggle);

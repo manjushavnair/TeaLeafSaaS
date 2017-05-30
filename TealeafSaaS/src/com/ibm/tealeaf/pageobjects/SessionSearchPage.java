@@ -101,7 +101,7 @@ public class SessionSearchPage {
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME160SEC,
-						TimeUnit.MILLISECONDS);
+						TimeUnit.SECONDS);
 		Actions builder = new Actions(driver);
 		// 3.a Move cursor to the Main Menu Element
 		builder.moveToElement(firstsession).perform();
@@ -130,13 +130,13 @@ public class SessionSearchPage {
 	//@FindBy(xpath = "//a[@class='active']") 
 	WebElement homepage;
 
-	public void backToHome() throws InterruptedException {
+	public void backToSessionSearch() throws InterruptedException {
 		logger.info("Navigating back to Home Page ");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC,
-						TimeUnit.MILLISECONDS);
+						TimeUnit.SECONDS);
 		Actions builder = new Actions(driver);
 		builder.moveToElement(homepage).click(homepage);
 		builder.perform();
@@ -154,21 +154,21 @@ public class SessionSearchPage {
 	 * 
 	 * @throws InterruptedException
 	 */
-	@FindBy(xpath = "//a[contains(@href,'/sessionsearch?result=false')and contains(.,'Session search')]")
+	@FindBy(xpath = "//a[contains(@href,'/sessionsearch?result=false')and contains(.,'Session Search')]")
 	WebElement searchpage;
 
-	public void backToSearch()  {
-		logger.info("Navigated back to Session search Page ");
+	public void backToSearch(String functionName)  {
+		logger.info("Navigating back to Session search Page from :"+functionName);
 		try {
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
-						TimeUnit.MILLISECONDS);
+						TimeUnit.SECONDS);
 		Actions builder = new Actions(driver);
 		builder.moveToElement(searchpage).click(searchpage);
 		builder.perform();
-		logger.info("Successfully navigated back to Session search Page ");
+		logger.info("Successfully navigated back to Session search Page from :"+functionName);
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 		} catch (Exception e) {
 			Assert.fail("Unable to return back to Session Search pageview");
@@ -199,12 +199,13 @@ public class SessionSearchPage {
 	}
 
 	// Click on drop down option-Last 5 min
-	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[1]//a[@title='Last 5 minutes']")
-	WebElement last_5min;
+	//@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[1]//a[@title='Last 5 minutes']")
+	@FindBy(xpath = "//div[@class='sess-endtime']//a[@title='Last 5 minutes']")
+ 	WebElement last_5min;
 
 	public void clickonOption_Last5min()  {
 		logger.info("Selected session end time 'Last 5 minutes'");
-		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);	
 		wait.until(ExpectedConditions.textToBePresentInElement(last_5min,
 				"Last 5 minutes"));
 		try {
