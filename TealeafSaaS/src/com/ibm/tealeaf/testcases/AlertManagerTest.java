@@ -65,7 +65,7 @@ public class AlertManagerTest extends SaaSloginTest {
 		try {
 			ExcelUtil eu = new ExcelUtil();
 			eu.setExcelFile(TeaLeafCONSTANTS.LOGINXLSDATAPATH, TeaLeafCONSTANTS.LOGINXLSDATASHEETNAMEALERTMANAGER);
-			searchString = eu.getCellData(1, 0);
+			searchString = eu.getCellData(2, 0);
 			
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 			
@@ -74,7 +74,7 @@ public class AlertManagerTest extends SaaSloginTest {
 			logger.info("searchString "+searchString);
 			
 			
-			alertmanager_page.invokeAlertManager();
+			 //go to home 
 			
 		} catch (Exception e) {
 			e.printStackTrace();

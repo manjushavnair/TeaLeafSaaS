@@ -77,9 +77,10 @@ public class AlertManagerPage extends BasePage {
 		
 		logger.info("Going to searchAlert ");
 
-		Actions builder = new Actions(driver);
+		/*Actions builder = new Actions(driver);
 		builder.moveToElement(searchAlert).click(searchAlert);
 		builder.perform();
+		*/
 		logger.info("Successfully searched searchAlert ");
 		try {
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
