@@ -253,6 +253,7 @@ public class SessionSearchPage extends BasePage {
 	WebElement last_12hours;
 	
 	
+	
 
 	public void clickonOption_Last12hours() throws InterruptedException {
 		logger.info("Selected session end time 'Last 12 hours'");
