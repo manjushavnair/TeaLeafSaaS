@@ -1,4 +1,4 @@
-package com.ibm.tealeaf.testcases;
+package com.ibm.tealeaf.testcases.base;
 
 import org.openqa.selenium.By;
 

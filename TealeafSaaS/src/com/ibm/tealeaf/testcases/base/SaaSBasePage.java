@@ -1,7 +1,7 @@
 /**
  *  
  */
-package com.ibm.tealeaf.testcases;
+package com.ibm.tealeaf.testcases.base;
 
 /**
  * @author Manjusha Saju
