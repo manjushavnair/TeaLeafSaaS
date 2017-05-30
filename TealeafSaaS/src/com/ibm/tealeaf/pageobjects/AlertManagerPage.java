@@ -28,20 +28,24 @@ public class AlertManagerPage extends BasePage {
 
 	// 1.Navigate toinvokeAlertManager page from home
  
-	@FindBy(xpath = "//span[contains(@class,'name alerts alerts-click firepath-matching-node')]")
+	//@FindBy(xpath = "//span[contains(@class,'name alerts alerts-click firepath-matching-node')]")
+	@FindBy(xpath = "//span[@title='Alert Manager']")
+	
 	WebElement alertmanager;
 
 	public void invokeAlertManager() {
-		logger.info("Entering into invokeAlertManager Page");
+		logger.info("Entering into invokeAlertManager");
 		WebDriverWait wait = new WebDriverWait(driver,
-				TeaLeafCONSTANTS.WAITTIME60SEC);
+				TeaLeafCONSTANTS.WAITTIME20SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(alertmanager,
 				"Alert Manager"));
-		logger.info("Entering into invokeAlertManager page");
+		
+		logger.info("Going to Click invokeAlertManager page");
+		
 		alertmanager.click();
 
 		try {
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
+			Thread.sleep(TeaLeafCONSTANTS.WAITTIME1000MILLISEC);
 		} catch (Exception e) {
 			Assert.fail("Unable to navigate to invokeAlertManager page");
 			e.printStackTrace();
@@ -60,7 +64,7 @@ public class AlertManagerPage extends BasePage {
 
 	public void searchAlert() throws InterruptedException {
 		logger.info("Navigating back to searchAlert ");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC,

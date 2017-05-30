@@ -22,7 +22,7 @@ public class BaseTest {
 	   @AfterSuite
 	  protected void tearDownAfterTestSuite(){
 		   logger.info("Quiting the browser Suite::BaseTest ");
-		   //driver.quit();
+		   driver.quit();
 		  }
 
 	 /*

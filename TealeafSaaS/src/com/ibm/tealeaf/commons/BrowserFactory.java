@@ -37,31 +37,41 @@ public class BrowserFactory {
 		 * null) { throw new
 		 * AssertionError("WebDriver instance  re-initialized"); }
 		 */
+		if (driver == null) {
+			synchronized (BrowserFactory.class) {
 
-		if (browserName.equalsIgnoreCase(TeaLeafCONSTANTS.FIREFOX))
+				if (browserName.equalsIgnoreCase(TeaLeafCONSTANTS.FIREFOX))
 
-		{
+				{
+					synchronized(BrowserFactory.class)
+					{
+					if(driver==null)
+					driver = new FirefoxDriver();
+					}
 
-			if (driver == null)
-				driver = new FirefoxDriver();
+				} else if (browserName
+						.equalsIgnoreCase(TeaLeafCONSTANTS.CHROME)) {
+					System.setProperty("webdriver.chrome.driver",
+							prpr.getProperty("CHROME_DRIVER_SERVER_PATH"));
+					synchronized(BrowserFactory.class)
+					{
+					if(driver==null)
+					driver = new ChromeDriver();
+					}
+				}
 
-		} else if (browserName.equalsIgnoreCase(TeaLeafCONSTANTS.CHROME)) {
-			System.setProperty("webdriver.chrome.driver",
-					prpr.getProperty("CHROME_DRIVER_SERVER_PATH"));
-			if (driver == null)
-
-				driver = new ChromeDriver();
+				else if (browserName.equalsIgnoreCase(TeaLeafCONSTANTS.IE)) {
+					System.setProperty("webdriver.ie.driver",
+							prpr.getProperty("IE_DRIVER_SERVER_PATH"));
+					synchronized(BrowserFactory.class)
+					{
+					if(driver==null)
+					driver = new InternetExplorerDriver();
+					}
+				}
+			}
 		}
 
-		else if (browserName.equalsIgnoreCase(TeaLeafCONSTANTS.IE)) {
-			System.setProperty("webdriver.ie.driver",
-					prpr.getProperty("IE_DRIVER_SERVER_PATH"));
-			if (driver == null)
-
-				driver = new InternetExplorerDriver();
-		}
-
-		
 		// driver.manage().timeouts().pageLoadTimeout(10L, TimeUnit.SECONDS);
 
 		driver.manage().window().maximize();
@@ -83,5 +93,5 @@ public class BrowserFactory {
 			driver.quit();
 		}
 	}
-	
+
 }

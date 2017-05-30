@@ -3,16 +3,20 @@ package com.ibm.tealeaf.utils;
 import java.io.File;
 import java.io.FileInputStream;
 
+import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
+import com.ibm.tealeaf.testcases.SessionSearchTest;
 
 public class ExcelUtil {
 
 	private Sheet datatypeSheet;
+	private static Logger logger = Logger.getLogger(ExcelUtil.class);
+
 
 	// This method is to set the File path and to open the Excel file, Pass
 	// Excel Path and Sheetname as Arguments to this method
@@ -36,8 +40,9 @@ public class ExcelUtil {
 				throw new IllegalArgumentException(
 						"The specified file is not Excel file");
 			}
-
-			datatypeSheet = workbook.getSheet("Sheet1");
+			logger.info("Reading the excel file ::" +filePath +" and sheetname ::" +sheetName);
+			
+			datatypeSheet = workbook.getSheet(sheetName);
 
 		} catch (Exception e) {
 			e.printStackTrace();

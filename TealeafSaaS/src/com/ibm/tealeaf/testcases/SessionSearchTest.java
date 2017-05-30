@@ -43,7 +43,7 @@ public class SessionSearchTest extends SaaSloginTest {
 					driver, SessionSearchPage.class);
 
 			try {
-				Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
+				Thread.sleep(TeaLeafCONSTANTS.WAITTIME1000MILLISEC);
 			} catch (Exception e) {
 
 				e.printStackTrace();
