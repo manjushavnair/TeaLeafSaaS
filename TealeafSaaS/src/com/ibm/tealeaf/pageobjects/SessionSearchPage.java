@@ -21,6 +21,9 @@ import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
  * @author Manjusha Saju
  * 
  */
+
+///http://www.utilities-online.info/xpath/#.WSz7M2mGNrQ
+//http://xmltoolbox.appspot.com/xpathevaluator.html
 public class SessionSearchPage {
 
 	private static Logger logger = Logger.getLogger(SessionSearchPage.class);
@@ -46,7 +49,7 @@ public class SessionSearchPage {
 	public void sessSearch() {
 		//WebDriverWait wait = new WebDriverWait(driver, 20);
 		//wait.until(ExpectedConditions.textToBePresentInElement(sess_search,"Session search"));
-		logger.info("Entering Session Search Page View");
+		logger.info("Entering into Session Search Page View");
 		sess_search.click();
 		
 		try {
@@ -55,7 +58,7 @@ public class SessionSearchPage {
 			Assert.fail("Unable to navigate to Session Search page");
 			e.printStackTrace();
 		}
-		logger.info("Exiting Session Search Page View");
+		logger.info("In Session Search Page View");
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
@@ -65,7 +68,7 @@ public class SessionSearchPage {
 
 	public void clickonSearchButton() {
 		
-		logger.info("Entering search result view ");
+		logger.info("Identified the Search button to be clicked in nmethod clickonSearchButton");
 		// driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,TimeUnit.SECONDS);
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
@@ -75,12 +78,13 @@ public class SessionSearchPage {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", defaultsearch);
 
-		logger.info("Displayed search result view ");
+		logger.info("Performed the method:clickonSearchButton");
+		logger.info("Presently in default search view");
 
 		
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 		} catch (Exception e) {
-			Assert.fail("Unable to display session search list");
+			Assert.fail("Unable to display default session search view");
 			e.printStackTrace();
 		}
 
@@ -92,12 +96,12 @@ public class SessionSearchPage {
 	WebElement firstsession;
 
 	public void selectBBRsession() throws InterruptedException {
-		logger.info("entering BBR session ");
+		logger.info("Selecting a BBR session");
 		try {	
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME160SEC,
-						TimeUnit.SECONDS);
+						TimeUnit.MILLISECONDS);
 		Actions builder = new Actions(driver);
 		// 3.a Move cursor to the Main Menu Element
 		builder.moveToElement(firstsession).perform();
@@ -106,13 +110,13 @@ public class SessionSearchPage {
 			//Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 			// 3.c Clicking on the Hidden SubMenu
 			firstsession.click();
+			logger.info("BBR session is selected");
 
 		} catch (Exception e) {
 			Assert.fail("Unable to click on replay icon");
 			e.printStackTrace();
 		}
 
-		logger.info("BBR session is selected");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 
 	}
@@ -123,15 +127,16 @@ public class SessionSearchPage {
 	 * @throws InterruptedException
 	 */
 	@FindBy(xpath = "//a[contains(@href,'/home')and contains(.,'IBM Tealeaf Customer Experience')]")
+	//@FindBy(xpath = "//a[@class='active']") 
 	WebElement homepage;
 
 	public void backToHome() throws InterruptedException {
-		logger.info("Entering navigated back to Home Page ");
+		logger.info("Navigating back to Home Page ");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 		driver.manage()
 				.timeouts()
-				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
-						TimeUnit.SECONDS);
+				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC,
+						TimeUnit.MILLISECONDS);
 		Actions builder = new Actions(driver);
 		builder.moveToElement(homepage).click(homepage);
 		builder.perform();
@@ -153,13 +158,13 @@ public class SessionSearchPage {
 	WebElement searchpage;
 
 	public void backToSearch()  {
-		logger.info("Entering into navigated back to Session search Page ");
+		logger.info("Navigated back to Session search Page ");
 		try {
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,
-						TimeUnit.SECONDS);
+						TimeUnit.MILLISECONDS);
 		Actions builder = new Actions(driver);
 		builder.moveToElement(searchpage).click(searchpage);
 		builder.perform();
@@ -179,7 +184,7 @@ public class SessionSearchPage {
 	public void clickonDefaultOption_Last24hrs()  {
 		logger.info("In default select option of 'Last 24 hrs'");
 		try {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.visibilityOf(last_24hrs));
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", last_24hrs);
@@ -199,7 +204,7 @@ public class SessionSearchPage {
 
 	public void clickonOption_Last5min()  {
 		logger.info("Selected session end time 'Last 5 minutes'");
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_5min,
 				"Last 5 minutes"));
 		try {

@@ -132,7 +132,7 @@ public class StruggleAnalyticsPage {
 		// Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 		logger.info("Entering navigated back to Struggle Analytics ");
 		 driver.manage() .timeouts()
-		 .implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC, TimeUnit.SECONDS);
+		 .implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC, TimeUnit.MILLISECONDS);
 		 
 		Actions builder2 = new Actions(driver);
 		builder2.moveToElement(menustruggle).click(menustruggle);
