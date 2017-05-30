@@ -16,20 +16,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
+import com.ibm.tealeaf.pageobjects.basepage.BasePage;
 
 /**
  * @author ManjushaSaju
  * 
  */
-public class StruggleAnalyticsPage {
+public class StruggleAnalyticsPage extends BasePage{
 
-	private WebDriver driver;
-
+	 
 	private static Logger logger = Logger
 			.getLogger(StruggleAnalyticsPage.class);
 
+	public StruggleAnalyticsPage() {
+		logger.info("default constructor called");
+
+	}
 	public StruggleAnalyticsPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 
 	}
 

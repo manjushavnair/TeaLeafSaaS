@@ -10,12 +10,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class LoginPage {
-	private WebDriver driver;
+import com.ibm.tealeaf.pageobjects.basepage.BasePage;
+
+public class LoginPage extends BasePage{
+	
 	private static Logger logger = Logger.getLogger(LoginPage.class);
 
+	public LoginPage() {
+		logger.info("default constructor called");
+
+	}
 	public LoginPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 
 	}
 

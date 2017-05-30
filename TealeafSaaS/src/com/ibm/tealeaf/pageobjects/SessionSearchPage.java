@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
+import com.ibm.tealeaf.pageobjects.basepage.BasePage;
 
 /**
  * @author Manjusha Saju
@@ -24,19 +25,18 @@ import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 
 ///http://www.utilities-online.info/xpath/#.WSz7M2mGNrQ
 //http://xmltoolbox.appspot.com/xpathevaluator.html
-public class SessionSearchPage {
+public class SessionSearchPage extends BasePage{
 
 	private static Logger logger = Logger.getLogger(SessionSearchPage.class);
 
-	private WebDriver driver;
-
+	 
 	public SessionSearchPage() {
 		logger.info("default constructor called");
 
 	}
 
 	public SessionSearchPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 
 	}
 
@@ -81,7 +81,7 @@ public class SessionSearchPage {
 		executor.executeScript("arguments[0].click();", defaultsearch);
 
 		logger.info("Performed the method ::clickonSearchButton");
-		logger.info("Presently in default search view");
+		
 
 		
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
