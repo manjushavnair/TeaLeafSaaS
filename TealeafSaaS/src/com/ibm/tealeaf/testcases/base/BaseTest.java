@@ -21,11 +21,11 @@ public class BaseTest {
 		  }
 	   @AfterSuite
 	  protected void tearDownAfterTestSuite(){
-		   logger.info("Quiting the browser ::BaseTest ");
-		   driver.quit();
+		   logger.info("Quiting the browser Suite::BaseTest ");
+		   //driver.quit();
 		  }
 
-	 
+	 /*
 		@BeforeMethod
 		  protected  void setUpBeforeTestMethod() {
 		    // initialize testPage
@@ -46,4 +46,5 @@ public class BaseTest {
 			logger.info("Quiting browser  tearDownAfterTestClass  ::BaseTest");
 			//driver.quit();
 		  }
+		  */
 }

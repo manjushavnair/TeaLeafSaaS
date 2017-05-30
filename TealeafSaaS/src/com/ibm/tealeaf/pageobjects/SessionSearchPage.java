@@ -110,7 +110,7 @@ public class SessionSearchPage extends BasePage {
 		builder.moveToElement(firstsession).perform();
 		// 3.b Giving 5 Secs for submenu to be displayed
 		
-			//Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
+			 Thread.sleep(TeaLeafCONSTANTS.WAITTIME20000MILLISEC);
 			// 3.c Clicking on the Hidden SubMenu
 			firstsession.click();
 			logger.info("BBR session is selected");
