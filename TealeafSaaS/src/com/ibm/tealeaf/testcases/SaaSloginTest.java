@@ -32,7 +32,8 @@ public class SaaSloginTest extends SaaSBasePage {
 	@Test(priority = 1)
 	public void verifyValidLogin() {
 
-		System.out.println("verifyValidLogin" );
+		logger.info("Entering verifyValidLogin");
+ 
 		// Created page object using Page Factory
 		LoginPage login_page = PageFactory
 				.initElements(driver, LoginPage.class);
@@ -54,6 +55,7 @@ public class SaaSloginTest extends SaaSBasePage {
 
 			e.printStackTrace();
 		}
+	 	logger.info("Exiting verifyValidLogin");
 		login_page.login_tealeafSaaS(userName, password);
 	}
 

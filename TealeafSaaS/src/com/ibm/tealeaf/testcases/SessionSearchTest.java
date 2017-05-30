@@ -9,17 +9,11 @@ package com.ibm.tealeaf.testcases;
  */
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.ibm.tealeaf.commons.BrowserFactory;
-import com.ibm.tealeaf.commons.PropertyReader;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
-import com.ibm.tealeaf.pageobjects.LoginPage;
-import com.ibm.tealeaf.pageobjects.SaaSBasePage;
 import com.ibm.tealeaf.pageobjects.SessionSearchPage;
 
 public class SessionSearchTest extends SaaSloginTest {
@@ -28,40 +22,39 @@ public class SessionSearchTest extends SaaSloginTest {
 
 	public SessionSearchTest() {
 
-		 super();
-		 System.out.println("SessionSearchTest called");
+		super();
+		System.out.println("SessionSearchTest called");
 
 	}
-	/*Test Case 1
-	 * 1.Log into tealeaf SaaS
-	 * 2.Navigate to Session Search view
-	 * 3. Click on Search button for the default session end time
-	 * 4. Select one of the BBR session to replay.
-	 * 5. Ensure session availability in default session search view
-	 * 6. Naviagate back to Session Search page
+
+	/*
+	 * Test Case 1 1.Log into tealeaf SaaS 2.Navigate to Session Search view 3.
+	 * Click on Search button for the default session end time 4. Select one of
+	 * the BBR session to replay. 5. Ensure session availability in default
+	 * session search view 6. Naviagate back to Session Search page
 	 */
-	@Test(priority = 2) 
+	@Test(priority = 2)
 	public void sessionSearchLast24hrs() {
 
 		try {
-			 System.out.println("sessionSearchLast24hrs called");
+
+			logger.info("Entering sessionSearchLast24hrs ");
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
-			logger.info("sessionSearchLast24hrs 1");
-			 
+
 			try {
 				Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 			} catch (Exception e) {
-				 
+
 				e.printStackTrace();
 			}
-			
+
 			sessionsearch_page.sessSearch();
-			logger.info("sessionSearchLast24hrs 2");
-		 
+
 			sessionsearch_page.clickonSearchButton();
 			sessionsearch_page.selectBBRsession();
 			sessionsearch_page.backToSearch();
+			logger.info("Exiting  sessionSearchLast24hrs ");
 
 		} catch (Exception e) {
 			Assert.fail("Unable to execute default search with BBR session replay");
@@ -70,24 +63,23 @@ public class SessionSearchTest extends SaaSloginTest {
 		}
 
 	}
+
 	/*
-	/*Test Case 2
-	 * 1.Log into tealeaf SaaS
-	 * 2.Navigate to Session Search view
-	 * 3.Click on the option for session end time-Last 5 minutes
-	 * 4. Click on Search button
-	 * 5.Select one of the BBR session to replay.
-	 * 6. Ensure session availability in this session search view
-	 * 7. Naviagate back to Session Search page
+	 * /*Test Case 2 1.Log into tealeaf SaaS 2.Navigate to Session Search view
+	 * 3.Click on the option for session end time-Last 5 minutes 4. Click on
+	 * Search button 5.Select one of the BBR session to replay. 6. Ensure
+	 * session availability in this session search view 7. Naviagate back to
+	 * Session Search page
 	 */
 	@Test(priority = 3)
 	public void sessionSearchLast5Min() {
 
+		logger.info("Entering  sessionSearchLast5Min ");
 		try {
 
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
-			//sessionsearch_page.sessSearch();
+			// sessionsearch_page.sessSearch();
 
 			sessionsearch_page.clickonDefaultOption_Last24hrs();
 			sessionsearch_page.clickonOption_Last5min();
@@ -99,22 +91,20 @@ public class SessionSearchTest extends SaaSloginTest {
 			e.printStackTrace();
 
 		}
-
+		logger.info("Exiting  sessionSearchLast5Min ");
 	}
 
-	
-	/*Test Case 3
-	 * 1.Log into tealeaf SaaS
-	 * 2.Navigate to Session Search view
-	 * 3.Click on the option for session end time-Last 15 minutes
-	 * 4. Click on Search button
-	 * 5.Select one of the BBR session to replay.
-	 * 6. Ensure session availability in this session search view
-	 * 7. Naviagate back to Session Search page
+	/*
+	 * Test Case 3 1.Log into tealeaf SaaS 2.Navigate to Session Search view
+	 * 3.Click on the option for session end time-Last 15 minutes 4. Click on
+	 * Search button 5.Select one of the BBR session to replay. 6. Ensure
+	 * session availability in this session search view 7. Naviagate back to
+	 * Session Search page
 	 */
-	@Test(priority = 2)
+	@Test(priority = 4)
 	public void sessionSearchLast15Min() {
 
+		logger.info("Entering  sessionSearchLast15Min ");
 		try {
 
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
@@ -131,23 +121,21 @@ public class SessionSearchTest extends SaaSloginTest {
 			e.printStackTrace();
 
 		}
+		logger.info("Exiting  sessionSearchLast15Min ");
 
 	}
 
-
-	
-	/*Test Case 4
-	 * 1.Log into tealeaf SaaS
-	 * 2.Navigate to Session Search view
-	 * 3.Click on the option for session end time-Last 30 minutes
-	 * 4. Click on Search button
-	 * 5.Select one of the BBR session to replay.
-	 * 6. Ensure session availability in this session search view
-	 * 7. Naviagate back to Session Search page
+	/*
+	 * Test Case 4 1.Log into tealeaf SaaS 2.Navigate to Session Search view
+	 * 3.Click on the option for session end time-Last 30 minutes 4. Click on
+	 * Search button 5.Select one of the BBR session to replay. 6. Ensure
+	 * session availability in this session search view 7. Naviagate back to
+	 * Session Search page
 	 */
-	@Test(priority = 2)
+	@Test(priority = 5)
 	public void sessionSearchLast30Min() {
 
+		logger.info("Entering  sessionSearchLast30Min ");
 		try {
 
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
@@ -164,22 +152,20 @@ public class SessionSearchTest extends SaaSloginTest {
 			e.printStackTrace();
 
 		}
+		logger.info("Exiting  sessionSearchLast30Min ");
 
 	}
-	
-	
-	/*Test Case 5
-	 * 1.Log into tealeaf SaaS
-	 * 2.Navigate to Session Search view
-	 * 3.Click on the option for session end time-Last hour
-	 * 4. Click on Search button
-	 * 5.Select one of the BBR session to replay.
-	 * 6. Ensure session availability in this session search view
-	 * 7. Naviagate back to Session Search page
-	 */
-	@Test(priority = 2)
-	public void sessionSearchLasthour() {
 
+	/*
+	 * Test Case 5 1.Log into tealeaf SaaS 2.Navigate to Session Search view
+	 * 3.Click on the option for session end time-Last hour 4. Click on Search
+	 * button 5.Select one of the BBR session to replay. 6. Ensure session
+	 * availability in this session search view 7. Naviagate back to Session
+	 * Search page
+	 */
+	@Test(priority = 6)
+	public void sessionSearchLasthour() {
+		logger.info("Entering  sessionSearchLasthour ");
 		try {
 
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
@@ -191,28 +177,27 @@ public class SessionSearchTest extends SaaSloginTest {
 			sessionsearch_page.clickonSearchButton();
 			sessionsearch_page.selectBBRsession();
 			sessionsearch_page.backToHome();
-
+			
+			logger.info("Exiting  sessionSearchLasthour ");
 		} catch (Exception e) {
 			e.printStackTrace();
 
 		}
 
 	}
-	
-	/*Test Case 6
-	 * 1.Log into tealeaf SaaS
-	 * 2.Navigate to Session Search view
-	 * 3.Click on the option for session end time-Last 12 hours
-	 * 4. Click on Search button
-	 * 5.Select one of the BBR session to replay.
-	 * 6. Ensure session availability in this session search view
-	 * 7. Naviagate back to Session Search page
+
+	/*
+	 * Test Case 6 1.Log into tealeaf SaaS 2.Navigate to Session Search view
+	 * 3.Click on the option for session end time-Last 12 hours 4. Click on
+	 * Search button 5.Select one of the BBR session to replay. 6. Ensure
+	 * session availability in this session search view 7. Naviagate back to
+	 * Session Search page
 	 */
-	@Test(priority = 2)
+	@Test(priority = 7)
 	public void sessionSearchLast12hours() {
 
 		try {
-
+			logger.info("Entering  sessionSearchLast12hours ");
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
 			sessionsearch_page.sessSearch();
@@ -222,6 +207,8 @@ public class SessionSearchTest extends SaaSloginTest {
 			sessionsearch_page.clickonSearchButton();
 			sessionsearch_page.selectBBRsession();
 			sessionsearch_page.backToHome();
+			logger.info("Exiting  sessionSearchLast12hours ");
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -229,23 +216,19 @@ public class SessionSearchTest extends SaaSloginTest {
 		}
 
 	}
-	
-	
 
-	/*Test Case 7
-	 * 1.Log into tealeaf SaaS
-	 * 2.Navigate to Session Search view
-	 * 3.Click on the option for session end time-Last 7 days
-	 * 4. Click on Search button
-	 * 5.Select one of the BBR session to replay.
-	 * 6. Ensure session availability in this session search view
-	 * 7. Naviagate back to Session Search page
+	/*
+	 * Test Case 7 1.Log into tealeaf SaaS 2.Navigate to Session Search view
+	 * 3.Click on the option for session end time-Last 7 days 4. Click on Search
+	 * button 5.Select one of the BBR session to replay. 6. Ensure session
+	 * availability in this session search view 7. Naviagate back to Session
+	 * Search page
 	 */
-	@Test(priority = 2)
+	@Test(priority = 8)
 	public void sessionSearchLast7days() {
 
 		try {
-
+			logger.info("Entering  sessionSearchLast7days ");
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
 			sessionsearch_page.sessSearch();
@@ -255,6 +238,7 @@ public class SessionSearchTest extends SaaSloginTest {
 			sessionsearch_page.clickonSearchButton();
 			sessionsearch_page.selectBBRsession();
 			sessionsearch_page.backToHome();
+			logger.info("Exiting  sessionSearchLast7days ");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -262,23 +246,19 @@ public class SessionSearchTest extends SaaSloginTest {
 		}
 
 	}
-	
-	
 
-	/*Test Case 8
-	 * 1.Log into tealeaf SaaS
-	 * 2.Navigate to Session Search view
-	 * 3.Click on the option for session end time-Last 14 days
-	 * 4. Click on Search button
-	 * 5.Select one of the BBR session to replay.
-	 * 6. Ensure session availability in this session search view
-	 * 7. Naviagate back to Session Search page
+	/*
+	 * Test Case 8 1.Log into tealeaf SaaS 2.Navigate to Session Search view
+	 * 3.Click on the option for session end time-Last 14 days 4. Click on
+	 * Search button 5.Select one of the BBR session to replay. 6. Ensure
+	 * session availability in this session search view 7. Naviagate back to
+	 * Session Search page
 	 */
-	@Test(priority = 2)
+	@Test(priority = 9)
 	public void sessionSearchLast14days() {
 
 		try {
-
+			logger.info("Entering  sessionSearchLast14days ");
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
 			sessionsearch_page.sessSearch();
@@ -288,32 +268,27 @@ public class SessionSearchTest extends SaaSloginTest {
 			sessionsearch_page.clickonSearchButton();
 			sessionsearch_page.selectBBRsession();
 			sessionsearch_page.backToHome();
-
+			logger.info("Exiting  sessionSearchLast14days ");
 		} catch (Exception e) {
 			e.printStackTrace();
 
 		}
 
 	}
-	
-	
 
-	/*Test Case 9
-	 * 1.Log into tealeaf SaaS
-	 * 2.Navigate to Session Search view
-	 * 3.Click on the option for session end time-Custom date range
-	 * 4. Click on Search button
-	 * 5.Select one of the BBR session to replay.
-	 * 6. Ensure session availability in this session search view
-	 * 7. Naviagate back to Session Search page
+	/*
+	 * Test Case 9 1.Log into tealeaf SaaS 2.Navigate to Session Search view
+	 * 3.Click on the option for session end time-Custom date range 4. Click on
+	 * Search button 5.Select one of the BBR session to replay. 6. Ensure
+	 * session availability in this session search view 7. Naviagate back to
+	 * Session Search page
 	 */
-	
-	
-	@Test(priority = 2)
+
+	@Test(priority = 10)
 	public void sessionSearch_Customdaterange() {
 
 		try {
-
+			logger.info("Entering  sessionSearch_Customdaterange ");
 			SessionSearchPage sessionsearch_page = PageFactory.initElements(
 					driver, SessionSearchPage.class);
 			sessionsearch_page.sessSearch();
@@ -323,17 +298,12 @@ public class SessionSearchTest extends SaaSloginTest {
 			sessionsearch_page.clickonSearchButton();
 			sessionsearch_page.selectBBRsession();
 			sessionsearch_page.backToHome();
+			logger.info("Exiting  sessionSearch_Customdaterange ");
 
 		} catch (Exception e) {
-			e.printStackTrace();}
-
+			e.printStackTrace();
 		}
 
-	
-}	
-	
-	
-	
-	
+	}
 
-
+}

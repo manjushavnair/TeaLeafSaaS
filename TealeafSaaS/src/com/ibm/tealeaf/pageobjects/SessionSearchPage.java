@@ -46,15 +46,16 @@ public class SessionSearchPage {
 	public void sessSearch() {
 		//WebDriverWait wait = new WebDriverWait(driver, 20);
 		//wait.until(ExpectedConditions.textToBePresentInElement(sess_search,"Session search"));
-		logger.info("In Session Search Page View");
+		logger.info("Entering Session Search Page View");
 		sess_search.click();
-		logger.info("In Session Search Page View");
+		
 		try {
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME1000MILLISEC);
 		} catch (Exception e) {
 			Assert.fail("Unable to navigate to Session Search page");
 			e.printStackTrace();
 		}
+		logger.info("Exiting Session Search Page View");
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
@@ -63,9 +64,11 @@ public class SessionSearchPage {
 	WebElement defaultsearch;
 
 	public void clickonSearchButton() {
+		
+		logger.info("Entering search result view ");
 		// driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,TimeUnit.SECONDS);
 		try {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(defaultsearch,
 				"Search"));
 		
@@ -89,6 +92,7 @@ public class SessionSearchPage {
 	WebElement firstsession;
 
 	public void selectBBRsession() throws InterruptedException {
+		logger.info("entering BBR session ");
 		try {	
 		driver.manage()
 				.timeouts()
@@ -122,6 +126,7 @@ public class SessionSearchPage {
 	WebElement homepage;
 
 	public void backToHome() throws InterruptedException {
+		logger.info("Entering navigated back to Home Page ");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 		driver.manage()
 				.timeouts()
@@ -148,6 +153,7 @@ public class SessionSearchPage {
 	WebElement searchpage;
 
 	public void backToSearch()  {
+		logger.info("Entering into navigated back to Session search Page ");
 		try {
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
 		driver.manage()
@@ -171,13 +177,14 @@ public class SessionSearchPage {
 	WebElement last_24hrs;
 
 	public void clickonDefaultOption_Last24hrs()  {
+		logger.info("In default select option of 'Last 24 hrs'");
 		try {
 		WebDriverWait wait = new WebDriverWait(driver, 400);
 		wait.until(ExpectedConditions.visibilityOf(last_24hrs));
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", last_24hrs);
 		// last_24hrs.click();
-		logger.info("In default select option of 'Last 24 hrs'");
+		logger.info("In default End option of 'Last 24 hrs'");
 		
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 		} catch (Exception e) {
@@ -191,6 +198,7 @@ public class SessionSearchPage {
 	WebElement last_5min;
 
 	public void clickonOption_Last5min()  {
+		logger.info("Selected session end time 'Last 5 minutes'");
 		WebDriverWait wait = new WebDriverWait(driver, 400);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_5min,
 				"Last 5 minutes"));
@@ -198,7 +206,7 @@ public class SessionSearchPage {
 		Actions builder = new Actions(driver);
 		builder.moveToElement(last_5min).build().perform();
 		last_5min.click();
-		logger.info("Selected session end time 'Last 5 minutes'");
+		logger.info("End session end time 'Last 5 minutes'");
 	
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 		} catch (InterruptedException e) {
@@ -213,13 +221,14 @@ public class SessionSearchPage {
 	WebElement last_15min;
 
 	public void clickonOption_Last15min() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		logger.info("Selected session end time 'Last 15 minutes'");
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_15min,
 				"Last 15 minutes"));
 		Actions builder = new Actions(driver);
 		builder.moveToElement(last_15min).build().perform();
 		last_15min.click();
-		logger.info("Selected session end time 'Last 15 minutes'");
+		logger.info("End session end time 'Last 15 minutes'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 
@@ -228,13 +237,14 @@ public class SessionSearchPage {
 	WebElement last_30min;
 
 	public void clickonOption_Last30min() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		logger.info("Selected session end time 'Last 30 minutes'");
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_30min,
 				"Last 30 minutes"));
 		Actions builder = new Actions(driver);
 		builder.moveToElement(last_30min).build().perform();
 		last_30min.click();
-		logger.info("Selected session end time 'Last 30 minutes'");
+		logger.info("End session end time 'Last 30 minutes'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 
@@ -243,13 +253,14 @@ public class SessionSearchPage {
 	WebElement last_hour;
 
 	public void clickonOption_Lasthour() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		logger.info("Selected session end time 'Last hour'");
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_hour,
 				"Last hour"));
 		Actions builder = new Actions(driver);
 		builder.moveToElement(last_hour).build().perform();
 		last_hour.click();
-		logger.info("Selected session end time 'Last hour'");
+		logger.info("End session end time 'Last hour'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 
@@ -258,13 +269,14 @@ public class SessionSearchPage {
 	WebElement last_12hours;
 
 	public void clickonOption_Last12hours() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		logger.info("Selected session end time 'Last 12 hours'");
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_12hours,
 				"Last 12 hours"));
 		Actions builder = new Actions(driver);
 		builder.moveToElement(last_12hours).build().perform();
 		last_12hours.click();
-		logger.info("Selected session end time 'Last 12 hours'");
+		logger.info("End session end time 'Last 12 hours'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 
@@ -273,13 +285,14 @@ public class SessionSearchPage {
 	WebElement last_7days;
 
 	public void clickonOption_Last7days() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		logger.info("Selected session end time 'Last 7 days'");
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_7days,
 				"Last 7 days"));
 		Actions builder = new Actions(driver);
 		builder.moveToElement(last_7days).build().perform();
 		last_7days.click();
-		logger.info("Selected session end time 'Last 7 days'");
+		logger.info("End session end time 'Last 7 days'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 
@@ -288,13 +301,14 @@ public class SessionSearchPage {
 	WebElement last_14days;
 
 	public void clickonOption_Last14days() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		logger.info("Selected session end time 'Last 14 days'");
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_14days,
 				"Last 14 days"));
 		Actions builder = new Actions(driver);
 		builder.moveToElement(last_14days).build().perform();
 		last_14days.click();
-		logger.info("Selected session end time 'Last 14 days'");
+		logger.info("End session end time 'Last 14 days'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 
@@ -303,13 +317,14 @@ public class SessionSearchPage {
 	WebElement customdaterange;
 
 	public void clickonOption_Customdaterange() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		logger.info("Selected session end time 'Custom Date Range'");
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(customdaterange,
 				"Custom date range"));
 		Actions builder = new Actions(driver);
 		builder.moveToElement(customdaterange).build().perform();
 		customdaterange.click();
-		logger.info("Selected session end time 'Custom Date Range'");
+		logger.info("End session end time 'Custom Date Range'");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
 	}
 

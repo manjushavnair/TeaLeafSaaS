@@ -32,10 +32,12 @@ public class LoginPage {
 
 	public void login_tealeafSaaS(String userName, String passWord) {
 		try {
-			System.out.println("login_tealeafSaaS" );
+			logger.info("Entering Tealeaf login");
+			 
 			username.sendKeys(userName);
 			password.sendKeys(passWord);
 			login_button.click();
+			logger.info("Exiting Tealeaf login");
 		} catch (Exception e) {
 			Assert.fail("Login failed");
 		}

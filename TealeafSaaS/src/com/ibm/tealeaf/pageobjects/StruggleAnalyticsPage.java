@@ -38,11 +38,11 @@ public class StruggleAnalyticsPage {
 	WebElement struggleanalytics;
 
 	public void strugAnalytics() throws InterruptedException {
-		//WebDriverWait wait = new WebDriverWait(driver, 400);
+		//WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		//wait.until(ExpectedConditions.textToBePresentInElement(struggleanalytics, "Struggle analytics"));
-
+		logger.info("Entering Struggle Analytics PageView clicked");
 		struggleanalytics.click();
-		logger.info("Struggle Analytics PageView clicked");
+		logger.info("Exiting Struggle Analytics PageView clicked");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 
 	}
@@ -52,7 +52,7 @@ public class StruggleAnalyticsPage {
 	WebElement reglabel;
 
 	public void registration() throws InterruptedException {
-
+		logger.info("Entering Registration struggle report");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 
 		try {
@@ -61,7 +61,7 @@ public class StruggleAnalyticsPage {
 			Assert.fail("No such element");
 		}
 
-		logger.info("In Registration struggle report");
+		logger.info("Exiting Registration struggle report");
 	}
 
 	/**
@@ -75,13 +75,13 @@ public class StruggleAnalyticsPage {
 
 	public void shoppingCart() throws InterruptedException {
 
-		logger.info("In Shopping cart struggle report yet to click");
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		logger.info("Entering Shopping cart struggle report yet to click");
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(
 				shoppingcartlabel, "Shopping cart"));
 		
 		shoppingcartlabel.click();
-		logger.info("In Shopping cart struggle report clicked");
+		logger.info("Exiting Shopping cart struggle report clicked");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
 
 		
@@ -97,10 +97,11 @@ public class StruggleAnalyticsPage {
 
 	public void checkOut() throws InterruptedException {
 
+		logger.info("Entering Checkout struggle report");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME15SEC);
 		checkoutlabel.click();
 
-		logger.info("In Checkout struggle report");
+		logger.info("Exiting Checkout struggle report");
 	}
 
 	/**
@@ -112,7 +113,7 @@ public class StruggleAnalyticsPage {
 	WebElement bannerlabel;
 
 	public void bannerLandingPage() throws InterruptedException {
-
+		logger.info("Enter Banner landing page report");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
 		bannerlabel.click();
 
@@ -129,7 +130,7 @@ public class StruggleAnalyticsPage {
 
 	public void backToStruggleAnalytics() throws InterruptedException {
 		// Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
-
+		logger.info("Entering navigated back to Struggle Analytics ");
 		 driver.manage() .timeouts()
 		 .implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC, TimeUnit.SECONDS);
 		 

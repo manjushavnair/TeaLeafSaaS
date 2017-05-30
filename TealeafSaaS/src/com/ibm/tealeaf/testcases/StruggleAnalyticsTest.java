@@ -33,6 +33,8 @@ public class StruggleAnalyticsTest extends SaaSloginTest {
 
 	@Test(priority = 2)
 	public void struggleAnalytics() {
+		logger.info("Entering struggleAnalytics");
+		
 		try {
 
 			StruggleAnalyticsPage stru_page = PageFactory.initElements(driver,
@@ -59,6 +61,7 @@ public class StruggleAnalyticsTest extends SaaSloginTest {
 			e.printStackTrace();
 
 		}
+		logger.info("Exiting struggleAnalytics");
 
 	}
 
