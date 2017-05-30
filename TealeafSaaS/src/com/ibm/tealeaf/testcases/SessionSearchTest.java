@@ -105,7 +105,7 @@ public class SessionSearchTest extends SaaSloginTest {
 	
 			logger.info("Selected the replay item :: sessionSearchLast5Min ");
 			
-			sessionsearch_page.backToSessionSearch();
+			sessionsearch_page.backToSearch("sessionSearchLast5Min");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -135,7 +135,7 @@ public class SessionSearchTest extends SaaSloginTest {
 			sessionsearch_page.clickonOption_Last15min();
 			sessionsearch_page.clickonSearchButton();
 			sessionsearch_page.selectBBRsession();
-			sessionsearch_page.backToSessionSearch();
+			sessionsearch_page.backToSearch("sessionSearchLast15Min");
 
 		} catch (Exception e) {
 			e.printStackTrace();

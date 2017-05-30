@@ -25,7 +25,7 @@ import com.ibm.tealeaf.pageobjects.basepage.BasePage;
 
 ///http://www.utilities-online.info/xpath/#.WSz7M2mGNrQ
 //http://xmltoolbox.appspot.com/xpathevaluator.html
-public class SessionSearchPage extends BasePage{
+public class SessionSearchPage extends BasePage {
 
 	private static Logger logger = Logger.getLogger(SessionSearchPage.class);
 
@@ -53,6 +53,7 @@ public class SessionSearchPage extends BasePage{
 		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,"Session Search"));
 		logger.info("Entering into Session Search Page View going to click on view");
 		sess_search.click();
+		 
 		
 		try {
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
@@ -84,7 +85,7 @@ public class SessionSearchPage extends BasePage{
 		
 
 		
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME20000MILLISEC);
 		} catch (Exception e) {
 			Assert.fail("Unable to display default session search view");
 			e.printStackTrace();
@@ -119,37 +120,11 @@ public class SessionSearchPage extends BasePage{
 			e.printStackTrace();
 		}
 
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME20000MILLISEC);
 
 	}
 
-	/**
-	 * 4. Navigating back to home page from BBR replay view
-	 * 
-	 * @throws InterruptedException
-	 */
-	@FindBy(xpath = "//a[contains(@href,'/home')and contains(.,'IBM Tealeaf Customer Experience')]")
-	//@FindBy(xpath = "//a[@class='active']") 
-	WebElement homepage;
-
-	public void backToSessionSearch() throws InterruptedException {
-		logger.info("Navigating back to Home Page ");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
-		driver.manage()
-				.timeouts()
-				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC,
-						TimeUnit.SECONDS);
-		Actions builder = new Actions(driver);
-		builder.moveToElement(homepage).click(homepage);
-		builder.perform();
-		logger.info("Successfully navigated back to Home Page ");
-		try {
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
-		} catch (Exception e) {
-			Assert.fail("Unable to return back to home page");
-			e.printStackTrace();
-		}
-	}
+	
 
 	/**
 	 * Navigating back to Session Search page
@@ -171,7 +146,7 @@ public class SessionSearchPage extends BasePage{
 		builder.moveToElement(searchpage).click(searchpage);
 		builder.perform();
 		logger.info("Successfully navigated back to Session search Page from :"+functionName);
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30000MILLISEC);
 		} catch (Exception e) {
 			Assert.fail("Unable to return back to Session Search pageview");
 			e.printStackTrace();
@@ -193,7 +168,7 @@ public class SessionSearchPage extends BasePage{
 		// last_24hrs.click();
 		logger.info("In default End option of 'Last 24 hrs'");
 		
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+			Thread.sleep(TeaLeafCONSTANTS.WAITTIME20000MILLISEC);
 		} catch (Exception e) {
 			Assert.fail("Unable to click the drop down menu for Session End Time");
 			e.printStackTrace();
@@ -216,7 +191,7 @@ public class SessionSearchPage extends BasePage{
 		last_5min.click();
 		logger.info("End session end time 'Last 5 minutes'");
 	
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME20000MILLISEC);
 		} catch (InterruptedException e) {
 			Assert.fail("Unable to click the drop down menu option- Last 5 min for Session End Time");
 			e.printStackTrace();
@@ -237,7 +212,7 @@ public class SessionSearchPage extends BasePage{
 		builder.moveToElement(last_15min).build().perform();
 		last_15min.click();
 		logger.info("End session end time 'Last 15 minutes'");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30000MILLISEC);
 	}
 
 	// Click on drop down option-Last 30 min
@@ -253,7 +228,7 @@ public class SessionSearchPage extends BasePage{
 		builder.moveToElement(last_30min).build().perform();
 		last_30min.click();
 		logger.info("End session end time 'Last 30 minutes'");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30000MILLISEC);
 	}
 
 	// Click on drop down option-Last hour
@@ -269,7 +244,7 @@ public class SessionSearchPage extends BasePage{
 		builder.moveToElement(last_hour).build().perform();
 		last_hour.click();
 		logger.info("End session end time 'Last hour'");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30000MILLISEC);
 	}
 
 	// Click on drop down option-Last 12 hours
@@ -285,7 +260,7 @@ public class SessionSearchPage extends BasePage{
 		builder.moveToElement(last_12hours).build().perform();
 		last_12hours.click();
 		logger.info("End session end time 'Last 12 hours'");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30000MILLISEC);
 	}
 
 	// Click on drop down option-Last 7 days
@@ -301,7 +276,7 @@ public class SessionSearchPage extends BasePage{
 		builder.moveToElement(last_7days).build().perform();
 		last_7days.click();
 		logger.info("End session end time 'Last 7 days'");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30000MILLISEC);
 	}
 
 	// Click on drop down option-Last 14 days
@@ -317,7 +292,7 @@ public class SessionSearchPage extends BasePage{
 		builder.moveToElement(last_14days).build().perform();
 		last_14days.click();
 		logger.info("End session end time 'Last 14 days'");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30000MILLISEC);
 	}
 
 	// Click on drop down option-custom date range
@@ -333,7 +308,7 @@ public class SessionSearchPage extends BasePage{
 		builder.moveToElement(customdaterange).build().perform();
 		customdaterange.click();
 		logger.info("End session end time 'Custom Date Range'");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME60SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30000MILLISEC);
 	}
 
 }

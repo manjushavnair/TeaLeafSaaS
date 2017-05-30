@@ -19,6 +19,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
+import com.ibm.tealeaf.pageobjects.HomePage;
 import com.ibm.tealeaf.pageobjects.StruggleAnalyticsPage;
 
 public class StruggleAnalyticsTest extends SaaSloginTest {
@@ -41,24 +42,36 @@ public class StruggleAnalyticsTest extends SaaSloginTest {
 					StruggleAnalyticsPage.class);
 			
 			try {
-				Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
+				
+				logger.info("Waiting 20 sec before StruggleAnalytics Page click");
+				 
+				Thread.sleep(TeaLeafCONSTANTS.WAITTIME20000MILLISEC);
+				logger.info("Waiting 20 sec completed and calling  clickStrugAnalytics");
 			} catch (Exception e) {
 				 
 				e.printStackTrace();
 			}
 			
-			stru_page.strugAnalytics();
+			stru_page.clickStrugAnalytics();
 			stru_page.registration();
+			
+	 
 			stru_page.backToStruggleAnalytics();
+			
 			stru_page.shoppingCart();
 			stru_page.backToStruggleAnalytics();
 			stru_page.checkOut();
 			stru_page.backToStruggleAnalytics();
 			stru_page.bannerLandingPage();
-			stru_page.backToStruggleAnalytics();
+		//	stru_page.backToStruggleAnalytics();
+			
+			HomePage home_page = PageFactory.initElements(driver,
+					HomePage.class);
+			home_page.backToHome();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+	     
+	       e.printStackTrace();
 
 		}
 		logger.info("Exiting struggleAnalytics");

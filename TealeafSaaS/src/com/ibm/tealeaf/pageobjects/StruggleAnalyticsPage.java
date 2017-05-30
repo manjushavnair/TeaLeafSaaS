@@ -38,19 +38,26 @@ public class StruggleAnalyticsPage extends BasePage{
 
 	}
 
-	// @FindBy(xpath = "//span[contains(@title,'Struggle analytics')]")
-	@FindBy(xpath = "//span[@class='name struggles struggles-click']")
+	                  
+	@FindBy(xpath = "//span[contains(@title,'Struggle Analytics')]")
+	//@FindBy(xpath = "//span[@class='name struggles struggles-click']")
 	WebElement struggleanalytics;
 
-	public void strugAnalytics() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME60SEC);
-		wait.until(ExpectedConditions.textToBePresentInElement(struggleanalytics, "Struggle analytics"));
-		logger.info("Entering Struggle Analytics PageView click");
-		struggleanalytics.click();
-		logger.info("Exiting Struggle Analytics PageView clicked");
+	public void clickStrugAnalytics() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME10SEC);
+		wait.until(ExpectedConditions.textToBePresentInElement(struggleanalytics, "Struggle Analytics"));
+		logger.info("Entering clickStrugAnalytics");
+		
+		
+		try {
+			struggleanalytics.click();
+		} catch (WebDriverException e) {
+			Assert.fail("struggleanalytics click fail");
+		}
+		logger.info("Exiting clickStrugAnalytics  clicked");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		//return PageFactory.initElements(driver, StruggleAnalyticsPage.class);
-         
+		 
 	}
 
 	// Method to call StruggleAnalytics->Registration
@@ -82,13 +89,13 @@ public class StruggleAnalyticsPage extends BasePage{
 	public void shoppingCart() throws InterruptedException {
 
 		logger.info("Entering Shopping cart struggle report yet to click");
-		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME60SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(
 				shoppingcartlabel, "Shopping cart"));
 		
 		shoppingcartlabel.click();
 		logger.info("Exiting Shopping cart struggle report clicked");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 
 		
 	}
@@ -104,9 +111,9 @@ public class StruggleAnalyticsPage extends BasePage{
 	public void checkOut() throws InterruptedException {
 
 		logger.info("Entering Checkout struggle report");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME15SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		checkoutlabel.click();
-
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		logger.info("Exiting Checkout struggle report");
 	}
 
@@ -120,9 +127,9 @@ public class StruggleAnalyticsPage extends BasePage{
 
 	public void bannerLandingPage() throws InterruptedException {
 		logger.info("Enter Banner landing page report");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME30SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME20000MILLISEC);
 		bannerlabel.click();
-
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		logger.info("In Banner landing page report");
 	}
 
@@ -137,14 +144,14 @@ public class StruggleAnalyticsPage extends BasePage{
 	public void backToStruggleAnalytics() throws InterruptedException {
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		logger.info("Navigating back to Struggle Analytics ");
-		 driver.manage() .timeouts()
+		 driver.manage().timeouts()
 		 .implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC, TimeUnit.SECONDS);
 		 
 		Actions builder2 = new Actions(driver);
 		builder2.moveToElement(menustruggle).click(menustruggle);
 		builder2.perform();
 		logger.info("Successfully navigated back to Struggle Analytics ");
-		Thread.sleep(TeaLeafCONSTANTS.WAITTIME100SEC);
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME20000MILLISEC);
 	}
 
 }
