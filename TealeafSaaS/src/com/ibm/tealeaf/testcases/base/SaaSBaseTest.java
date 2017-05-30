@@ -17,52 +17,46 @@ import org.testng.annotations.*;
 import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.PropertyReader;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
- 
+
 import junit.framework.TestCase;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.*;
 
-public class SaaSBasePage  extends BasePage {
+public class SaaSBaseTest extends BaseTest {
 
 	protected static WebDriver driver;
-	private static Logger logger = Logger.getLogger(SaaSBasePage.class);
+	private static Logger logger = Logger.getLogger(SaaSBaseTest.class);
 
 	protected static PropertyReader prpr;
 	private WebDriverWait wait;
 
-	public SaaSBasePage() {
+	public SaaSBaseTest() {
 
 		prpr = PropertyReader.readProperty();
 
- 
 	}
-	
-	public WebDriver setDriver(String browserType, String appURL)
-	{
+
+	public WebDriver setDriver(String browserType, String appURL) {
 		if (driver == null)
-			driver = BrowserFactory.startBrowser(
-					browserType,
-					appURL);
+			driver = BrowserFactory.startBrowser(browserType, appURL);
 		return driver;
- 	}
-	
+	}
 
 	@AfterSuite
 	public void testDown() {
 		BrowserFactory.stopDriver();
 
 	}
- 
+
 	@BeforeSuite
 	public void initializeTestBaseSetup(String browserType, String appURL) {
 		try {
-			setDriver(TeaLeafCONSTANTS.BROWSER_TYPE, TeaLeafCONSTANTS.APPLICATION_URL);
-  		} catch (Exception e) {
+			setDriver(TeaLeafCONSTANTS.BROWSER_TYPE,
+					TeaLeafCONSTANTS.APPLICATION_URL);
+		} catch (Exception e) {
 			logger.info("Cannot Identoify the WebDriver");
 			e.printStackTrace();
 		}
 	}
-	
-	 
 
 }

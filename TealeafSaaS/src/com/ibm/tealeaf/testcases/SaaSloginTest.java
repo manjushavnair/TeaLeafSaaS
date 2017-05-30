@@ -15,10 +15,10 @@ import org.testng.annotations.Test;
 
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 import com.ibm.tealeaf.pageobjects.LoginPage;
-import com.ibm.tealeaf.testcases.base.SaaSBasePage;
+import com.ibm.tealeaf.testcases.base.SaaSBaseTest;
 import com.ibm.tealeaf.utils.ExcelUtil;
 
-public class SaaSloginTest extends SaaSBasePage {
+public class SaaSloginTest extends SaaSBaseTest {
 
 	private static Logger logger = Logger
 			.getLogger(SaaSloginTest.class);

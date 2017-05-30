@@ -2,7 +2,7 @@ package com.ibm.tealeaf.testcases.base;
 
 import org.openqa.selenium.By;
 
-public class BasePage {
+public class BaseTest {
 	
 	protected void setUpBeforeTestClass(){
 	    // initialize a browser driver, connect to servers
