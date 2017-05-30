@@ -11,7 +11,6 @@ package com.ibm.tealeaf.testcases.base;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
 import com.ibm.tealeaf.commons.BrowserFactory;
@@ -24,11 +23,7 @@ import org.openqa.selenium.remote.*;
 
 public class SaaSBaseTest extends BaseTest {
 
-	protected static WebDriver driver;
 	private static Logger logger = Logger.getLogger(SaaSBaseTest.class);
-
-	protected static PropertyReader prpr;
-	private WebDriverWait wait;
 
 	public SaaSBaseTest() {
 

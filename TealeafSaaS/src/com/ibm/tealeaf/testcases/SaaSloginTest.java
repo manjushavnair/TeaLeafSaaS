@@ -12,6 +12,8 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
 import com.ibm.tealeaf.pageobjects.LoginPage;
@@ -58,20 +60,21 @@ public class SaaSloginTest extends SaaSBaseTest {
 	 	logger.info("Exiting verifyValidLogin");
 		login_page.login_tealeafSaaS(userName, password);
 	}
-	
+	@BeforeClass
 	protected void setUpBeforeTestClass(){
 	    // initialize a browser driver, connect to servers
 	  }
-
+	@BeforeMethod
 	  protected  void setUpBeforeTestMethod() {
 	    // initialize testPage
 	    // login to the app, if necessary
 	  }
-
+	@AfterMethod
 	  protected  void tearDownAfterTestMethod() {
 	    // logout of the app, if necessary
 	  }
 
+	@AfterClass
 	  protected  void  tearDownAfterTestClass() {
 	    // close connections, close browser as needed
 	  }
