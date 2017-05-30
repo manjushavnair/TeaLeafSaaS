@@ -16,10 +16,7 @@ import org.testng.annotations.*;
 import com.ibm.tealeaf.commons.BrowserFactory;
 import com.ibm.tealeaf.commons.PropertyReader;
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
-
-import junit.framework.TestCase;
-import org.openqa.selenium.*;
-import org.openqa.selenium.remote.*;
+ 
 
 public class SaaSBaseTest extends BaseTest {
 
