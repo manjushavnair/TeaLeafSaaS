@@ -1,4 +1,4 @@
-package com.ibm.tealeaf.pageobjects;
+package com.ibm.tealeaf.testcases;
 
 import org.openqa.selenium.By;
 
