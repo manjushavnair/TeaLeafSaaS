@@ -1,51 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Standalone" verbose="1" parallel="classes" >
-<!-- change the below two vvlaues-->
-<parameter name="appURL" value="https://ip/admin/tealaf/"/>
-<parameter name="browserType" value="chrome"/>  
-   
+<suite name="Standalone" verbose="1" parallel="classes">
+	<!-- change the below two vvlaues -->
+	<parameter name="appURL" value="https://ip/admin/tealaf/" />
+	<parameter name="browserType" value="chrome" />
+ 
+	<test name="standalone">
+		<!-- 
+		    <groups>
+		     <run> <include name="standalone" />
+		     </run> 
+		     </groups> <packages> 
+			<package name="com.ibm.tealeaf.testcases" /> 
+			
+			</packages> 
+		 -->
+		<classes>
 
-  
-  <test name="standalone">
-  <!--    <groups>
-            <run>
-                <include name="standalone" />
-            </run>
-        </groups>
-        <packages>
-            <package name="com.ibm.tealeaf.testcases" />
-        </packages>
-        -->
-    <classes>
-      
-     <class name="com.ibm.tealeaf.testcases.VerifyTealeafSaaSlogin" >
-     
-     </class>
-     
-     <class name="com.ibm.tealeaf.testcases.SessionSearchTest">
-     
-     <methods>
-        <include name="sessionSearchLast24hrs" />
-        <include name="sessionSearchLast5Min" />
-        <exclude name="sessionSearchLast15Min" />
-        <exclude name="sessionSearchLast30Min" />
-        <exclude name="sessionSearchLasthour" />
-        <exclude name="sessionSearchLast12hours" />
-        <exclude name="sessionSearchLast7days" />
-        <exclude name="sessionSearchLast14days" />
-        <exclude name="sessionSearch_Customdaterange" />
-      </methods>
-     
-     </class>
-    
-     
-   
-    
-    </classes>
-    
-    
-  
-  </test>
-  
+			<class name="com.ibm.tealeaf.testcases.SaaSloginTest">
+				<methods>
+					<include name="veryfyValidLogin" />
+				</methods>
+			</class>
+
+			<class name="StruggleAnalyticsTest">
+				<methods>
+					<include name="struggleAnalytics" />
+				</methods>
+			</class>
+
+		<class name="AlertManagerTest">
+				<methods>
+					<include name="clickAlertManager" />
+					<include name="searchAlert" />
+				</methods>
+			</class>
+
+			<class name="com.ibm.tealeaf.testcases.SessionSearchTest">
+
+				<methods>
+					<include name="sessionSearchLast24hrs" />
+					<exclude name="sessionSearchLast5Min" />
+					<exclude name="sessionSearchLast15Min" />
+					<exclude name="sessionSearchLast30Min" />
+					<exclude name="sessionSearchLasthour" />
+					<include name="sessionSearchLast12hours" />
+					<exclude name="sessionSearchLast7days" />
+					<exclude name="sessionSearchLast14days" />
+					<exclude name="sessionSearch_Customdaterange" />
+				</methods>
+
+			</class>
+
+
+
+
+		</classes>
+
+
+
+	</test>
+
 </suite>
