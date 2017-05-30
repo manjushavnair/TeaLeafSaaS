@@ -61,6 +61,7 @@ public class BrowserFactory {
 				driver = new InternetExplorerDriver();
 		}
 
+		
 		// driver.manage().timeouts().pageLoadTimeout(10L, TimeUnit.SECONDS);
 
 		driver.manage().window().maximize();
