@@ -23,13 +23,13 @@
 				</methods>
 			</class>
 
-			<class name="StruggleAnalyticsTest">
+			<class name="com.ibm.tealeaf.testcases.StruggleAnalyticsTest">
 				<methods>
 					<include name="struggleAnalytics" />
 				</methods>
 			</class>
 
-		<class name="AlertManagerTest">
+		<class name="com.ibm.tealeaf.testcases.AlertManagerTest">
 				<methods>
 					<include name="clickAlertManager" />
 					<include name="searchAlert" />
