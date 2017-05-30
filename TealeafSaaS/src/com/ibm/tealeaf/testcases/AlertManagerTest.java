@@ -42,7 +42,7 @@ public class AlertManagerTest extends SaaSloginTest {
 			logger.info("Entering into clickAlertManager ");
 			AlertManagerPage alertmanager_page = PageFactory.initElements(
 					driver, AlertManagerPage.class);
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME30000MILLISEC);
+			Thread.sleep(TeaLeafCONSTANTS.WAITTIME60000MILLISEC);
 
 			alertmanager_page.invokeAlertManager();
 

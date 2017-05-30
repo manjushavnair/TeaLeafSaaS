@@ -34,5 +34,8 @@ public interface TeaLeafCONSTANTS {
 	public static int WAITTIME10000MILLISEC = 10000;//10 sec
 	public static int WAITTIME20000MILLISEC = 20000;//20 sec
 	public static int WAITTIME30000MILLISEC = 30000;//30 sec
+	public static int WAITTIME40000MILLISEC = 40000;//40 sec
+	public static int WAITTIME50000MILLISEC = 50000;//50 sec
+	public static int WAITTIME60000MILLISEC = 60000;//60 sec
 
 }
