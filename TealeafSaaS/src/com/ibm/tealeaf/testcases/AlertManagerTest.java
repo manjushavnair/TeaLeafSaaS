@@ -20,11 +20,14 @@ import com.ibm.tealeaf.utils.ExcelUtil;
 public class AlertManagerTest extends SaaSloginTest {
 
 	private static Logger logger = Logger.getLogger(AlertManagerTest.class);
+	private AlertManagerPage alertmanager_page ;
 
 	public AlertManagerTest() {
 
 		super();
 		System.out.println("AlertManagerTest called");
+		alertmanager_page = PageFactory.initElements(
+				driver, AlertManagerPage.class);
 
 	}
 
@@ -40,9 +43,8 @@ public class AlertManagerTest extends SaaSloginTest {
 		try {
 
 			logger.info("Entering into clickAlertManager ");
-			AlertManagerPage alertmanager_page = PageFactory.initElements(
-					driver, AlertManagerPage.class);
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME60000MILLISEC);
+		
+			Thread.sleep(TeaLeafCONSTANTS.WAITTIME100000MILLISEC);
 
 			alertmanager_page.invokeAlertManager();
 
@@ -62,11 +64,17 @@ public class AlertManagerTest extends SaaSloginTest {
 		String searchString = null;
 		try {
 			ExcelUtil eu = new ExcelUtil();
-			eu.setExcelFile(TeaLeafCONSTANTS.LOGINXLSDATAPATH, "AlertManager");
+			eu.setExcelFile(TeaLeafCONSTANTS.LOGINXLSDATAPATH, TeaLeafCONSTANTS.LOGINXLSDATASHEETNAMEALERTMANAGER);
 			searchString = eu.getCellData(1, 0);
 			
+			Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
+			
+			alertmanager_page.searchAlert(searchString) ;
+			
 			logger.info("searchString "+searchString);
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME30000MILLISEC);
+			
+			
+			alertmanager_page.invokeAlertManager();
 			
 		} catch (Exception e) {
 			e.printStackTrace();

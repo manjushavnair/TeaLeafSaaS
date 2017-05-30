@@ -21,7 +21,7 @@ public class BaseTest {
 		  }
 	   @AfterSuite
 	  protected void tearDownAfterTestSuite(){
-		   logger.info("Quiting the browser Suite::BaseTest ");
+		   logger.info("Quiting the tearDownAfterTestSuite ::BaseTest ");
 		   driver.quit();
 		  }
 
@@ -40,11 +40,11 @@ public class BaseTest {
 			protected void setUpBeforeTestClass(){
 			    // initialize a browser driver, connect to servers
 			  }
+			  */
 		@AfterClass
 		  protected  void  tearDownAfterTestClass() {
 		    // close connections, close browser as needed
 			logger.info("Quiting browser  tearDownAfterTestClass  ::BaseTest");
-			//driver.quit();
+			 driver.quit();
 		  }
-		  */
 }

@@ -84,7 +84,7 @@ public class ExcelUtil {
 			ExcelUtil eu = new ExcelUtil();
 
 			eu.setExcelFile(TeaLeafCONSTANTS.LOGINXLSDATAPATH,
-					TeaLeafCONSTANTS.LOGINXLSDATASHEETNAME);
+					TeaLeafCONSTANTS.LOGINXLSDATASHEETNAMELOGIN);
 
 			userName = eu.getCellData(1, 1);
 			password = eu.getCellData(1, 2);

@@ -3,6 +3,7 @@ package com.ibm.tealeaf.pageobjects;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -54,29 +55,36 @@ public class AlertManagerPage extends BasePage {
 	}
 
 	/**
-	 * 1. Search for the pre created alerts
+	 * 1. Search for the precreated alerts
 	 * 
 	 * @throws InterruptedException
 	 */
-	@FindBy(xpath = "//a[contains(@href,'/home')and contains(.,'IBM Tealeaf Customer Experience')]")
-	// @FindBy(xpath = "//a[@class='active']")
-	WebElement homepage;
+	@FindBy(css = "input[class^='global-search-input']")
+	//@FindBy(xpath = "//input[@class='global-search-input form-control ng-valid ng-dirty ng-pristine ng-touched']")
+ 	WebElement searchAlert;
 
-	public void searchAlert() throws InterruptedException {
-		logger.info("Navigating back to searchAlert ");
+	public void searchAlert(String searchString) throws InterruptedException {
+		logger.info("Navigating  to searchAlert ");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		driver.manage()
 				.timeouts()
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC,
 						TimeUnit.SECONDS);
+		
+		driver.
+		findElement(By.cssSelector("input[class^='global-search-input']"))
+		.sendKeys(searchString);
+		
+		logger.info("Going to searchAlert ");
+
 		Actions builder = new Actions(driver);
-		builder.moveToElement(homepage).click(homepage);
+		builder.moveToElement(searchAlert).click(searchAlert);
 		builder.perform();
-		logger.info("Successfully navigated back to searchAlert ");
+		logger.info("Successfully searched searchAlert ");
 		try {
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
 		} catch (Exception e) {
-			Assert.fail("Unable to return back to home page");
+			Assert.fail("Unable to return back to searchAlert ");
 			e.printStackTrace();
 		}
 	}

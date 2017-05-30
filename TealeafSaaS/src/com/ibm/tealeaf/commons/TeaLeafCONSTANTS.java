@@ -11,7 +11,8 @@ public interface TeaLeafCONSTANTS {
 	
 
 	public static String LOGINXLSDATAPATH = "c:/Automation/logindataselenium.xls";
-	public static String LOGINXLSDATASHEETNAME = "Sheet1";
+	public static String LOGINXLSDATASHEETNAMELOGIN = "Login";
+	public static String LOGINXLSDATASHEETNAMEALERTMANAGER = "AlertManager";
 
 	public static String LOGINJSONDATAPATH = "c:\\Automation\\logindataselenium.json";
  
@@ -37,5 +38,7 @@ public interface TeaLeafCONSTANTS {
 	public static int WAITTIME40000MILLISEC = 40000;//40 sec
 	public static int WAITTIME50000MILLISEC = 50000;//50 sec
 	public static int WAITTIME60000MILLISEC = 60000;//60 sec
+	public static int WAITTIME80000MILLISEC = 80000;//80 sec
+	public static int WAITTIME100000MILLISEC = 100000;//100 sec
 
 }
