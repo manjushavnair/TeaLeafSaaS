@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PortalLogin extends Login {
+public class PortalLogin   {
 
 	private WebDriver driver;
 	private static Logger logger = Logger.getLogger(PortalLogin.class);
@@ -25,9 +25,8 @@ public class PortalLogin extends Login {
 	public static void main(String[] args) throws Exception {
 
 		WebDriver driver = null;
-		Login l = new PortalLogin();
-		l.bsoLogin();
-		l.login();
+		PortalLogin l = new PortalLogin();
+ 		l.login();
 
 	}
 
@@ -47,7 +46,7 @@ public class PortalLogin extends Login {
 		WebElement struggle = driver.findElement(By
 				.xpath("//span[contains(@title,'Struggle analytics')]"));
 		
-		WebDriverWait wait = new WebDriverWait(driver, 200);
+		WebDriverWait wait = new WebDriverWait(driver, 00);
 		logger.info("Struggle Analytics Page View step 2");
 		wait.until(ExpectedConditions.textToBePresentInElement(struggle,
 				"Struggle analytics"));
