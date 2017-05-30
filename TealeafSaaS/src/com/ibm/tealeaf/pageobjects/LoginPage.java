@@ -37,7 +37,7 @@ public class LoginPage extends BasePage{
 	@FindBy(xpath = "//a[contains(text(),'Forgot password')]")
 	WebElement forgot_password;
 
-	public LoginPage login_tealeafSaaS(String userName, String passWord) {
+	public void login_tealeafSaaS(String userName, String passWord) {
 		try {
 			logger.info("Entering Tealeaf login");
 			 
@@ -48,7 +48,7 @@ public class LoginPage extends BasePage{
 		} catch (Exception e) {
 			Assert.fail("Login failed");
 		}
-		return PageFactory.initElements(driver, LoginPage.class);
+		//return PageFactory.initElements(driver, LoginPage.class);
 
 	}
 

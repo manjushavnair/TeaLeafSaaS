@@ -22,13 +22,10 @@ public class BaseTest {
 	   @AfterSuite
 	  protected void tearDownAfterTestSuite(){
 		   logger.info("Quiting the browser ::BaseTest ");
-		    driver.quit();
+		   driver.quit();
 		  }
 
-	  @BeforeClass
-		protected void setUpBeforeTestClass(){
-		    // initialize a browser driver, connect to servers
-		  }
+	 
 		@BeforeMethod
 		  protected  void setUpBeforeTestMethod() {
 		    // initialize testPage
@@ -39,8 +36,14 @@ public class BaseTest {
 		    // logout of the app, if necessary
 		  }
 
+		 @BeforeClass
+			protected void setUpBeforeTestClass(){
+			    // initialize a browser driver, connect to servers
+			  }
 		@AfterClass
 		  protected  void  tearDownAfterTestClass() {
 		    // close connections, close browser as needed
+			logger.info("Quiting browser  tearDownAfterTestClass  ::BaseTest");
+			driver.quit();
 		  }
 }

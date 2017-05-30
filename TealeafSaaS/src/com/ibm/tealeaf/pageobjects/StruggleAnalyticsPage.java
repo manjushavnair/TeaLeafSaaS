@@ -38,18 +38,18 @@ public class StruggleAnalyticsPage extends BasePage{
 
 	}
 
-	//@FindBy(xpath = "//span[contains(@title,'Struggle analytics')]")
+	// @FindBy(xpath = "//span[contains(@title,'Struggle analytics')]")
 	@FindBy(xpath = "//span[@class='name struggles struggles-click']")
 	WebElement struggleanalytics;
 
-	public StruggleAnalyticsPage strugAnalytics() throws InterruptedException {
-		 WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
-		//wait.until(ExpectedConditions.textToBePresentInElement(struggleanalytics, "Struggle analytics"));
-		logger.info("Entering Struggle Analytics PageView clicked");
+	public void strugAnalytics() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME60SEC);
+		wait.until(ExpectedConditions.textToBePresentInElement(struggleanalytics, "Struggle analytics"));
+		logger.info("Entering Struggle Analytics PageView click");
 		struggleanalytics.click();
 		logger.info("Exiting Struggle Analytics PageView clicked");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
-		return PageFactory.initElements(driver, StruggleAnalyticsPage.class);
+		//return PageFactory.initElements(driver, StruggleAnalyticsPage.class);
          
 	}
 
@@ -135,8 +135,8 @@ public class StruggleAnalyticsPage extends BasePage{
 	WebElement menustruggle;
 
 	public void backToStruggleAnalytics() throws InterruptedException {
-		// Thread.sleep(TeaLeafCONSTANTS.WAITTIME5000MILLISEC);
-		logger.info("Entering navigated back to Struggle Analytics ");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
+		logger.info("Navigating back to Struggle Analytics ");
 		 driver.manage() .timeouts()
 		 .implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC, TimeUnit.SECONDS);
 		 

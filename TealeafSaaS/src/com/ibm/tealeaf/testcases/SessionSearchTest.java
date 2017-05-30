@@ -328,10 +328,7 @@ public class SessionSearchTest extends SaaSloginTest {
 		}
 
 	}
-*/
-	public void TearDown()
-	{
-	    if (driver != null)
-	    	driver.quit();
-	}
+*/ 
+	
+	 
 }
