@@ -23,7 +23,7 @@ import com.ibm.tealeaf.pageobjects.basepage.BasePage;
  * 
  */
 
-///http://www.utilities-online.info/xpath/#.WSz7M2mGNrQ
+//http://www.utilities-online.info/xpath/#.WSz7M2mGNrQ
 //http://xmltoolbox.appspot.com/xpathevaluator.html
 public class SessionSearchPage extends BasePage {
 
@@ -248,8 +248,11 @@ public class SessionSearchPage extends BasePage {
 	}
 
 	// Click on drop down option-Last 12 hours
-	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[5]//a[@title='Last 12 hours']")
+	//@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[5]//a[@title='Last 12 hours']")
+	@FindBy(xpath = "//*[contains(@title, 'Last 12 hours')]|//*[contains(.,'Last 12 hours')]")
 	WebElement last_12hours;
+	
+	
 
 	public void clickonOption_Last12hours() throws InterruptedException {
 		logger.info("Selected session end time 'Last 12 hours'");
