@@ -1,4 +1,4 @@
-package com.ibm.tealeaf.test;
+package com.ibm.tealeaf.test.mock;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
