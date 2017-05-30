@@ -40,7 +40,7 @@ public class SessionSearchTest extends SaaSloginTest {
 	 * 5. Ensure session availability in default session search view
 	 * 6. Naviagate back to Session Search page
 	 */
-	@Test(priority = 2)
+	@Test(priority = 2) 
 	public void sessionSearchLast24hrs() {
 
 		try {
@@ -80,7 +80,7 @@ public class SessionSearchTest extends SaaSloginTest {
 	 * 6. Ensure session availability in this session search view
 	 * 7. Naviagate back to Session Search page
 	 */
-	@Test
+	@Test(priority = 3)
 	public void sessionSearchLast5Min() {
 
 		try {
@@ -112,7 +112,7 @@ public class SessionSearchTest extends SaaSloginTest {
 	 * 6. Ensure session availability in this session search view
 	 * 7. Naviagate back to Session Search page
 	 */
-	@Test
+	@Test(priority = 2)
 	public void sessionSearchLast15Min() {
 
 		try {
@@ -145,7 +145,7 @@ public class SessionSearchTest extends SaaSloginTest {
 	 * 6. Ensure session availability in this session search view
 	 * 7. Naviagate back to Session Search page
 	 */
-	@Test
+	@Test(priority = 2)
 	public void sessionSearchLast30Min() {
 
 		try {
@@ -177,7 +177,7 @@ public class SessionSearchTest extends SaaSloginTest {
 	 * 6. Ensure session availability in this session search view
 	 * 7. Naviagate back to Session Search page
 	 */
-	@Test
+	@Test(priority = 2)
 	public void sessionSearchLasthour() {
 
 		try {
@@ -208,7 +208,7 @@ public class SessionSearchTest extends SaaSloginTest {
 	 * 6. Ensure session availability in this session search view
 	 * 7. Naviagate back to Session Search page
 	 */
-	@Test
+	@Test(priority = 2)
 	public void sessionSearchLast12hours() {
 
 		try {
@@ -241,7 +241,7 @@ public class SessionSearchTest extends SaaSloginTest {
 	 * 6. Ensure session availability in this session search view
 	 * 7. Naviagate back to Session Search page
 	 */
-	@Test
+	@Test(priority = 2)
 	public void sessionSearchLast7days() {
 
 		try {
@@ -274,7 +274,7 @@ public class SessionSearchTest extends SaaSloginTest {
 	 * 6. Ensure session availability in this session search view
 	 * 7. Naviagate back to Session Search page
 	 */
-	@Test
+	@Test(priority = 2)
 	public void sessionSearchLast14days() {
 
 		try {
@@ -309,7 +309,7 @@ public class SessionSearchTest extends SaaSloginTest {
 	 */
 	
 	
-	@Test
+	@Test(priority = 2)
 	public void sessionSearch_Customdaterange() {
 
 		try {

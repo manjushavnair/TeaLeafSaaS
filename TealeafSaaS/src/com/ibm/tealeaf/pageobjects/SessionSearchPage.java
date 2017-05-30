@@ -58,13 +58,14 @@ public class SessionSearchPage {
 	}
 
 	// 2. Display default Session search view( for last 24 hrs )
-	@FindBy(xpath = "//button[text()='Search']")
+	//@FindBy(xpath = "//button[text()='Search']")
+	@FindBy(xpath = "//button[@class='btn btn-primary ng-binding']") 
 	WebElement defaultsearch;
 
 	public void clickonSearchButton() {
 		// driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,TimeUnit.SECONDS);
 		try {
-		WebDriverWait wait = new WebDriverWait(driver, 400);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.textToBePresentInElement(defaultsearch,
 				"Search"));
 		
