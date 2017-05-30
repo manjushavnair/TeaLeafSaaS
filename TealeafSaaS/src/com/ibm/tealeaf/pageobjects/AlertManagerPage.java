@@ -76,14 +76,10 @@ public class AlertManagerPage extends BasePage {
 		.sendKeys(searchString);
 		
 		logger.info("Going to searchAlert ");
-
-		/*Actions builder = new Actions(driver);
-		builder.moveToElement(searchAlert).click(searchAlert);
-		builder.perform();
-		*/
+ 
 		logger.info("Successfully searched searchAlert ");
 		try {
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10SEC);
+			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		} catch (Exception e) {
 			Assert.fail("Unable to return back to searchAlert ");
 			e.printStackTrace();
