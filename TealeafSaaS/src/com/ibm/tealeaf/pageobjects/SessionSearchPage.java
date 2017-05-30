@@ -41,19 +41,21 @@ public class SessionSearchPage {
 	}
 
 	// 1.Navigate to session search page view from home
- 	//@FindBy(xpath = "//span[contains(@title,'Session search')]")
+ 	//@FindBy(xpath = "//span[contains(@title,'Session Search')]")
 	@FindBy(xpath = "//span[@class='name sessionsearch sessionsearch-click']")
+	//@FindBy(xpath = "//span[@class='name sessionsearch sessionsearch-click'] | //span[contains(@title,'Session Search')]")
 
 	WebElement sess_search;
 
 	public void sessSearch() {
-		//WebDriverWait wait = new WebDriverWait(driver, 20);
-		//wait.until(ExpectedConditions.textToBePresentInElement(sess_search,"Session search"));
 		logger.info("Entering into Session Search Page View");
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME60SEC);
+		wait.until(ExpectedConditions.textToBePresentInElement(sess_search,"Session Search"));
+		logger.info("Entering into Session Search Page View going to click on view");
 		sess_search.click();
 		
 		try {
-			Thread.sleep(TeaLeafCONSTANTS.WAITTIME1000MILLISEC);
+			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
 		} catch (Exception e) {
 			Assert.fail("Unable to navigate to Session Search page");
 			e.printStackTrace();
@@ -68,17 +70,17 @@ public class SessionSearchPage {
 
 	public void clickonSearchButton() {
 		
-		logger.info("Identified the Search button to be clicked in nmethod clickonSearchButton");
-		// driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME60SEC,TimeUnit.SECONDS);
+		logger.info("Identified the Search button to be clicked  :: clickonSearchButton");
+	//	driver.manage().timeouts().implicitlyWait(TeaLeafCONSTANTS.WAITTIME30SEC,TimeUnit.SECONDS);
 		try {
-		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
+		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME80SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(defaultsearch,
 				"Search"));
 		
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", defaultsearch);
 
-		logger.info("Performed the method:clickonSearchButton");
+		logger.info("Performed the method ::clickonSearchButton");
 		logger.info("Presently in default search view");
 
 		

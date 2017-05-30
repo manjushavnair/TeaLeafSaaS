@@ -50,10 +50,18 @@ public class SessionSearchTest extends SaaSloginTest {
 			}
 
 			sessionsearch_page.sessSearch();
-
+			logger.info("Identify sessSearch default session search page view  :: sessionSearchLast24hrs ");
+			
 			sessionsearch_page.clickonSearchButton();
+			logger.info("clickonsearch button   :: sessionSearchLast24hrs ");
+			
 			sessionsearch_page.selectBBRsession();
+			logger.info("select  selectBBRsession  for reply  :: sessionSearchLast24hrs ");
+			
 			sessionsearch_page.backToSearch("sessionSearchLast24hrs");
+			
+			logger.info("Go back to default search view   :: sessionSearchLast24hrs ");
+			
 			logger.info("Exiting from sessionSearchLast24hrs");
 
 		} catch (Exception e) {
@@ -321,4 +329,9 @@ public class SessionSearchTest extends SaaSloginTest {
 
 	}
 */
+	public void TearDown()
+	{
+	    if (driver != null)
+	    	driver.quit();
+	}
 }
