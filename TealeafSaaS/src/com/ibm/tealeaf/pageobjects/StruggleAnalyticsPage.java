@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -41,14 +42,15 @@ public class StruggleAnalyticsPage extends BasePage{
 	@FindBy(xpath = "//span[@class='name struggles struggles-click']")
 	WebElement struggleanalytics;
 
-	public void strugAnalytics() throws InterruptedException {
+	public StruggleAnalyticsPage strugAnalytics() throws InterruptedException {
 		 WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		//wait.until(ExpectedConditions.textToBePresentInElement(struggleanalytics, "Struggle analytics"));
 		logger.info("Entering Struggle Analytics PageView clicked");
 		struggleanalytics.click();
 		logger.info("Exiting Struggle Analytics PageView clicked");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
-
+		return PageFactory.initElements(driver, StruggleAnalyticsPage.class);
+         
 	}
 
 	// Method to call StruggleAnalytics->Registration

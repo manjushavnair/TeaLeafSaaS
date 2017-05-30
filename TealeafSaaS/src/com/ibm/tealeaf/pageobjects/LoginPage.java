@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import com.ibm.tealeaf.pageobjects.basepage.BasePage;
@@ -36,7 +37,7 @@ public class LoginPage extends BasePage{
 	@FindBy(xpath = "//a[contains(text(),'Forgot password')]")
 	WebElement forgot_password;
 
-	public void login_tealeafSaaS(String userName, String passWord) {
+	public LoginPage login_tealeafSaaS(String userName, String passWord) {
 		try {
 			logger.info("Entering Tealeaf login");
 			 
@@ -47,6 +48,7 @@ public class LoginPage extends BasePage{
 		} catch (Exception e) {
 			Assert.fail("Login failed");
 		}
+		return PageFactory.initElements(driver, LoginPage.class);
 
 	}
 

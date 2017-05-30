@@ -33,6 +33,9 @@ public class SaaSBaseTest extends BaseTest {
 	public SaaSBaseTest() {
 
 		prpr = PropertyReader.readProperty();
+		
+		setDriver(prpr.getProperty(TeaLeafCONSTANTS.BROWSER_TYPE),
+				prpr.getProperty(TeaLeafCONSTANTS.APPLICATION_URL));
 
 	}
 
@@ -42,21 +45,25 @@ public class SaaSBaseTest extends BaseTest {
 		return driver;
 	}
 
+	/*
 	@AfterSuite
 	public void testDown() {
 		BrowserFactory.stopDriver();
 
 	}
-
+	
+	
+	@Parameters({ "browserType", "appURL" })
 	@BeforeSuite
 	public void initializeTestBaseSetup(String browserType, String appURL) {
 		try {
-			setDriver(TeaLeafCONSTANTS.BROWSER_TYPE,
-					TeaLeafCONSTANTS.APPLICATION_URL);
+			setDriver(prpr.getProperty(TeaLeafCONSTANTS.BROWSER_TYPE),
+				prpr.getProperty(TeaLeafCONSTANTS.APPLICATION_URL));
 		} catch (Exception e) {
 			logger.info("Cannot Identoify the WebDriver");
 			e.printStackTrace();
 		}
 	}
+	*/
 
 }

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Standalone" verbose="1" parallel="classes" >
+<!-- change the below two vvlaues-->
+<parameter name="appURL" value="https://ip/admin/tealaf/"/>
+<parameter name="browserType" value="chrome"/>  
+   
+
+  
   <test name="standalone">
   <!--    <groups>
             <run>
