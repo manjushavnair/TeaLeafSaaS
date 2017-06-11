@@ -45,6 +45,6 @@ public class BaseTest {
 		  protected  void  tearDownAfterTestClass() {
 		    // close connections, close browser as needed
 			logger.info("Quiting browser  tearDownAfterTestClass  ::BaseTest");
-			 driver.quit();
+			 //driver.quit();
 		  }
 }

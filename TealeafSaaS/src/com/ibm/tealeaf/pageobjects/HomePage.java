@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
-import com.ibm.tealeaf.pageobjects.basepage.BasePage;
+import com.ibm.tealeaf.pageobjects.base.BasePage;
 
 public class HomePage extends BasePage {
 

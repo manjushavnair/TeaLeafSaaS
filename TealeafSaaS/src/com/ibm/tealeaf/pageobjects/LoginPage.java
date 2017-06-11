@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import com.ibm.tealeaf.pageobjects.basepage.BasePage;
+import com.ibm.tealeaf.pageobjects.base.BasePage;
 
 public class LoginPage extends BasePage{
 	

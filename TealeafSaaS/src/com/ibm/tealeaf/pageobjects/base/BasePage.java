@@ -1,4 +1,4 @@
-package com.ibm.tealeaf.pageobjects.basepage;
+package com.ibm.tealeaf.pageobjects.base;
 
 import org.openqa.selenium.WebDriver;
 
