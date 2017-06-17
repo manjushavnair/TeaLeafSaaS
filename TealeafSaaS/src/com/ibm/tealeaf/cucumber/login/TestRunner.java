@@ -1,4 +1,4 @@
-package cucumbertest;
+package com.ibm.tealeaf.cucumber.login;
 
 import org.junit.runner.RunWith;
 
@@ -8,8 +8,8 @@ import cucumber.api.junit.Cucumber;
  
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "Feature"
-		,glue={"cucumbertest"}
+		features = "feature_login"
+		,glue={"com.ibm.tealeaf.cucumber.login"}
 		,monochrome = false
 		)
  

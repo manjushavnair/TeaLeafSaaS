@@ -1,4 +1,4 @@
-package cucumbertest;
+package com.ibm.tealeaf.cucumber.login;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,7 +11,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class Test_Steps {
+public class Login {
 		public static WebDriver driver;
 	@Given("^User is on Home Page$")
 	public void user_is_on_Home_Page() throws Throwable {
