@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
  
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "feature_login"
+		features = "Feature"
 		,glue={"com.ibm.tealeaf.cucumber.login"}
 		,monochrome = false
 		)

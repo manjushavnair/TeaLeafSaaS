@@ -17,6 +17,7 @@ public class Login {
 	public void user_is_on_Home_Page() throws Throwable {
 		driver = new FirefoxDriver();
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    driver.manage().window().maximize();
 	    driver.get("https://50.23.117.115/webapp/login");
 	}
 
@@ -27,18 +28,23 @@ public class Login {
 
 	@When("^User enters \"(.*)\" and \"(.*)\"$")
 	public void user_enters_UserName_and_Password(String username, String password) throws Throwable {
+	 
 		driver.findElement(By.id("j_username")).sendKeys(username); 	 
 	    driver.findElement(By.id("j_password")).sendKeys(password);
-	    driver.findElement(By.className("submit")).click();
+	    driver.findElement(By.xpath("//button[@class='submit']")).click();
+	    
 	}
 
 	@Then("^Message displayed Login Successfully$")
 	public void message_displayed_Login_Successfully() throws Throwable {
 		System.out.println("Login Successfully");
 	}
-
+	
+	 
 	@When("^User LogOut from the Application$")
 	public void user_LogOut_from_the_Application() throws Throwable {
+		 driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 Thread.sleep(20000);
 		driver.findElement (By.xpath("//a[contains(@class,'dropdown-toggle with-lsep ng-binding')]")).click();
 		Actions builder = new Actions(driver);
 		builder.moveToElement(driver.findElement(By.xpath("//a[@ng-click='logout()']"))).
@@ -46,10 +52,11 @@ public class Login {
 				
 		builder.perform();
 	}
+	
 
 	@Then("^Message displayed LogOut Successfully$")
 	public void message_displayed_LogOut_Successfully() throws Throwable {
 		System.out.println("LogOut Successfully");
 	}
-
+ 
 }
