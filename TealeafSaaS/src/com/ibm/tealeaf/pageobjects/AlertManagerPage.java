@@ -62,7 +62,7 @@ public class AlertManagerPage extends BasePage {
 	@FindBy(css = "input[class^='global-search-input']")
 	//@FindBy(xpath = "//input[@class='global-search-input form-control ng-valid ng-dirty ng-pristine ng-touched']")
  	WebElement searchAlert;
-
+    
 	public void searchAlert(String searchString) throws InterruptedException {
 		logger.info("Navigating  to searchAlert ");
 		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
@@ -71,19 +71,44 @@ public class AlertManagerPage extends BasePage {
 				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC,
 						TimeUnit.SECONDS);
 		
-		driver.
-		findElement(By.cssSelector("input[class^='global-search-input']"))
-		.sendKeys(searchString);
+		searchAlert.sendKeys(searchString);
 		
 		logger.info("Going to searchAlert ");
  
-		logger.info("Successfully searched searchAlert ");
+		logger.info("Successfully searched the alert");
 		try {
 			Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
+			
+			
 		} catch (Exception e) {
 			Assert.fail("Unable to return back to searchAlert ");
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * 2. Click on New Alert
+	 * 
+	 * @throws InterruptedException
+	 */
+	
+	@FindBy(xpath = "//span[@class='new-alert ng-binding']")
+ 	WebElement newAlert;
+
+	
+	public void newAlert() throws InterruptedException{
+		
+		logger.info("Going to click new Alert");
+		Thread.sleep(TeaLeafCONSTANTS.WAITTIME10000MILLISEC);
+		driver.manage()
+		.timeouts()
+		.implicitlyWait(TeaLeafCONSTANTS.WAITTIME10SEC,
+				TimeUnit.SECONDS);
+		
+		Actions builder = new Actions(driver);
+		builder.moveToElement(newAlert).click();
+		builder.perform();
+		logger.info("New Alert window opened" );
 	}
 
 }

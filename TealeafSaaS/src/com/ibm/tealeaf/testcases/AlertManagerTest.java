@@ -32,11 +32,13 @@ public class AlertManagerTest extends SaaSloginTest {
 	}
 
 	/*
-	 * Test Case 1 1.Log into tealeaf SaaS 2.Navigate to Session Search view 3.
-	 * Click on Search button for the default session end time 4. Select one of
-	 * the BBR session to replay. 5. Ensure session availability in default
-	 * session search view 6. Naviagate back to Session Search page
-	 */
+	 * Test Case 1
+	 * 1.Log into tealeaf SaaS 
+	 * 2.Navigate to Alert Manager view 
+	 * 3.Click on Alert Manager
+	 * 4. Search for an alert from existing ones
+	 * 5. Ensure the alert has been selected and displayed
+	 * */
 	@Test(priority = 2)
 	public void clickAlertManager() {
 
@@ -82,5 +84,31 @@ public class AlertManagerTest extends SaaSloginTest {
 		}
 
 	}
+	
+	/*
+	 * Test Case 2
+	 * 1. From the opened Alert Manager window, select new alert
+	 * 2. Ensure new alert window is popped up to add details further
+	 * 
+	 * */
+	
+	@Test(priority = 4)
+	public void newAlertpopup(){
+		
+		try {
 
-}
+			logger.info("Entering into newAlertpopup");
+		
+			//Thread.sleep(TeaLeafCONSTANTS.WAITTIME100000MILLISEC);
+
+			alertmanager_page.newAlert();
+
+			logger.info("Exiting from newAlertpopup");
+
+		} catch (Exception e) {
+			Assert.fail("Unable to open new alert window from Alert Manager");
+			e.printStackTrace();
+		}
+	}
+
+	}

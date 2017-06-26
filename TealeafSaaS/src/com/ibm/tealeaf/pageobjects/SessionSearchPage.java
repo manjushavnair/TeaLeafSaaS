@@ -155,7 +155,7 @@ public class SessionSearchPage extends BasePage {
 
 	// Select drop down option for Session End Time by clicking on
 	// 24hrs.Option-default search
-	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[3][contains(@class, 'icon-container')]")
+	@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[1]//div[3]//div[contains(@class, 'input-icon icons glyphicon glyphicon-chevron-down')]")
 	WebElement last_24hrs;
 
 	public void clickonDefaultOption_Last24hrs()  {
@@ -174,6 +174,8 @@ public class SessionSearchPage extends BasePage {
 			e.printStackTrace();
 		}
 	}
+	
+	
 
 	// Click on drop down option-Last 5 min
 	//@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[1]//a[@title='Last 5 minutes']")
@@ -251,9 +253,7 @@ public class SessionSearchPage extends BasePage {
 	//@FindBy(xpath = "//div[contains(@class,'sess-endtime')]//filtering-select//div//div[2]//ul//li[5]//a[@title='Last 12 hours']")
 	@FindBy(xpath = "//*[contains(@title, 'Last 12 hours')]|//*[contains(.,'Last 12 hours')]")
 	WebElement last_12hours;
-	
-	
-	
+		
 
 	public void clickonOption_Last12hours() throws InterruptedException {
 		logger.info("Selected session end time 'Last 12 hours'");
@@ -273,9 +273,15 @@ public class SessionSearchPage extends BasePage {
 
 	public void clickonOption_Last7days() throws InterruptedException {
 		logger.info("Selected session end time 'Last 7 days'");
+		// Create instance of Javascript executor
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		//Identify the WebElement which will appear after scrolling down
+		// now execute query which actually will scroll until that element is not appeared on page.
+		je.executeScript("arguments[0].scrollIntoView(true);",last_7days);
 		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_7days,
 				"Last 7 days"));
+        logger.info("Scrolled down to view the option 'Last 7 days'");
 		Actions builder = new Actions(driver);
 		builder.moveToElement(last_7days).build().perform();
 		last_7days.click();
@@ -289,6 +295,12 @@ public class SessionSearchPage extends BasePage {
 
 	public void clickonOption_Last14days() throws InterruptedException {
 		logger.info("Selected session end time 'Last 14 days'");
+		// Create instance of Javascript executor
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		//Identify the WebElement which will appear after scrolling down
+		// now execute query which actually will scroll until that element is not appeared on page.
+		je.executeScript("arguments[0].scrollIntoView(true);",last_14days);
+        logger.info("Scrolled down to view the option 'Last 14 days'");
 		WebDriverWait wait = new WebDriverWait(driver, TeaLeafCONSTANTS.WAITTIME30SEC);
 		wait.until(ExpectedConditions.textToBePresentInElement(last_14days,
 				"Last 14 days"));
