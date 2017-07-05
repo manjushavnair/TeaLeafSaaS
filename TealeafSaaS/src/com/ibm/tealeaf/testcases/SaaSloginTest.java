@@ -9,16 +9,19 @@ package com.ibm.tealeaf.testcases;
  */
 
 import org.apache.log4j.Logger;
+
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 import org.testng.annotations.*;
 
 
 import com.ibm.tealeaf.commons.TeaLeafCONSTANTS;
+import com.ibm.tealeaf.listener.LoginListener;
 import com.ibm.tealeaf.pageobjects.LoginPage;
 import com.ibm.tealeaf.testcases.base.SaaSBaseTest;
 import com.ibm.tealeaf.utils.ExcelUtil;
+
+@Listeners(com.ibm.tealeaf.listener.LoginListener.class)
 
 public class SaaSloginTest extends SaaSBaseTest {
 
