@@ -71,13 +71,7 @@
 					</dependency>
 					
 					 
-  <dependency>
-    <groupId>cucumber</groupId>
-    <artifactId>mylib</artifactId>
-    <version>1.0</version>
-    <scope>system</scope>
-    <systemPath>c:/software/cucumber-core-1.2.5.jar</systemPath>
-  </dependency>
+ 
  
 
 					<dependency>
@@ -125,8 +119,7 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.4</version>
-			<scope>test</scope>
-		</dependency>
+			 	</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -146,8 +139,8 @@
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>1.1.5</version>
-			<scope>test</scope>
+			<version>1.2.4</version>
+			 
 		</dependency>
 
 		<dependency>
@@ -168,6 +161,11 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-jvm-deps</artifactId>
 			<version>1.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-core</artifactId>
+			<version>1.2.4</version>
 		</dependency>
 		<dependency>
 			<groupId>net.masterthought</groupId>
