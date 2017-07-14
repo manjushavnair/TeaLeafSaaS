@@ -36,7 +36,9 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-					 
+					<excludes>
+      <exclude>**/TestRunner.java</exclude>
+    </excludes>
 
 
 				</configuration>
