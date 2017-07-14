@@ -19,7 +19,7 @@
 			<resource>
 				<directory>src</directory>
 				<excludes>
-					<exclude>**/*.java</exclude>
+					<exclude>**/TestRunner.java</exclude>
 				</excludes>
 			</resource>
 			<resource>
