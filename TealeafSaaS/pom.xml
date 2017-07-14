@@ -69,6 +69,17 @@
 						<artifactId>robotframework-selenium2library-java</artifactId>
 						<version>1.4.0.8</version>
 					</dependency>
+					
+					 
+  <dependency>
+    <groupId>cucumber</groupId>
+    <artifactId>mylib</artifactId>
+    <version>1.0</version>
+    <scope>system</scope>
+    <systemPath>c:/software/cucumber-core-1.2.5.jar</systemPath>
+  </dependency>
+ 
+
 					<dependency>
 						<groupId>org.seleniumhq.selenium</groupId>
 						<artifactId>selenium-java</artifactId>
