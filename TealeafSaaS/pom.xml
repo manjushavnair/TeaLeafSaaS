@@ -13,6 +13,26 @@
 		<selenium.version>2.48.2</selenium.version>
 		<keywords.class>Selenium2Library</keywords.class>
 	</properties>
+	
+		 <pluginGroups>
+        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+    </pluginGroups>
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                  http://localhost:9000
+                </sonar.host.url>
+            </properties>
+        </profile>
+     </profiles>
+     
+     
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
@@ -30,6 +50,10 @@
 			</resource>
 		</resources>
 		<plugins>
+		
+		
+	
+		
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.0</version>
