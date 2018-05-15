@@ -16,7 +16,9 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
  * @author manjusha saju
  * 
  */
-public class BrowserFactory {
+public class BrowserFactory
+{
+
 
 	private static WebDriver driver;
 	private static PropertyReader prpr;
