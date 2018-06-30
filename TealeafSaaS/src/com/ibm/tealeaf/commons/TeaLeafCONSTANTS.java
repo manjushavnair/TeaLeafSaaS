@@ -6,15 +6,15 @@ public interface TeaLeafCONSTANTS {
 	public static String CHROME = "chrome";
 	public static String BROWSER_TYPE = "BROWSER_TYPE";
 	public static String APPLICATION_URL = "APPLICATION_URL";
-	public static String CONFIGPATH = "c:\\Automation\\config.properties";
-	public static String EXCEPTIONPATH = "c:\\Automation\\exception.properties";
+	public static String CONFIGPATH = "C:\\Software\\selenium\\config.properties";
+	public static String EXCEPTIONPATH = "C:\\Software\\selenium\\exception.properties";
 	
 
-	public static String LOGINXLSDATAPATH = "c:/Automation/logindataselenium.xls";
+	public static String LOGINXLSDATAPATH = "C:/Software/selenium/logindataselenium.xls";
 	public static String LOGINXLSDATASHEETNAMELOGIN = "Login";
 	public static String LOGINXLSDATASHEETNAMEALERTMANAGER = "AlertManager";
 
-	public static String LOGINJSONDATAPATH = "c:\\Automation\\logindataselenium.json";
+	public static String LOGINJSONDATAPATH = "C:\\Software\\selenium\\logindataselenium.json";
  
 	
 	public static String IE = "IE";

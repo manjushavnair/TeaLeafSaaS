@@ -38,6 +38,8 @@ public class SaaSloginTest extends SaaSBaseTest {
 	public void verifyValidLogin() {
 
 		logger.info("Entering verifyValidLogin");
+
+		logger.info("Starting Browser");
  
 		// Created page object using Page Factory
 		LoginPage login_page = PageFactory

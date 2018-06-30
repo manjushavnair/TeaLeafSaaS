@@ -18,7 +18,7 @@ public class PortalLogin   {
 
 	public PortalLogin() {
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Automation\\chromedriver_win32\\chromedriver.exe");
+				"C:\\Software\\selenium\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 
@@ -34,7 +34,8 @@ public class PortalLogin   {
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("https://50.23.117.115/webapp/login");
+		//driver.get("https://adfs.connectedplant.honeywell.com/adfs/ls?version=1.0&action=signin&realm=urn%3AAppProxy%3Acom&appRealm=3312a585-7537-e811-a94e-000d3a190baa&returnUrl=https%3A%2F%2Fpsaqa.psademo.useast.connectedplant.honeywell.com%2FMES%2FLandingPage.aspx&client-request-id=07D6FD45-D3F1-0001-C88E-F107F1D3D301");
+driver.get("https://www.google.com");
 
 		driver.findElement(By.id("j_username")).sendKeys(
 				"manjushasaju@in.ibm.com");
