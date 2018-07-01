@@ -42,27 +42,36 @@ public class BrowserFactory
 		if (driver == null) {
 			synchronized (BrowserFactory.class) {
 
+
+
 				if (browserName.equalsIgnoreCase(TeaLeafCONSTANTS.FIREFOX))
 
 				{
 					synchronized(BrowserFactory.class)
 					{
 					if(driver==null)
+
 					driver = new FirefoxDriver();
+
+
 					}
 
 				} else if (browserName
 						.equalsIgnoreCase(TeaLeafCONSTANTS.CHROME)) {
+
 					System.setProperty("webdriver.chrome.driver",
 							prpr.getProperty("CHROME_DRIVER_SERVER_PATH"));
 					synchronized(BrowserFactory.class)
 					{
-					if(driver==null)
-					driver = new ChromeDriver();
+					if(driver==null) {
+
+						driver = new ChromeDriver();
+					}
 					}
 				}
 
 				else if (browserName.equalsIgnoreCase(TeaLeafCONSTANTS.IE)) {
+
 					System.setProperty("webdriver.ie.driver",
 							prpr.getProperty("IE_DRIVER_SERVER_PATH"));
 					synchronized(BrowserFactory.class)
@@ -74,14 +83,11 @@ public class BrowserFactory
 			}
 		}
 
-		// driver.manage().timeouts().pageLoadTimeout(10L, TimeUnit.SECONDS);
 
-		driver.manage().window().maximize();
-		driver.manage()
-				.timeouts()
-				.implicitlyWait(TeaLeafCONSTANTS.WAITTIME15SEC,
-						TimeUnit.SECONDS);
+		logger.info("step: " +url);
+
 		driver.get(url);
+
 		return driver;
 
 	}
@@ -91,6 +97,7 @@ public class BrowserFactory
 	}
 
 	public static void stopDriver() {
+		logger.info("stopDriver" );
 		if (driver != null) {
 			driver.quit();
 		}

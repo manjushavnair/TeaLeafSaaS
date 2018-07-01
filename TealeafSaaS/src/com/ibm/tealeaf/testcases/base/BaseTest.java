@@ -15,13 +15,18 @@ public class BaseTest {
 	protected WebDriverWait wait;
 	private static Logger logger = Logger.getLogger(BaseTest.class);
 
+	public BaseTest()
+	{
+
+	}
+
 	@BeforeSuite
 	  protected void setUpBeforeTestSuite(){
-		    // initialize a browser driver, connect to servers
+	 	    // initialize a browser driver, connect to servers
 		  }
 	   @AfterSuite
 	  protected void tearDownAfterTestSuite(){
-		   logger.info("Quiting the tearDownAfterTestSuite ::BaseTest ");
+	 	   logger.info("Quiting the tearDownAfterTestSuite ::BaseTest ");
 		   driver.quit();
 		  }
 
@@ -43,7 +48,7 @@ public class BaseTest {
 			  */
 		@AfterClass
 		  protected  void  tearDownAfterTestClass() {
-		    // close connections, close browser as needed
+	 	    // close connections, close browser as needed
 			logger.info("Quiting browser  tearDownAfterTestClass  ::BaseTest");
 			 driver.quit();
 		  }

@@ -30,7 +30,9 @@ public class SaaSloginTest extends SaaSBaseTest {
 
 	public SaaSloginTest() {
 
-		super();
+		 setDriver(prpr.getProperty(TeaLeafCONSTANTS.BROWSER_TYPE),
+				prpr.getProperty(TeaLeafCONSTANTS.APPLICATION_URL));
+
 
 	}
 

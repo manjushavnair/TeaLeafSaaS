@@ -23,15 +23,14 @@ public class SaaSBaseTest extends BaseTest {
 	private static Logger logger = Logger.getLogger(SaaSBaseTest.class);
 
 	public SaaSBaseTest() {
-
+	 	logger.info("readProperty ");
 		prpr = PropertyReader.readProperty();
-		
-		setDriver(prpr.getProperty(TeaLeafCONSTANTS.BROWSER_TYPE),
-				prpr.getProperty(TeaLeafCONSTANTS.APPLICATION_URL));
+
 
 	}
 
-	public WebDriver setDriver(String browserType, String appURL) {
+	public   WebDriver setDriver(String browserType, String appURL) {
+	 	logger.info("browserType"+browserType + " : appURL "+appURL);
 		if (driver == null)
 			driver = BrowserFactory.startBrowser(browserType, appURL);
 		return driver;
