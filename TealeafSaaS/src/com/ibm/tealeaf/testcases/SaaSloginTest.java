@@ -41,8 +41,7 @@ public class SaaSloginTest extends SaaSBaseTest {
 
 		logger.info("Entering verifyValidLogin");
 
-		logger.info("Starting Browser");
- 
+
 		// Created page object using Page Factory
 		LoginPage login_page = PageFactory
 				.initElements(driver, LoginPage.class);
@@ -59,12 +58,13 @@ public class SaaSloginTest extends SaaSBaseTest {
 					TeaLeafCONSTANTS.LOGINXLSDATASHEETNAMELOGIN);
 			userName = eu.getCellData(1, 1);
 			password = eu.getCellData(1, 2);
+			logger.info("Entering verifyValidLogin" +userName + " " +password);
 	 	} catch (Exception e) {
 			Assert.fail("Unable to login");
 
 			e.printStackTrace();
 		}
-	 	logger.info("Exiting verifyValidLogin");
+	 	logger.info("Exiting verifyValidLogin and going to login");
 		login_page.login_tealeafSaaS(userName, password);
 	}
 	 
