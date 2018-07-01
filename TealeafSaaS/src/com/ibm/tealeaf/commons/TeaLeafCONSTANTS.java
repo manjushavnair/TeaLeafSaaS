@@ -10,7 +10,7 @@ public interface TeaLeafCONSTANTS {
 	public static String EXCEPTIONPATH = "C:\\Software\\selenium\\exception.properties";
 	
 
-	public static String LOGINXLSDATAPATH = "C:/Software/selenium/logindataselenium.xls";
+	public static String LOGINXLSDATAPATH = "C:/Software/selenium/dataselenium.xls";
 	public static String LOGINXLSDATASHEETNAMELOGIN = "Login";
 	public static String LOGINXLSDATASHEETNAMEALERTMANAGER = "AlertManager";
 
