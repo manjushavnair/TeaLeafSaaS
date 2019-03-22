@@ -2,6 +2,16 @@ pipeline
 {
     agent any
 stages{
+
+
+
+    stage("log") {
+         
+        commons = load("jenkinsfile-commons.groovy")
+
+        commons.success()
+    }
+
 	stage('Checkout') 
 	{
 	 // Get CalibrationResults from GitHub
