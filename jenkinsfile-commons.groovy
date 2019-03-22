@@ -1,4 +1,8 @@
 def success() {
+    
+    
+    
+    echo " echoing success"
     currentBuild.result = "SUCCESS"
 }
 
