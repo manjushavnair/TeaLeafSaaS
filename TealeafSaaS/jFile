@@ -1,0 +1,135 @@
+pipeline
+{
+    agent any
+stages{
+
+ 
+	stage('Checkout') 
+	{
+	 // Get CalibrationResults from GitHub
+	 steps
+	 {
+ 
+		
+	 // Get CombinationBuilder from GitHub
+	       checkout([  
+		    $class: 'GitSCM', 
+		    branches: [[name: 'refs/heads/master']], 
+		    doGenerateSubmoduleConfigurations: true, 
+		    extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'TeaLeafSaaS']], 
+		    submoduleCfg: [], 
+		    userRemoteConfigs: [[credentialsId: '6463627-ab54-4e42-bc29-123458', url: 'https://github.com/manjushavnair/TeaLeafSaaS.git']]
+		])
+		
+
+	       checkout([  
+		    $class: 'GitSCM', 
+		    branches: [[name: 'refs/heads/master']], 
+		    doGenerateSubmoduleConfigurations: true, 
+		    extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'Automation']], 
+		    submoduleCfg: [], 
+		    userRemoteConfigs: [[credentialsId: '6463627-ab54-4e42-bc29-123458', url: 'https://github.com/cloudties/Automation.git']]
+		])
+
+		script
+		{
+		
+		 def rootDir = pwd()
+   		 println("Current Directory: " + rootDir) 
+		 def commons = load "TeaLeafSaaS/jenkinsfile-commons.groovy" 
+                 commons.success()
+         
+		
+ 		  echo  getChangeString()
+ 		     
+		    emailNotification( )
+		}
+		echo "mailer"
+	step([$class: 'Mailer',
+	      notifyEveryUnstableBuild: true,
+	      recipients: emailextrecipients([[$class: 'CulpritsRecipientProvider'],
+                                      [$class: 'RequesterRecipientProvider']])])
+	}//steps
+	}//stage
+	}//stages
+	
+}//piplein
+//https://www.oreilly.com/library/view/jenkins-2-up/9781491979587/ch04.html
+
+
+def emailNotification(  ) {
+    def to = emailextrecipients([[$class: 'CulpritsRecipientProvider'],
+	           [$class: 'DevelopersRecipientProvider'],
+	           [$class: 'RequesterRecipientProvider'], 
+	           [$class: 'FailingTestSuspectsRecipientProvider'],
+	           [$class: 'FirstFailingBuildSuspectsRecipientProvider'],
+                   [$class: 'UpstreamComitterRecipientProvider']])
+      //committerEmail = bat (script: 'git --no-pager show -s --format='%ae'', returnStdout: true).trim()
+      //echo committerEmail
+      emailext (
+            to: 'kksclt@gmail.com',
+         //      to: to,
+            attachLog: true,
+            compressLog: true,
+           // body: '''${SCRIPT, template="groovy_html.template"}''', 
+             body: '''${JELLY_SCRIPT, template="html.jelly"}''', 
+           
+           
+            mimeType: 'text/html',
+            replyTo: '$DEFAULT_REPLYTO', 
+            subject: '${DEFAULT_SUBJECT}',
+          //  recipients: emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])]
+            recipientProviders: [[$class: 'CulpritsRecipientProvider'],
+	           [$class: 'DevelopersRecipientProvider'],
+	           [$class: 'RequesterRecipientProvider'], 
+	           [$class: 'FailingTestSuspectsRecipientProvider'],
+	           [$class: 'FirstFailingBuildSuspectsRecipientProvider'],
+                   [$class: 'UpstreamComitterRecipientProvider']]
+    )
+}
+
+
+@NonCPS
+def getChangeString() {
+    MAX_MSG_LEN = 100
+    def changeString = ""
+
+    echo "Gathering SCM changes"
+    def changeLogSets = currentBuild.rawBuild.changeSets
+    for (int i = 0; i < changeLogSets.size(); i++) {
+        def entries = changeLogSets[i].items
+        for (int j = 0; j < entries.length; j++) {
+            def entry = entries[j]
+            truncated_msg = entry.msg.take(MAX_MSG_LEN)
+            changeString += " - ${truncated_msg} [${entry.author}]\n"
+        }
+    }
+
+    if (!changeString) {
+        changeString = " - No new changes"
+    }
+    return changeString
+}
+
+@NonCPS  // Necessary to allow .each to work.
+def changelist() {
+
+changeAuthors = currentBuild.changeSets.collect { set ->
+  set.collect { entry -> entry.author.fullName 
+   echo entry.author.fullName
+   echo 'here'
+   }
+}.flatten()
+
+   changeAuthors
+ 
+   /* def changes = ""
+    currentBuild.changeSets.each { set ->
+        set.each { entry ->
+            changes += "${entry.commitId} by ${entry.author.fullName}\n"
+        }
+    }
+    echo changes
+    changes
+    */
+}
