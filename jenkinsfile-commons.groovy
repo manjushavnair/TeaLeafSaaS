@@ -7,3 +7,4 @@ def handleError(err) {
     currentBuild.result = "FAILURE"
     throw any //rethrow exception to prevent the build from proceeding
 }
+return this
