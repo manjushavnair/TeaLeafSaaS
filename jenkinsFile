@@ -7,9 +7,9 @@ stages{
 
     stage("log") {
          checkout scm
-        commons = load("jenkinsfile-commons.groovy")
+      //  commons = load("jenkinsfile-commons.groovy")
 
-        commons.success()
+       // commons.success()
     }
 
 	stage('Checkout') 
